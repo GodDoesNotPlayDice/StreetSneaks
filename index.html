@@ -1,73 +1,259 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>Street Sneaks</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="header-top">
-        <nav>
-            <ul>
-                <li class="header-top__item">
-                    <a class="header-top__item__link" href="#">
-                        <i class="fa-solid fa-truck"></i><span class="header-top__item__link__text">
-                            Estado de mi Pedido
-                        </span></a>
-                </li>
-                <li class="header-top__item"><a class="header-top__item__link" href="#">
-                        <i class="fa-solid fa-user"></i>
-                        <span class="header-top__item__link__text">Mi Cuenta</span></a></li>
-            </ul>
-        </nav>
+      <nav>
+        <ul>
+          <li class="header-top__item">
+            <a class="header-top__item__link" href="#">
+              <i class="fa-solid fa-truck"></i
+              ><span class="header-top__item__link__text">
+                Estado de mi Pedido
+              </span></a
+            >
+          </li>
+          <li class="header-top__item">
+            <a class="header-top__item__link" href="#">
+              <i class="fa-solid fa-user"></i>
+              <span class="header-top__item__link__text">Mi Cuenta</span></a
+            >
+          </li>
+        </ul>
+      </nav>
     </div>
     <section>
-        <header>
-            <div class="header-center">
-                <div class="header-center__logo-title">
-                    <img class="header-center__logo" src="/imgs/logo.png" alt="Logo de la pagina">
-                    <h1><span class="header-center__title">Street Sneaks</span></h1>
-                </div>
-                <div class="header-center__menu">
-                    <nav>
-                        <ul>
-                            <li class="header-center__menu__item"><a class="header-center__menu__item__link"
-                                    href="#">Novedades</a>
-                            </li>
-                            <li class="header-center__menu__item"><a class="header-center__menu__item__link"
-                                    href="#">Hombre</a></li>
-                            <li class="header-center__menu__item"><a class="header-center__menu__item__link"
-                                    href="#">Mujer</a></li>
-                            <li class="header-center__menu__item"><a class="header-center__menu__item__link"
-                                    href="#">Niño</a></li>
-                            <li class="header-center__menu__item"><a class="header-center__menu__item__link"
-                                    href="#">Deportivo</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="header-center__search">
-                    <nav>
-                        <input placeholder="Busca tu zapatilla" type="search" name="shoes" id="search">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </nav>
-                </div>
-                <div class="header-center__shopping-car">
-                    <a href="#" class="header-center__shopping-car__link">
-                        <i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-            </div>
-        </header>
+      <header>
+        <div class="header-center">
+          <div class="header-center__logo-title">
+            <img
+              class="header-center__logo"
+              src="imgs/logo.png"
+              alt="Logo de la pagina"
+            />
+            <h1><span class="header-center__title">Street Sneaks</span></h1>
+          </div>
+          <div class="header-center__menu">
+            <nav>
+              <ul>
+                <li class="header-center__menu__item">
+                  <a class="header-center__menu__item__link" href="#"
+                    >Novedades</a
+                  >
+                </li>
+                <li class="header-center__menu__item">
+                  <a class="header-center__menu__item__link" href="#">Hombre</a>
+                </li>
+                <li class="header-center__menu__item">
+                  <a class="header-center__menu__item__link" href="#">Mujer</a>
+                </li>
+                <li class="header-center__menu__item">
+                  <a class="header-center__menu__item__link" href="#">Niño</a>
+                </li>
+                <li class="header-center__menu__item">
+                  <a class="header-center__menu__item__link" href="#"
+                    >Deportivo</a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="header-center__search">
+            <nav>
+              <input
+                placeholder="Busca tu zapatilla"
+                type="search"
+                name="shoes"
+                id="search"
+              />
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </nav>
+          </div>
+          <div class="header-center__shopping-car">
+            <a href="#" class="header-center__shopping-car__link">
+              <i class="fa-solid fa-cart-shopping"></i
+            ></a>
+          </div>
+        </div>
+      </header>
     </section>
-    <div class="header-bottom">
-
-    </div>
-</body>
-
+    <div class="header-bottom"></div>
+    <main>
+      <section>
+        <h2>SNEAKS BOXES</h2>
+        <div class="sneaks">
+          <div class="sneaks__card">
+            <div class="sneaks__card__img">
+              <img
+                class="sneaks__card__img__img"
+                src="imgs/AirJordan4Grey.webp"
+                alt="AIR JORDAN GREY"
+              />
+            </div>
+            <div class="sneaks__card__details">
+              <div class="sneaks__card__details__name-price">
+                <p>Gray Air Jordan 4</p>
+                <p>$80.000 CLP</p>
+              </div>
+                <div class="sneaks__card__details__desc"><p>Calzado hombre/Mujer</p>
+                    <p>1 Color</p>
+                </div>
+              
+            </div>
+          </div>
+          <div class="sneaks__card">
+            <div class="sneaks__card__img">
+              <img
+                class="sneaks__card__img__img"
+                src="imgs/AirJordan4Withe.webp"
+                alt="AIR JORDAN GREY"
+              />
+            </div>
+            <div class="sneaks__card__details">
+              <div class="sneaks__card__details__name-price">
+                <p>white Air Jordan 4</p>
+                <p>$70.000 CLP</p>
+              </div>
+                <div class="sneaks__card__details__desc"><p>Calzado hombre/Mujer</p>
+                    <p>1 Color</p>
+                </div>
+              
+            </div>
+          </div>
+          <div class="sneaks__card">
+            <div class="sneaks__card__img">
+              <img
+                class="sneaks__card__img__img"
+                src="imgs/AirJordan4Beage.webp"
+                alt="AIR JORDAN GREY"
+              />
+            </div>
+            <div class="sneaks__card__details">
+              <div class="sneaks__card__details__name-price">
+                <p>Beige Air Jordan 4</p>
+                <p>$83.000 CLP</p>
+              </div>
+                <div class="sneaks__card__details__desc"><p>Calzado hombre/Mujer</p>
+                    <p>1 Color</p>
+                </div>
+              
+            </div>
+          </div>
+          <div class="sneaks__card">
+            <div class="sneaks__card__img">
+              <img
+                class="sneaks__card__img__img"
+                src="imgs/AirJordan4WitheBlue.webp"
+                alt="Blue and white air jordan 4"
+              />
+            </div>
+            <div class="sneaks__card__details">
+              <div class="sneaks__card__details__name-price">
+                <p>Blue/white Air JORDAN 4</p>
+                <p>$90.000 CLP</p>
+              </div>
+                <div class="sneaks__card__details__desc"><p>Calzado hombre/Mujer</p>
+                    <p>1 Color</p>
+                </div>
+              
+            </div>
+          </div>
+          
+        </div>
+        <div class="sneaks">
+            <div class="sneaks__card">
+              <div class="sneaks__card__img">
+                <img
+                  class="sneaks__card__img__img"
+                  src="imgs/RedUniversity.jpg"
+                  alt="AIR JORDAN RedUniversity""
+                />
+              </div>
+              <div class="sneaks__card__details">
+                <div class="sneaks__card__details__name-price">
+                  <p>Air Jordan 4 University Red</p>
+                  <p>$50.000 CLP</p>
+                </div>
+                  <div class="sneaks__card__details__desc"><p>Calzado hombre/Mujer</p>
+                      <p>1 Color</p>
+                  </div>
+                
+              </div>
+            </div>
+            <div class="sneaks__card">
+              <div class="sneaks__card__img">
+                <img
+                  class="sneaks__card__img__img"
+                  src="imgs/AirJordan4BlackCat.webp"
+                  alt="AIR JORDAN GREY"
+                />
+              </div>
+              <div class="sneaks__card__details">
+                <div class="sneaks__card__details__name-price">
+                  <p>Air Jordan 4 Black Cat</p>
+                  <p>$82.300 CLP</p>
+                </div>
+                  <div class="sneaks__card__details__desc"><p>Calzado hombre/Mujer</p>
+                      <p>1 Color</p>
+                  </div>
+                
+              </div>
+            </div>
+            <div class="sneaks__card">
+              <div class="sneaks__card__img">
+                <img
+                  class="sneaks__card__img__img"
+                  src="imgs/RedThunder.jpeg"
+                  alt="AIR JORDAN GREY"
+                />
+              </div>
+              <div class="sneaks__card__details">
+                <div class="sneaks__card__details__name-price">
+                  <p>Air Jordan 4 Red Thunder</p>
+                  <p>$64.000 CLP</p>
+                </div>
+                  <div class="sneaks__card__details__desc"><p>Calzado hombre/Mujer</p>
+                      <p>1 Color</p>
+                  </div>
+                
+              </div>
+            </div>
+            <div class="sneaks__card">
+              <div class="sneaks__card__img">
+                <img
+                  class="sneaks__card__img__img"
+                  src="imgs/AirJordan4Travis.webp"
+                  alt="AIR JORDAN GREY"
+                />
+              </div>
+              <div class="sneaks__card__details">
+                <div class="sneaks__card__details__name-price">
+                  <p>Air Jordan 4 Travis Scott</p>
+                  <p>$90.000 CLP</p>
+                </div>
+                  <div class="sneaks__card__details__desc"><p>Calzado hombre/Mujer</p>
+                      <p>1 Color</p>
+                  </div>
+                
+              </div>
+            </div>
+            
+          </div>
+      </section>
+    </main>
+  </body>
 </html>
