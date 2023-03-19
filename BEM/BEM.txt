@@ -1,0 +1,43 @@
+Como funciona bem
+
+Bloque: Cualquier elemento autonomo que podemos utilizar en cualquier lugar de la pagina, (un logo, una galeria, un menu)
+
+Una etiqueta la cual no este ligada a nada, que sean completamente independientes y reutilizables ejemplo,
+
+Clase: div -> card
+        h2 -> card__title
+        p -> card__text
+        img -> card__image
+
+
+Ahora para reutilizar almenos las redes sociales lo tenemos que desligar de card
+
+tal que queda asi...
+
+Clase: ul -> social-icons
+        li -> social-icons__item
+            a -> 
+                img -> social-icons__icon
+        li -> social-icons__item
+            a ->
+                img -> social-icons__icon
+
+
+Elementos: Los elementos son los que siguen a los bloques
+    tal como el ejemplo de arriba.
+
+    Clase: ul -> social-icons
+        li -> social-icons__item
+            a -> 
+                img -> social-icons__icon
+        li -> social-icons__item
+            a ->
+                img -> social-icons__icon
+
+
+Modificador: Y los modificadores los que siguen el elemento original pero con modificacion
+
+
+Clase: card card--blue
+
+con eso reutilizamos card pero ademas le podemos agregar el azul
