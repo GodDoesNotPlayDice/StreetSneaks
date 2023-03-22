@@ -1,11 +1,11 @@
-/* Colors:
-    #4355ce
-    #1f1b1a
-    #e13838
-    #e4e4e4 
-*/
+:root{
+--blue-color: #4355ce;
+--black-color: #1f1b1a;
+--red-color: #e13838;
+--withe-color: #e4e4e4;
 
 
+}
 /* CSS 0 - 1 */
 
 *{
@@ -17,6 +17,7 @@ body{
 ul{
     display: inherit;
     list-style: none;
+    margin: 0;
 }
 nav{
     display: inherit;
@@ -26,18 +27,27 @@ a{
     text-decoration: none;
 }
 
+p{
+    margin: 0;
+}
+
+ul{
+    padding: 0;
+}
+
+
 /* ICONS */
 .fa-solid{
     color: #e4e4e4;
 }
 
 .fa-magnifying-glass{
-    padding-left: 10px;
+    padding-left: 0.625rem;
 }
 
 .fa-cart-shopping{
     font-size: 22px;
-    color: #e13838;
+    color: var(--red-color);
 }
 
 /* Disable temps */
@@ -51,12 +61,13 @@ a{
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 10px;
-    background-color: #4355ce;
+    width: 100%;
+    padding: 0.125rem 0;
+    background-color: var(--blue-color);
 }
 
 .header-top__item{
-    padding: 0 10px;
+    padding: 0 0.625rem;
 }
 .header-top__item__link{
     text-decoration: none;
@@ -64,16 +75,16 @@ a{
 
 .header-top__item__link__text{
     color: #e4e4e4;
-    padding-left: 10px;
+    padding-left: 0.625rem;
     font-size: 12px;
 }
 
 .header-center{
     display: grid;
-    grid-template-columns: auto auto 230px 80px;
+    grid-template-columns: auto auto 0.45fr 0.15fr;
     align-items: center;
     background-color: #1f1b1a;
-    padding: 1px;
+    padding: 0.020rem;
 }
 
 .header-center__logo-title{
@@ -82,22 +93,29 @@ a{
 }
 
 .header-center__title{
-    color: #e4e4e4;
+    color: var(--withe-color);
 }
 
 
 .header-center__logo{
-    width: 100px;
-    rotate: 30deg;
+    width: 6.25rem;
+    transform: rotate(30deg);
+    transition: ease-in 1s;
 }
 
 .header-center__menu{
     display: flex;
+    align-items: center;
+}
+
+.header-center__menu__item{
+    margin: 0.313rem;
 }
 
 .header-center__menu__item__link{
-    color: #e4e4e4;
-    padding: 0 10px;
+    color: var(--withe-color);
+    transition: ease-out 0.5s;
+    padding: 0.313rem;
 }
 
 .header-center__shopping-car{
@@ -107,8 +125,8 @@ a{
 
 
 .header-bottom{
-    padding: 10px;
-    background-color: #e13838;
+    padding: 0.625rem;
+    background-color: var(--red-color);
 }
 
 
@@ -116,39 +134,65 @@ a{
     display: grid;
     justify-content: center;
     grid-template-columns:repeat(auto-fit, 300px);
-    
-    
-    padding: 50px;
+    padding: 3.125rem;
 }
 
 
 .sneaks__card{
-    width: 250px;
+    display: inherit;
+    justify-content: center;
 }
 
 .sneaks__card__img{
-    width: inherit;
-    height: 300px;
+    max-width: 16rem;
+    height: 100%;
 }
 
 .sneaks__card__img__img{
     width: 100%;
-    max-height: 300px;
+    height: 16rem;
 }
 
 .sneaks__card__details__name-price{
-
     display:flex ;
+    color: var(--black-color);
     justify-content: space-between;
-    color: #1f1b1a;
+    padding-bottom: 0.188rem;
     font-weight: bold;
-    padding-bottom: 3px ;
     
 }
 
 .sneaks__card__details__desc p{
-
     color: #707070;
-    padding: 5px 0;
+    padding: 0.2rem;
     
 }
+
+.sneaks__card__details__name-price p{
+    padding: 0 0.5rem;
+}
+
+.corousel-section{
+    display: flex;
+    justify-content: center;
+}
+
+.carousel {
+    margin: 20px;
+    max-width: 600px;
+  }
+
+  .header-center__menu__item__link:hover{
+    color: var(--blue-color);
+    transition: ease-in 0.5s;
+    background-color: #0000001d;
+    border-radius: 5px;
+  }
+
+  .header-center__logo:hover{
+    transform: rotate(390deg);
+    transition: ease-in 1s;
+  }
+
+
+  

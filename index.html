@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/styles.css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
       integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
       crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <title>Street Sneaks</title>
+      referrerpolicy="no-referrer">
+      <link rel="stylesheet" href="css/styles.css">
+  <title>Street Sneaks</title>
   </head>
-
   <body>
-    <div class="header-top">
+    <div class="header-top ">
       <nav>
         <ul>
           <li class="header-top__item">
@@ -30,8 +30,7 @@
           <li class="header-top__item">
             <a class="header-top__item__link" href="#">
               <i class="fa-solid fa-user"></i>
-              <span class="header-top__item__link__text">Mi Cuenta</span></a
-            >
+              <span class="header-top__item__link__text">Mi Cuenta</span></a>
           </li>
         </ul>
       </nav>
@@ -43,8 +42,7 @@
             <img
               class="header-center__logo"
               src="imgs/logo.png"
-              alt="Logo de la pagina"
-            />
+              alt="Logo de la pagina">
             <h1><span class="header-center__title">Street Sneaks</span></h1>
           </div>
           <div class="header-center__menu">
@@ -78,8 +76,7 @@
                 placeholder="Busca tu zapatilla"
                 type="search"
                 name="shoes"
-                id="search"
-              />
+                id="search">
               <i class="fa-solid fa-magnifying-glass"></i>
             </nav>
           </div>
@@ -92,17 +89,44 @@
       </header>
     </section>
     <div class="header-bottom"></div>
+    <section>
+      <h2 class="disable-temp" >Zapatillas mas recientes:</h2>
+      <div class="corousel-section w-20">
+        <div id="carouselExample" class="carousel slide">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="imgs/carrusel_img1.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="imgs/carrusel_img2.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="imgs/carrusel_img3.jpg" class="d-block w-100" alt="...">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </section>
     <main>
       <section>
         <h2 class="disable-temp" >Zapatillas mas recientes:</h2>
         <div class="sneaks">
           <div class="sneaks__card">
             <div class="sneaks__card__img">
-              <img
+              <a class="sneaks__card__img__link" href="#">
+                <img
                 class="sneaks__card__img__img"
                 src="imgs/AirJordan4Grey.webp"
-                alt="AIR JORDAN GREY"
-              />
+                alt="AIR JORDAN GREY">
+              </a>
             </div>
             <div class="sneaks__card__details">
               <div class="sneaks__card__details__name-price">
@@ -116,12 +140,13 @@
           </div>
           <div class="sneaks__card">
             <div class="sneaks__card__img">
-              <img
+              <a class="sneaks__card__img__link" href="#">
+                <img
                 class="sneaks__card__img__img"
                 src="imgs/AirJordan4Withe.webp"
-                alt="AIR JORDAN GREY"
-              />
-            </div>
+                alt="AIR JORDAN GREY">
+              </a>
+              </div>
             <div class="sneaks__card__details">
               <div class="sneaks__card__details__name-price">
                 <p>white Air Jordan 4</p>
@@ -134,12 +159,13 @@
           </div>
           <div class="sneaks__card">
             <div class="sneaks__card__img">
-              <img
+              <a class="sneaks__card__img__link" href="#">
+                <img
                 class="sneaks__card__img__img"
                 src="imgs/AirJordan4Beage.webp"
-                alt="AIR JORDAN GREY"
-              />
-            </div>
+                alt="AIR JORDAN GREY">
+              </a>
+              </div>
             <div class="sneaks__card__details">
               <div class="sneaks__card__details__name-price">
                 <p>Beige Air Jordan 4</p>
@@ -152,11 +178,12 @@
           </div>
           <div class="sneaks__card">
             <div class="sneaks__card__img">
-              <img
+              <a class="sneaks__card__img__link" href="#">
+                <img
                 class="sneaks__card__img__img"
                 src="imgs/AirJordan4WitheBlue.webp"
-                alt="Blue and white air jordan 4"
-              />
+                alt="Blue and white air jordan 4">
+              </a>
             </div>
             <div class="sneaks__card__details">
               <div class="sneaks__card__details__name-price">
@@ -169,83 +196,86 @@
               
             </div>
           </div>
-        </div>
-        <div class="sneaks">
-            <div class="sneaks__card">
-              <div class="sneaks__card__img">
+          <div class="sneaks__card">
+            <div class="sneaks__card__img">
+              <a class="sneaks__card__img__link" href="#">
                 <img
-                  class="sneaks__card__img__img"
-                  src="imgs/RedUniversity.jpg"
-                  alt="AIR JORDAN RedUniversity""
-                />
-              </div>
+                class="sneaks__card__img__img"
+                src="imgs/RedUniversity.jpg"
+                alt="AIR JORDAN RedUniversity">
+              </a>
+            </div>
               <div class="sneaks__card__details">
                 <div class="sneaks__card__details__name-price">
                   <p>Air Jordan 4 University Red</p>
                   <p>$50.000 CLP</p>
                 </div>
-                  <div class="sneaks__card__details__desc"><p>Calzado hombre/Mujer</p>
-                      <p>1 Color</p>
-                  </div>
+                <div class="sneaks__card__details__desc"><p>Calzado hombre/Mujer</p>
+                  <p>1 Color</p>
+                </div>
               </div>
             </div>
             <div class="sneaks__card">
               <div class="sneaks__card__img">
-                <img
+                <a class="sneaks__card__img__link" href="#">
+                  <img
                   class="sneaks__card__img__img"
                   src="imgs/AirJordan4BlackCat.webp"
-                  alt="AIR JORDAN GREY"
-                />
+                  alt="AIR JORDAN GREY">
+                </a>
               </div>
               <div class="sneaks__card__details">
                 <div class="sneaks__card__details__name-price">
                   <p>Air Jordan 4 Black Cat</p>
                   <p>$82.300 CLP</p>
                 </div>
-                  <div class="sneaks__card__details__desc"><p>Calzado hombre/Mujer</p>
-                      <p>1 Color</p>
-                  </div>
+                <div class="sneaks__card__details__desc"><p>Calzado hombre/Mujer</p>
+                  <p>1 Color</p>
+                </div>
               </div>
             </div>
             <div class="sneaks__card">
               <div class="sneaks__card__img">
-                <img
+                <a class="sneaks__card__img__link" href="#">
+                  <img
                   class="sneaks__card__img__img"
                   src="imgs/RedThunder.jpeg"
-                  alt="AIR JORDAN GREY"
-                />
+                  alt="AIR JORDAN GREY">
+                </a>
               </div>
               <div class="sneaks__card__details">
                 <div class="sneaks__card__details__name-price">
                   <p>Air Jordan 4 Red Thunder</p>
                   <p>$64.000 CLP</p>
                 </div>
-                  <div class="sneaks__card__details__desc"><p>Calzado hombre/Mujer</p>
-                      <p>1 Color</p>
-                  </div>
+                <div class="sneaks__card__details__desc"><p>Calzado hombre/Mujer</p>
+                  <p>1 Color</p>
+                </div>
               </div>
             </div>
             <div class="sneaks__card">
               <div class="sneaks__card__img">
-                <img
+                <a class="sneaks__card__img__link" href="#">
+                  <img
                   class="sneaks__card__img__img"
                   src="imgs/AirJordan4Travis.webp"
-                  alt="AIR JORDAN GREY"
-                />
+                  alt="AIR JORDAN GREY">
+                </a>
               </div>
               <div class="sneaks__card__details">
                 <div class="sneaks__card__details__name-price">
                   <p>Air Jordan 4 Travis Scott</p>
                   <p>$90.000 CLP</p>
                 </div>
-                  <div class="sneaks__card__details__desc"><p>Calzado hombre/Mujer</p>
-                      <p>1 Color</p>
-                  </div>
-                
+                <div class="sneaks__card__details__desc"><p>Calzado hombre/Mujer</p>
+                  <p>1 Color</p>
+                </div>
               </div>
             </div>
           </div>
       </section>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
   </body>
 </html>
