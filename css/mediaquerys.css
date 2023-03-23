@@ -1,0 +1,32 @@
+@media only screen and (max-width: 800px){
+    .input-group{
+      display: none;
+    }
+    .header-center__shopping-car{
+      display: none;
+    }
+    .header-center__menu{
+        display: none;
+    }
+
+    .header-top-items{
+        display: none;
+    }
+
+    .footer-top__text{
+        left: 0;
+        font-size: 10px;
+      }
+
+    .footer-top{
+        display: block;
+        text-align: center;
+    }
+
+    .footer-top__social{
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+    }
+
+  }

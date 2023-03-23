@@ -1,10 +1,21 @@
 /* CSS 0 - 1 */
+@font-face {
+  font-family: mainFont;
+  src: url(/src/fonts/Facon.ttf);
+}
 
 * {
+  box-sizing: border-box;
   margin: 0;
 }
 body {
   font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+h1{
+  padding: 0;
 }
 ul {
   display: inherit;
@@ -26,6 +37,7 @@ p {
 ul {
   padding: 0;
 }
+
 
 :root {
   --blue-color: #4355ce;
@@ -79,18 +91,21 @@ ul {
 
 .header-center {
   display: grid;
-  grid-template-columns: auto auto 20% 0.15fr;
+  grid-template-columns: auto auto 20% 10%;
   align-items: center;
   background-color: #1f1b1a;
   padding: 0.02rem;
 }
 
 .header-center__logo-title {
+  position: relative;
+  top: 10px;
   display: flex;
   align-items: center;
 }
 
 .header-center__title {
+  font-family: mainFont;
   color: var(--withe-color);
 }
 
@@ -171,11 +186,12 @@ ul {
   padding: 1rem;
   height: 15rem;
   height: 20vh;
-  justify-content: center;
 }
 
 .footer-top__text {
-  width: 100%;
+  position: relative;
+  left: 5rem;
+  text-align: center;
 }
 .footer-top__social {
   display: flex;
@@ -195,6 +211,7 @@ ul {
 .footer-top__text__letters {
   color: var(--withe-color);
 }
+
 .footer-bottom {
   padding: 1rem;
   background-color: var(--red-color);
@@ -218,7 +235,6 @@ ul {
 
 .header-center__menu__item__link:hover {
   color: var(--blue-color);
-  text-decoration: underline;
   transition: ease-in 0.5s;
   background-color: #0000001d;
   border-radius: 5px;
@@ -230,6 +246,9 @@ ul {
 }
 
 .footer-top__social__link:hover {
-    color: var(--black-color);
-    transition: ease-in 0.2s;
-  }
+  color: var(--black-color);
+  transition: ease-in 0.2s;
+}
+
+
+
