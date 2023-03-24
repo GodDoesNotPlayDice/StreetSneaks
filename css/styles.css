@@ -65,6 +65,10 @@ ul {
   display: none;
 }
 
+.fa-bars{
+
+  color: var(--red-color);
+}
 /* CSS GENERAL 10 WEIGHT */
 
 .header-top {
@@ -122,6 +126,10 @@ ul {
 
 .header-center__menu__item {
   margin: 0.313rem;
+}
+
+.navbar-toggler{
+  display: inline-flex;
 }
 
 .header-center__menu__item__link {

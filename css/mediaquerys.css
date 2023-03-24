@@ -3,11 +3,37 @@
       display: none;
     }
     .header-center__shopping-car{
-      display: none;
+      z-index: 1;
     }
     .header-center__menu{
-        display: none;
+   position: absolute;
+    left: 62%;
+    top: 1.7%;
+    color: #ff0000;
+    background-color: #1f1b1a;
+    overflow-y: auto;
+    display: grid;
+    z-index: 1;
+   
     }
+
+    .navbar-nav{
+
+
+    }
+
+    .navbar-collapse{
+
+
+    }
+
+
+    .header-center{
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+ 
 
     .header-top-items{
         display: none;
