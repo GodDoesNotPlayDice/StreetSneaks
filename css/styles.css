@@ -128,6 +128,12 @@ ul {
   margin: 0.313rem;
 }
 
+.navbar{
+
+  
+
+}
+
 .navbar-toggler{
   display: inline-flex;
 }
@@ -148,6 +154,10 @@ ul {
   background-color: var(--red-color);
 }
 
+.header-searchbar{
+background-color: #1f1b1a;
+
+}
 .sneaks {
   display: grid;
   justify-content: center;
@@ -257,6 +267,5 @@ ul {
   color: var(--black-color);
   transition: ease-in 0.2s;
 }
-
 
 
