@@ -130,6 +130,12 @@ ul {
   display: inline-flex;
 }
 
+
+.main__h2{
+  padding: 2rem 0;
+  text-align: center;
+}
+
 .header-center__menu__item__link {
   color: var(--withe-color);
   transition: ease-out 0.5s;
@@ -178,6 +184,7 @@ background-color: #1f1b1a;
   justify-content: space-between;
   padding-bottom: 0.188rem;
   font-weight: bold;
+  font-size: 14px;
 }
 
 .corousel-section {
@@ -186,7 +193,7 @@ background-color: #1f1b1a;
 }
 
 .carousel {
-  margin-top: 1.25px;
+  margin-top: 1rem;
   max-width: 56.25rem;
 }
 
