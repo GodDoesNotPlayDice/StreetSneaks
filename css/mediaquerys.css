@@ -1,4 +1,10 @@
 @media only screen and (max-width: 800px){
+
+
+  .header-center__shopping-car{
+    padding-right: 5rem;
+  }
+
   
   .header-center{
     display: flex;
@@ -34,7 +40,7 @@
 @media only screen and (max-width: 575px) {
 
   .header-center__shopping-car{
-    padding-right: 5rem;
+    padding-right: 4rem;
   }
 
   .header-center__menu{
