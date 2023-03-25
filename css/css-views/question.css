@@ -1,0 +1,20 @@
+.questions{
+    padding: 5rem;
+}
+
+.questions__h3{
+    text-align: center;
+}
+
+.tablaEntregas{
+}
+
+td{
+    padding: 0.4rem;
+    border: solid;
+    border-width: 0.1rem;  
+}
+li{
+    padding: 0.15rem 0;
+}
+

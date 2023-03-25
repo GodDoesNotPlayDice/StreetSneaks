@@ -1,14 +1,15 @@
 @media only screen and (max-width: 800px){
-
-  .header-center__shopping-car{
-    z-index: 1;
-  }
   
   .header-center{
     display: flex;
     justify-content: space-evenly;
+    align-self: center;
   }
 
+  .header-center__title{
+    font-size: 20px;
+
+  }
   .header-top-items{
       display: none;
   }
@@ -30,6 +31,11 @@
 }
 
 @media only screen and (max-width: 575px) {
+
+  .header-center__shopping-car{
+    padding-right: 5rem;
+  }
+
   .header-center__menu{
     justify-content: flex-start;
   }
@@ -45,8 +51,12 @@
 .header-searchbar{
   padding-left: 1rem;
 }
-
-  
+  .footer-top__link ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+  }
 }
 
 

@@ -10,8 +10,6 @@
 }
 body {
   font-family: sans-serif;
-  display: flex;
-  justify-content: center;
 }
 
 h1{
@@ -70,6 +68,7 @@ ul {
   color: var(--red-color);
 }
 /* CSS GENERAL 10 WEIGHT */
+
 
 .header-top {
   display: flex;
@@ -187,21 +186,21 @@ background-color: #1f1b1a;
 }
 
 .carousel {
-  margin-top: 20px;
-  max-width: 900px;
+  margin-top: 1.25px;
+  max-width: 56.25rem;
 }
 
 .footer-top {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
   background-color: var(--black-color);
-  padding: 1rem;
-  height: 15rem;
-  height: 20vh;
+  padding: 2rem;
+  height: 100%;
 }
 
-.footer-top__text {
-  position: relative;
-  left: 5rem;
+.footer-top__link {
   text-align: center;
 }
 .footer-top__social {
@@ -219,9 +218,6 @@ background-color: #1f1b1a;
   transition: ease-in 0.2s;
 }
 
-.footer-top__text__letters {
-  color: var(--withe-color);
-}
 
 .footer-bottom {
   padding: 1rem;
