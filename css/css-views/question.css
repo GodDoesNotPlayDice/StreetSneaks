@@ -1,14 +1,3 @@
-.questions{
-    padding: 5rem;
-}
-
-.questions__h3{
-    text-align: center;
-}
-
-.tablaEntregas{
-}
-
 td{
     padding: 0.4rem;
     border: solid;
@@ -18,3 +7,18 @@ li{
     padding: 0.15rem 0;
 }
 
+.questions{
+    padding: 5rem;
+}
+
+.questions__h3{
+    text-align: center;
+}
+
+.tabla{
+    overflow-x:auto;
+}
+
+.card-body__text{
+    padding: 0.5rem 0;
+}

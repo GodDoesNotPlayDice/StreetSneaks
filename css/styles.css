@@ -208,7 +208,7 @@ background-color: #1f1b1a;
   flex-wrap: wrap;
   justify-content: flex-end;
   align-items: flex-end;
-  width: 50%;
+  width: 20%;
 }
 
 .footer-top__social__link {
@@ -224,6 +224,7 @@ background-color: #1f1b1a;
   background-color: var(--red-color);
   color: var(--withe-color);
 }
+
 .footer__bottom__copyright {
   display: flex;
   justify-content: center;
