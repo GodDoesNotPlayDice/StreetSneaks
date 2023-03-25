@@ -1,0 +1,70 @@
+td{
+    padding: 0.4rem;
+    border: solid;
+    border-width: 0.1rem;  
+}
+li{
+    padding: 0.15rem 0;
+}
+
+
+:root {
+    --blue-color: #4355ce;
+    --black-color: #1f1b1a;
+    --red-color: #e13838;
+    --red-color-hover: #9f2727;
+    --withe-color: #e4e4e4;
+  }
+
+.questions{
+    padding: 5rem;
+}
+
+.questions-title{
+    text-decoration: underline;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.questions-subtitle{
+    margin: 0.4rem 0;
+    text-align: start;
+    text-decoration: none;
+}
+
+.tabla{
+    overflow-x:auto;
+}
+
+.card-body__text{
+    padding: 0.5rem 0;
+}
+
+.form-group{
+    padding: 1rem 0;
+}
+
+.btn-red, .btn-red:active, .btn-red:visited {
+    color: var(--withe-color);
+    background-color: var(--red-color);
+}
+
+.btn-red:active,.btn-red:hover{
+    color: white;
+    background-color: var(--red-color-hover);
+}
+
+
+.btn-blue, .btn-blue:active, .btn-blue:visited {
+    color: var(--withe-color);
+    background-color: var(--blue-color);
+}
+
+.btn-blue:active,.btn-blue:hover{
+    color: white;
+    background-color: var(--blue-color);
+}
+
+.btn--color-white{
+    color: white;
+}
