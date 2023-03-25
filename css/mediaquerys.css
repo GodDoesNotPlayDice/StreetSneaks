@@ -1,49 +1,17 @@
 @media only screen and (max-width: 800px){
-  .input-group{
-    
-  }
+
   .header-center__shopping-car{
     z-index: 1;
   }
-  .header-center__menu{
-    position: initial;
-  left: 70%;
-  top: 3%;
-  color: #ff0000;
-  background-color: #1f1b1a;
-  overflow-y: auto;
-  display: grid;
-  z-index: 1;
- 
-  }
-
-  .header-center__search{
-
-    display: none;
-  }
-
-  .navbar{
-  position: relative;
-
-  }
-
-  .navbar-collapse{
-
-
-  }
-
-
+  
   .header-center{
     display: flex;
     justify-content: space-evenly;
   }
 
-
-
   .header-top-items{
       display: none;
   }
-
   .footer-top__text{
       left: 0;
       font-size: 10px;
@@ -59,24 +27,26 @@
       justify-content: flex-end;
       width: 100%;
   }
-
 }
-@media only screen and (max-width: 768px){
+
+@media only screen and (max-width: 575px) {
   .header-center__menu{
-    position: initial;
-
+    justify-content: flex-start;
   }
-
-
-}
-@media only screen and (min-width: 768px){
-
-  .header-center__search_under{
-
+  .header-center__search{
     display: none;
   }
 
+.header-center__search_under{
+  padding: 2rem;
+  display: block;
 }
 
+.header-searchbar{
+  padding-left: 1rem;
+}
+
+  
+}
 
 

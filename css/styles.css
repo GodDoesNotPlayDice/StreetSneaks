@@ -95,7 +95,7 @@ ul {
 
 .header-center {
   display: grid;
-  grid-template-columns: auto auto 20% 10%;
+  grid-template-columns: auto 20% 10%;
   align-items: center;
   background-color: #1f1b1a;
   padding: 0.02rem;
@@ -121,19 +121,12 @@ ul {
 
 .header-center__menu {
   display: flex;
-  align-items: center;
+  justify-content: center;
 }
 
 .header-center__menu__item {
   margin: 0.313rem;
 }
-
-.navbar{
-
-  
-
-}
-
 .navbar-toggler{
   display: inline-flex;
 }
@@ -242,6 +235,14 @@ background-color: #1f1b1a;
   text-align: center;
 }
 
+.header-center__search_under{
+  display: none;
+}
+
+.navbar-dark{
+  border-color: transparent;
+}
+
 .sneaks__card__details__desc p {
   color: #707070;
   padding: 0.2rem;
@@ -268,4 +269,9 @@ background-color: #1f1b1a;
   transition: ease-in 0.2s;
 }
 
-
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
+}
