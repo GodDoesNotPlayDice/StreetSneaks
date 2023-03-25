@@ -247,6 +247,31 @@ background-color: #1f1b1a;
   border-color: transparent;
 }
 
+.btn--color-white{
+  color: white;
+}
+
+.btn-blue:active,.btn-blue:hover{
+  color: white;
+  background-color: var(--blue-color);
+}
+
+.btn-red:active,.btn-red:hover{
+  color: white;
+  background-color: var(--red-color-hover);
+}
+
+
+.btn-blue, .btn-blue:active, .btn-blue:visited {
+  color: var(--withe-color);
+  background-color: var(--blue-color);
+}
+
+.btn-red, .btn-red:active, .btn-red:visited {
+  color: var(--withe-color);
+  background-color: var(--red-color);
+}
+
 .sneaks__card__details__desc p {
   color: #707070;
   padding: 0.2rem;
@@ -272,6 +297,7 @@ background-color: #1f1b1a;
   color: var(--black-color);
   transition: ease-in 0.2s;
 }
+
 
 .navbar-toggler:focus,
 .navbar-toggler:active,
