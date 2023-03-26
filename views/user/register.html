@@ -41,7 +41,78 @@
 
     </section>
     <section>
-        <div class="register">
+        <header>
+          <div class="header-center">
+            <div class="header-center__logo-title">
+              <img class="header-center__logo" src="../../src/imgs/logo.png" alt="Logo de la pagina">
+              <h1><a href="../../index.html"><span class="header-center__title">Street Sneaks</span></a></h1>
+            </div>
+            <div class="header-center__search">
+              <nav>
+                <div class="input-group rounded">
+                  <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+                    aria-describedby="search-addon">
+                  <span class="input-group-text border-0 bg-transparent text-white" id="search-addon">
+                    <i class="fas fa-search"></i>
+                  </span>
+                </div>
+              </nav>
+            </div>
+            <div class="header-center__shopping-car">
+              <a href="../carro.html" class="header-center__shopping-car__link">
+                <i class="fa-solid fa-cart-shopping"></i></a>
+            </div>
+          </div>
+        </header>
+      </section>
+      <div class="header-searchbar">
+        <nav class="navbar navbar-expand-sm navbar-dark">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#opciones" name="button">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse header-center__menu" id="opciones">
+            <ul class="navbar-nav">
+              <li class="header-center__menu__item">
+                <a class="header-center__menu__item__link" href="../novedades.html">Novedades</a>
+              </li>
+              <li class="header-center__menu__item">
+                <a class="header-center__menu__item__link" href="../hombre.html">Hombre</a>
+              </li>
+              <li class="header-center__menu__item">
+                <a class="header-center__menu__item__link" href="../mujer.html">Mujer</a>
+              </li>
+              <li class="header-center__menu__item">
+                <a class="header-center__menu__item__link" href="../nino.html">Niño</a>
+              </li>
+              <li class="header-center__menu__item">
+                <a class="header-center__menu__item__link" href="../deportivo.html">Deportivo</a>
+              </li>
+              <li class="header-center__menu__item">
+                <a class="header-center__menu__item__link disable" href="../user/register.html"><i class="fa-solid fa-user"></i> Mi cuenta</a>
+              </li>
+              <li class="header-center__menu__item disable">
+                <a class="header-center__menu__item__link" href="../carro.html"><i class="fa-solid fa-truck"></i>Carrito de compras</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <!-- Mobile -->
+        <div class="header-center__search_under">
+          <nav>
+            <div class="input-group rounded">
+              <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+                aria-describedby="search-addon">
+              <span class="input-group-text border-0 bg-transparent text-white" id="search-addon-mobile">
+                <i class="fas fa-search"></i>
+              </span>
+            </div>
+          </nav>
+          <!-- Mobile -->
+        </div>
+      </div>
+      <div class="header-bottom"></div>
+    <section>
+        <div class="panel">
             <div class="container mt-5 container-form">
                 <h4>Iniciar Sesión</h4>
             <form>
@@ -77,7 +148,34 @@
     
         
     </section>
-
+    <footer>
+        <div class="footer-top">
+          <div>
+            <div class="footer-top__header">
+                <h2><span class="header-center__title">Street Sneaks</span></h2>
+            </div>
+          </div>
+          <div class="footer-top__link">
+            <ul>
+              <li><a href="../question.html" class="footer-top__item">Preguntas Frecuentes</a></li>
+              <li><a href="../tos.html" class="footer-top__item">Terminos y Servicio</a></li>
+            </ul>
+          </div>
+          <div class="footer-top__social">
+            <a href="#" class="footer-top__social__link"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="footer-top__social__link"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="footer__bottom__text">
+            <p><span class="footer__bottom__text__letters">StreetSneakers@streetsneak.com</span></p>
+          </div>
+          <div class="footer__bottom__copyright">
+            <p><span class="footer__bottom__copyright__text">Copyright © 2023 STREET SNEAKS. All rights reserved.</span>
+            </p>
+          </div>
+        </div>
+      </footer>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
     crossorigin="anonymous"></script>
