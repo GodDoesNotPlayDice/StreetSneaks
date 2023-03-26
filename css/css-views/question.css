@@ -43,28 +43,3 @@ li{
 .form-group{
     padding: 1rem 0;
 }
-
-.btn-red, .btn-red:active, .btn-red:visited {
-    color: var(--withe-color);
-    background-color: var(--red-color);
-}
-
-.btn-red:active,.btn-red:hover{
-    color: white;
-    background-color: var(--red-color-hover);
-}
-
-
-.btn-blue, .btn-blue:active, .btn-blue:visited {
-    color: var(--withe-color);
-    background-color: var(--blue-color);
-}
-
-.btn-blue:active,.btn-blue:hover{
-    color: white;
-    background-color: var(--blue-color);
-}
-
-.btn--color-white{
-    color: white;
-}

@@ -7,6 +7,8 @@
 * {
   box-sizing: border-box;
   margin: 0;
+  transform: scale(100%);
+  transition: ease-in-out 0.5s;
 }
 body {
   font-family: sans-serif;
@@ -206,6 +208,9 @@ background-color: #1f1b1a;
   padding: 2rem;
   height: 100%;
 }
+.footer-top__item{
+  color: var(--withe-color);
+}
 
 .footer-top__link {
   text-align: center;
@@ -224,7 +229,6 @@ background-color: #1f1b1a;
   background-color: var(--blue-color);
   transition: ease-in 0.2s;
 }
-
 
 .footer-bottom {
   padding: 1rem;
@@ -246,6 +250,42 @@ background-color: #1f1b1a;
 .navbar-dark{
   border-color: transparent;
 }
+
+.disable{
+  display: none;
+}
+
+
+.btn--color-white{
+  color: white;
+}
+
+.zoom:hover{
+  transform: scale(120%);
+  transition: ease-in-out 0.5s;
+}
+
+.btn-blue:active,.btn-blue:hover{
+  color: white;
+  background-color: var(--blue-color);
+}
+
+.btn-red:active,.btn-red:hover{
+  color: white;
+  background-color: var(--red-color-hover);
+}
+
+
+.btn-blue, .btn-blue:active, .btn-blue:visited {
+  color: var(--withe-color);
+  background-color: var(--blue-color);
+}
+
+.btn-red, .btn-red:active, .btn-red:visited {
+  color: var(--withe-color);
+  background-color: var(--red-color);
+}
+
 
 .sneaks__card__details__desc p {
   color: #707070;
@@ -271,6 +311,10 @@ background-color: #1f1b1a;
 .footer-top__social__link:hover {
   color: var(--black-color);
   transition: ease-in 0.2s;
+}
+
+.navbar-toggler{
+  margin: 0;
 }
 
 .navbar-toggler:focus,
