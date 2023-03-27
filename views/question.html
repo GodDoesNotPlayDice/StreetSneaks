@@ -29,7 +29,7 @@
               </span></a>
           </li>
           <li class="header-top__item">
-            <a class="header-top__item__link" href="#">
+            <a class="header-top__item__link" href="user/register.html">
               <i class="fa-solid fa-user"></i>
               <span class="header-top__item__link__text">Mi Cuenta</span></a>
           </li>
@@ -56,33 +56,39 @@
           </nav>
         </div>
         <div class="header-center__shopping-car">
-          <a href="#" class="header-center__shopping-car__link">
+          <a href="../views/carro.html" class="header-center__shopping-car__link">
             <i class="fa-solid fa-cart-shopping"></i></a>
         </div>
       </div>
     </header>
   </section>
   <div class="header-searchbar">
-    <nav class="navbar navbar-expand-sm navbar-dark bg-#1f1b1a">
+    <nav class="navbar navbar-expand-sm navbar-dark">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#opciones" name="button">
         <i class="fa-solid fa-bars"></i>
       </button>
       <div class="collapse navbar-collapse header-center__menu" id="opciones">
         <ul class="navbar-nav">
           <li class="header-center__menu__item">
-            <a class="header-center__menu__item__link" href="#">Novedades</a>
+            <a class="header-center__menu__item__link" href="../views/novedades.html">Novedades</a>
           </li>
           <li class="header-center__menu__item">
-            <a class="header-center__menu__item__link" href="#">Hombre</a>
+            <a class="header-center__menu__item__link" href="../views/hombre.html">Hombre</a>
           </li>
           <li class="header-center__menu__item">
-            <a class="header-center__menu__item__link" href="#">Mujer</a>
+            <a class="header-center__menu__item__link" href="../views/mujer.html">Mujer</a>
           </li>
           <li class="header-center__menu__item">
-            <a class="header-center__menu__item__link" href="#">Niño</a>
+            <a class="header-center__menu__item__link" href="../views/nino.html">Niño</a>
           </li>
           <li class="header-center__menu__item">
-            <a class="header-center__menu__item__link" href="#">Deportivo</a>
+            <a class="header-center__menu__item__link" href="../views/deportivo.html">Deportivo</a>
+          </li>
+          <li class="header-center__menu__item">
+            <a class="header-center__menu__item__link disable" href="../views/user/register.html"><i class="fa-solid fa-user"></i> Mi cuenta</a>
+          </li>
+          <li class="header-center__menu__item disable">
+            <a class="header-center__menu__item__link" href="../views/carro.html"><i class="fa-solid fa-truck"></i>Carrito de compras</a>
           </li>
         </ul>
       </div>
@@ -93,7 +99,7 @@
         <div class="input-group rounded">
           <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
             aria-describedby="search-addon">
-          <span class="input-group-text border-0 bg-transparent text-white" id="search-addon">
+          <span class="input-group-text border-0 bg-transparent text-white" id="search-addon-mobile">
             <i class="fas fa-search"></i>
           </span>
         </div>
@@ -334,7 +340,7 @@
                 <input type="email" class="form-control" id="email" placeholder="Ingrese su email">
               </div>
               <div class="form-group">
-                <label for="oreder">Número de pedido</label>
+                <label for="order">Número de pedido</label>
                 <input type="text" class="form-control" id="order" placeholder="Ingrese el número de su pedido">
               </div>
               <div class="form-group">
@@ -362,7 +368,7 @@
       <div class="footer-top__link">
         <ul>
           <li><a href="" class="footer-top__item">Preguntas Frecuentes</a></li>
-          <li><a href="" class="footer-top__item">Terminos y Servicio</a></li>
+          <li><a href="../views/tos.html" class="footer-top__item">Terminos y Servicio</a></li>
         </ul>
       </div>
       <div class="footer-top__social">

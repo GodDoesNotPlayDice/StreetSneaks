@@ -1,0 +1,41 @@
+*{
+    flex-wrap: wrap;
+}
+
+button{
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+
+.sneak{
+    padding: 5rem;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.sneak__card{
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+}
+
+.sneaks__card__img{
+    height: 60%;
+}
+
+.price{
+    color: #1f1b1a;
+    font-weight: 600;
+}
+.sneaks__imgs{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sneaks__imgs__img{
+    padding: 1rem;
+    max-width: 15.6rem;
+    height: 16rem;
+}
