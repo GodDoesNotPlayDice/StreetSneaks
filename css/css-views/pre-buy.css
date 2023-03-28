@@ -3,6 +3,10 @@ h4{
     text-align: center;
 }
 
+p{
+    
+}
+
 .btn-pagar {
     width: 20rem;
 }
@@ -49,7 +53,8 @@ h4{
 }
 
 .cart-card__img-contain{
-    width: 12rem;
+    max-width: 40%;
+    max-height: 40%;
 }
 
 .cart-card__img{
@@ -58,8 +63,10 @@ h4{
 }
 
 .cart-card__details{
-    
-    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+   justify-content: space-between;
+    padding: 0 1rem;
 }
 
 .cart-card__name__text{
@@ -76,6 +83,21 @@ h4{
     font-weight: 600;
 }
 
-.btn-group{
-    margin-top: 2rem;
+.count-prod{
+    display: flex;
+    align-items: center;
+    border-radius: 100%;
+    width: 100%;
 }
+
+.count-prod__number{
+    background-color: #e4e4e4;
+    padding: 0.4rem 1rem;
+}
+
+.btn-red{
+    font-weight: 600;  
+}
+
+
+

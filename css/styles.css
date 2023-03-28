@@ -46,7 +46,7 @@ ul {
 
 
   --red-color-hover: #952626;
-  --blue-color-hover: #4355ce;
+  --blue-color-hover: #303d94;
 }
 
 /* ICONS */
@@ -266,6 +266,10 @@ background-color: #1f1b1a;
 .zoom:hover{
   transform: scale(120%);
   transition: ease-in-out 0.5s;
+}
+
+.zoom{
+  transition: ease-in 0.5s;
 }
 
 .btn-blue:active,.btn-blue:hover{
