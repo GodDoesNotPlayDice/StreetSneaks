@@ -52,6 +52,10 @@
     margin-top: 1rem;
     margin-left: 1.5rem;
   }
+  .panel{
+    margin: 2rem;
+    padding: 0;
+  }
   .sneak {
     padding: 0;
   }
@@ -107,15 +111,13 @@
     width: 100%;
   }
 
+  .sneaks__imgs__img{
+    margin-top: 1rem;
+  }
+
 }
 
 @media only screen and (max-width: 300px){
-  .panel{
-    margin: 2rem;
-    padding: 0;
-   
-  }
-
   .btn{
     font-size: 12px;
     width: 60%;
@@ -125,6 +127,9 @@
     font-size: 12px;
   }
 
+  .header-center__logo{
+    width: 30%;
+  }
 }
 
 
