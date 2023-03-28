@@ -11,39 +11,38 @@
     integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="stylesheet" href="../../css/styles.css">
-  <link rel="stylesheet" href="../../css/css-views/intro.css">
+  <link rel="stylesheet" href="../../css/css-views/sneaks.css">
   <link rel="stylesheet" href="../../css/mediaquerys.css">
   <link rel="icon" type="image/x-icon" href="../../src/imgs/logo.png">
-  <title>Log-in</title>
+  <title>Street Sneaks</title>
 </head>
+
 <body>
-  <section>
-    <div class="header-top-items">
-      <div class="header-top ">
-        <nav>
-          <ul>
-            <li class="header-top__item">
-              <a class="header-top__item__link" href="#">
-                <i class="fa-solid fa-truck"></i><span class="header-top__item__link__text">
-                  Estado de mi Pedido
-                </span></a>
-            </li>
-            <li class="header-top__item">
-              <a class="header-top__item__link" href="register.html">
-                <i class="fa-solid fa-user"></i>
-                <span class="header-top__item__link__text">Mi Cuenta</span></a>
-            </li>
-          </ul>
-        </nav>
-      </div>
+  <div class="header-top-items">
+    <div class="header-top ">
+      <nav>
+        <ul>
+          <li class="header-top__item">
+            <a class="header-top__item__link" href="#">
+              <i class="fa-solid fa-truck"></i><span class="header-top__item__link__text">
+                Estado de mi Pedido
+              </span></a>
+          </li>
+          <li class="header-top__item">
+            <a class="header-top__item__link" href="#">
+              <i class="fa-solid fa-user"></i>
+              <span class="header-top__item__link__text">Mi Cuenta</span></a>
+          </li>
+        </ul>
+      </nav>
     </div>
-  </section>
+  </div>
   <section>
     <header>
       <div class="header-center">
         <div class="header-center__logo-title">
           <img class="header-center__logo" src="../../src/imgs/logo.png" alt="Logo de la pagina">
-          <h1><a href="../../index.html"><span class="header-center__title">Street Sneaks</span></a></h1>
+          <h1><a href="/index.html"><span class="header-center__title">Street Sneaks</span></a></h1>
         </div>
         <div class="header-center__search">
           <nav>
@@ -57,7 +56,7 @@
           </nav>
         </div>
         <div class="header-center__shopping-car">
-          <a href="../carro.html" class="header-center__shopping-car__link">
+          <a href="../../views/carro.html" class="header-center__shopping-car__link">
             <i class="fa-solid fa-cart-shopping"></i></a>
         </div>
       </div>
@@ -71,27 +70,25 @@
       <div class="collapse navbar-collapse header-center__menu" id="opciones">
         <ul class="navbar-nav">
           <li class="header-center__menu__item">
-            <a class="header-center__menu__item__link" href="../novedades.html">Novedades</a>
+            <a class="header-center__menu__item__link" href="views/novedades.html">Novedades</a>
           </li>
           <li class="header-center__menu__item">
-            <a class="header-center__menu__item__link" href="../hombre.html">Hombre</a>
+            <a class="header-center__menu__item__link" href="#">Hombre</a>
           </li>
           <li class="header-center__menu__item">
-            <a class="header-center__menu__item__link" href="../mujer.html">Mujer</a>
+            <a class="header-center__menu__item__link" href="#">Mujer</a>
           </li>
           <li class="header-center__menu__item">
-            <a class="header-center__menu__item__link" href="../nino.html">Niño</a>
+            <a class="header-center__menu__item__link" href="#">Niño</a>
           </li>
           <li class="header-center__menu__item">
-            <a class="header-center__menu__item__link" href="../deportivo.html">Deportivo</a>
+            <a class="header-center__menu__item__link" href="#">Deportivo</a>
           </li>
           <li class="header-center__menu__item">
-            <a class="header-center__menu__item__link disable" href="../user/register.html"><i
-                class="fa-solid fa-user"></i> Mi cuenta</a>
+            <a class="header-center__menu__item__link disable" href="../../views/user/register.html"><i class="fa-solid fa-user"></i> Mi cuenta</a>
           </li>
           <li class="header-center__menu__item disable">
-            <a class="header-center__menu__item__link" href="../carro.html"><i class="fa-solid fa-truck"></i>Carrito de
-              compras</a>
+            <a class="header-center__menu__item__link" href="#"><i class="fa-solid fa-truck"></i>Carrito de compras</a>
           </li>
         </ul>
       </div>
@@ -112,27 +109,36 @@
   </div>
   <div class="header-bottom"></div>
   <section>
-    <div class="panel">
-      <div class="container mt-5 container-form">
-        <h4>Iniciar Sesión</h4>
-        <form>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="Ingrese su email">
+    <div class="sneak">
+      <div class="sneak__card">
+        <div class="sneaks__card__img">
+          <a class="sneaks__card__img__link" href="">
+            <img class="sneaks__card__img__img"
+              src="../../src/imgs/sneaks/Jose-Fuentes/Air-Force-1-Low-Retro/Air-Force-1-Low-Retro.webp"
+              alt="Air Force 1 Low Retro">
+          </a>
+        </div>
+        <div class="sneaks__card__details">
+          <div class="sneaks__card__details__name-price">
+            <p>Air Force 1 Low Retro</p>
           </div>
-          <div class="form-group">
-            <label for="Contrasenna">Contraseña</label>
-            <input type="text" class="form-control" id="Contrasenna" placeholder="Ingrese su contraseña">
+          <div class="sneaks__card__details__desc">
+            <p>Calzado Hombre</p>
+            <p>1 Color</p>
+            <p>Talla 36</p>
+            <p>Stock: 5</p>
+            <p><span class="price">$36.000 CLP</span></p>
+            <button type="button" class="btn btn-blue">Añadir al carro</button>
           </div>
-          <div class="btn-links">
-            <button type="submit" class="btn btn-red">Iniciar Sesión</button>
-            <a href="../user/register.html" class="btn-links__link">Aun no estas registrado?</a>
-          </div>
-        </form>
+        </div>
       </div>
-      <div class="container-img">
-        <img src="../../src/imgs/carrusel_img1.jpg" alt="imagen de login">
-      </div>
+        <div class="sneaks__imgs">
+          <img
+          class="sneaks__imgs__img"
+            src="../../src/imgs/sneaks/Jose-Fuentes/Air-Force-1-Low-Retro/Air-Force-1-Low-Retro-Above.webp" alt="">
+          <img class="sneaks__imgs__img"
+            src="../../src/imgs/sneaks/Jose-Fuentes/Air-Force-1-Low-Retro/Air Force-1-Low-Retro-under.webp" alt="">
+        </div>
     </div>
   </section>
   <footer>
@@ -145,7 +151,7 @@
       <div class="footer-top__link">
         <ul>
           <li><a href="../question.html" class="footer-top__item">Preguntas Frecuentes</a></li>
-          <li><a href="../tos.html" class="footer-top__item">Terminos y Servicio</a></li>
+          <li><a href="" class="footer-top__item">Terminos y Servicio</a></li>
         </ul>
       </div>
       <div class="footer-top__social">
@@ -163,17 +169,15 @@
       </div>
     </div>
   </footer>
+  <script src="../../js/script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
     integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
     crossorigin="anonymous"></script>
-</body>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-  integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
-  integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+
+    
 </body>
 
 </html>

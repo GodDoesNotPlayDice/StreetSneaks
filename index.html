@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -16,40 +15,32 @@
   <link rel="icon" type="image/x-icon" href="src/imgs/logo.png">
   <title>Street Sneaks</title>
 </head>
-
 <body>
-  <div class="center-items">
-    <div class="header-top-items">
-      <div class="header-top ">
-        <nav>
-          <ul>
-            <li class="header-top__item">
-              <a class="header-top__item__link" href="#">
-                <i class="fa-solid fa-truck"></i><span class="header-top__item__link__text">
-                  Estado de mi Pedido
-                </span></a>
+  <div class="header-top-items">
+    <div class="header-top ">
+      <nav>
+        <ul>
+          <li class="header-top__item">
+            <a class="header-top__item__link" href="#">
+              <i class="fa-solid fa-truck"></i><span class="header-top__item__link__text">
+                Estado de mi Pedido
+              </span></a>
             </li>
             <li class="header-top__item">
-              <a class="header-top__item__link" href="#">
+              <a class="header-top__item__link" href="views/user/register.html">
                 <i class="fa-solid fa-user"></i>
                 <span class="header-top__item__link__text">Mi Cuenta</span></a>
-            </li>
-          </ul>
-        </nav>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
-    </div>
     <section>
       <header>
         <div class="header-center">
           <div class="header-center__logo-title">
             <img class="header-center__logo" src="src/imgs/logo.png" alt="Logo de la pagina">
-            <h1><span class="header-center__title">Street Sneaks</span></h1>
-          </div>
-
-          <div class="header-center__menu">
-            
-            
-            <div class="container"></div>
+            <h1><a href="index.html"><span class="header-center__title">Street Sneaks</span></a></h1>
           </div>
           <div class="header-center__search">
             <nav>
@@ -63,16 +54,15 @@
             </nav>
           </div>
           <div class="header-center__shopping-car">
-            <a href="#" class="header-center__shopping-car__link">
+            <a href="views/carro.html" class="header-center__shopping-car__link">
               <i class="fa-solid fa-cart-shopping"></i></a>
           </div>
         </div>
       </header>
     </section>
-    <div class="header-bottom"></div>
     <div class="header-searchbar">
-      <nav class="navbar navbar-expand-sm navbar-light bg-#1f1b1a">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#opciones" name="button" >
+      <nav class="navbar navbar-expand-sm navbar-dark">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#opciones" name="button">
           <i class="fa-solid fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse header-center__menu" id="opciones">
@@ -81,38 +71,42 @@
               <a class="header-center__menu__item__link" href="views/novedades.html">Novedades</a>
             </li>
             <li class="header-center__menu__item">
-              <a class="header-center__menu__item__link" href="views/hombre.html">Hombre</a>
+              <a class="header-center__menu__item__link" href="#">Hombre</a>
             </li>
             <li class="header-center__menu__item">
-              <a class="header-center__menu__item__link" href="views/mujer.html">Mujer</a>
+              <a class="header-center__menu__item__link" href="#">Mujer</a>
             </li>
             <li class="header-center__menu__item">
-              <a class="header-center__menu__item__link" href="views/nino.html">Niño</a>
+              <a class="header-center__menu__item__link" href="#">Niño</a>
             </li>
             <li class="header-center__menu__item">
-              <a class="header-center__menu__item__link" href="views/deportivo.html">Deportivo</a>
+              <a class="header-center__menu__item__link" href="#">Deportivo</a>
             </li>
             <li class="header-center__menu__item">
               <a class="header-center__menu__item__link disable" href="views/user/register.html"><i class="fa-solid fa-user"></i> Mi cuenta</a>
             </li>
             <li class="header-center__menu__item disable">
-              <a class="header-center__menu__item__link" href="views/carro.html"><i class="fa-solid fa-truck"></i>Carrito de compras</a>
+              <a class="header-center__menu__item__link" href="#"><i class="fa-solid fa-truck"></i>Carrito de compras</a>
             </li>
           </ul>
         </div>
       </nav>
+      <!-- Mobile -->
       <div class="header-center__search_under">
         <nav>
           <div class="input-group rounded">
             <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
               aria-describedby="search-addon">
-            <span class="input-group-text border-0 bg-transparent text-white" id="search-addon">
+            <span class="input-group-text border-0 bg-transparent text-white" id="search-addon-mobile">
               <i class="fas fa-search"></i>
             </span>
           </div>
         </nav>
+        <!-- Mobile -->
       </div>
     </div>
+    <div class="header-bottom"></div>
+    
     <div class="corousel-section">
       <div id="carouselExample" class="carousel slide">
         <div class="carousel-inner">
@@ -136,14 +130,15 @@
         </button>
       </div>
     </div>
+
     <main>
       <section>
-        <h2 class="disable-temp">Zapatillas mas recientes:</h2>
+        <h2 class="main__h2">Zapatillas mas recientes</h2>
         <div class="sneaks">
           <div class="sneaks__card">
             <div class="sneaks__card__img">
               <a class="sneaks__card__img__link" href="#">
-                <img class="sneaks__card__img__img" src="src/imgs/AirJordan4Grey.webp" alt="AIR JORDAN GREY">
+                <img class="sneaks__card__img__img zoom" src="src/imgs/sneaks/AirJordan4Grey.webp" alt="AIR JORDAN GREY">
               </a>
             </div>
             <div class="sneaks__card__details">
@@ -152,7 +147,7 @@
                 <p>$80.000 CLP</p>
               </div>
               <div class="sneaks__card__details__desc">
-                <p>Calzado hombre/Mujer</p>
+                <p>Calzado Hombre/Mujer</p>
                 <p>1 Color</p>
               </div>
             </div>
@@ -160,16 +155,16 @@
           <div class="sneaks__card">
             <div class="sneaks__card__img">
               <a class="sneaks__card__img__link" href="#">
-                <img class="sneaks__card__img__img" src="src/imgs/AirJordan4Withe.webp" alt="AIR JORDAN GREY">
+                <img class="sneaks__card__img__img zoom" src="src/imgs/sneaks/AirJordan4Withe.webp" alt="AirJordan4Withe">
               </a>
             </div>
             <div class="sneaks__card__details">
               <div class="sneaks__card__details__name-price">
-                <p>white Air Jordan 4</p>
+                <p>White Air Jordan 4</p>
                 <p>$70.000 CLP</p>
               </div>
               <div class="sneaks__card__details__desc">
-                <p>Calzado hombre/Mujer</p>
+                <p>Calzado Hombre/Mujer</p>
                 <p>1 Color</p>
               </div>
             </div>
@@ -177,7 +172,7 @@
           <div class="sneaks__card">
             <div class="sneaks__card__img">
               <a class="sneaks__card__img__link" href="#">
-                <img class="sneaks__card__img__img" src="src/imgs/AirJordan4Beage.webp" alt="AIR JORDAN GREY">
+                <img class="sneaks__card__img__img zoom" src="src/imgs/sneaks/AirJordan4Beage.webp" alt="AirJordan4Beage">
               </a>
             </div>
             <div class="sneaks__card__details">
@@ -186,7 +181,7 @@
                 <p>$83.000 CLP</p>
               </div>
               <div class="sneaks__card__details__desc">
-                <p>Calzado hombre/Mujer</p>
+                <p>Calzado Hombre/Mujer</p>
                 <p>1 Color</p>
               </div>
             </div>
@@ -194,8 +189,8 @@
           <div class="sneaks__card">
             <div class="sneaks__card__img">
               <a class="sneaks__card__img__link" href="#">
-                <img class="sneaks__card__img__img" src="src/imgs/AirJordan4WitheBlue.webp"
-                  alt="Blue and white air jordan 4">
+                <img class="sneaks__card__img__img zoom" src="src/imgs/sneaks/AirJordan4WitheBlue.webp"
+                  alt="Blue and White air jordan 4">
               </a>
             </div>
             <div class="sneaks__card__details">
@@ -204,7 +199,7 @@
                 <p>$90.000 CLP</p>
               </div>
               <div class="sneaks__card__details__desc">
-                <p>Calzado hombre/Mujer</p>
+                <p>Calzado Hombre/Mujer</p>
                 <p>1 Color</p>
               </div>
 
@@ -213,7 +208,7 @@
           <div class="sneaks__card">
             <div class="sneaks__card__img">
               <a class="sneaks__card__img__link" href="#">
-                <img class="sneaks__card__img__img" src="src/imgs/RedUniversity.jpg" alt="AIR JORDAN RedUniversity">
+                <img class="sneaks__card__img__img zoom" src="src/imgs/sneaks/RedUniversity.jpg" alt="AIR JORDAN RedUniversity">
               </a>
             </div>
             <div class="sneaks__card__details">
@@ -222,7 +217,7 @@
                 <p>$50.000 CLP</p>
               </div>
               <div class="sneaks__card__details__desc">
-                <p>Calzado hombre/Mujer</p>
+                <p>Calzado Hombre/Mujer</p>
                 <p>1 Color</p>
               </div>
             </div>
@@ -230,7 +225,7 @@
           <div class="sneaks__card">
             <div class="sneaks__card__img">
               <a class="sneaks__card__img__link" href="#">
-                <img class="sneaks__card__img__img" src="src/imgs/AirJordan4BlackCat.webp" alt="AIR JORDAN GREY">
+                <img class="sneaks__card__img__img zoom" src="src/imgs/sneaks/AirJordan4BlackCat.webp" alt="AIR JORDAN GREY">
               </a>
             </div>
             <div class="sneaks__card__details">
@@ -239,24 +234,24 @@
                 <p>$82.300 CLP</p>
               </div>
               <div class="sneaks__card__details__desc">
-                <p>Calzado hombre/Mujer</p>
+                <p>Calzado Hombre/Mujer</p>
                 <p>1 Color</p>
               </div>
             </div>
           </div>
           <div class="sneaks__card">
             <div class="sneaks__card__img">
-              <a class="sneaks__card__img__link" href="#">
-                <img class="sneaks__card__img__img" src="src/imgs/RedThunder.jpeg" alt="AIR JORDAN GREY">
+              <a class="sneaks__card__img__link" href="views/sneak_details/Air-Force-1-Low-Retro.html">
+                <img class="sneaks__card__img__img zoom" src="src/imgs//sneaks/Jose-Fuentes/Air-Force-1-Low-Retro/Air-Force-1-Low-Retro.webp" alt="AIR JORDAN GREY">
               </a>
             </div>
             <div class="sneaks__card__details">
               <div class="sneaks__card__details__name-price">
-                <p>Air Jordan 4 Red Thunder</p>
+                <p>Air Force 1 Low Retro</p>
                 <p>$64.000 CLP</p>
               </div>
               <div class="sneaks__card__details__desc">
-                <p>Calzado hombre/Mujer</p>
+                <p>Calzado Hombre</p>
                 <p>1 Color</p>
               </div>
             </div>
@@ -264,7 +259,7 @@
           <div class="sneaks__card">
             <div class="sneaks__card__img">
               <a class="sneaks__card__img__link" href="#">
-                <img class="sneaks__card__img__img" src="src/imgs/AirJordan4Travis.webp" alt="AIR JORDAN GREY">
+                <img class="sneaks__card__img__img zoom" src="src/imgs/sneaks/AirJordan4Travis.webp" alt="AIR JORDAN GREY">
               </a>
             </div>
             <div class="sneaks__card__details">
@@ -273,7 +268,7 @@
                 <p>$90.000 CLP</p>
               </div>
               <div class="sneaks__card__details__desc">
-                <p>Calzado hombre/Mujer</p>
+                <p>Calzado Hombre/Mujer</p>
                 <p>1 Color</p>
               </div>
             </div>
@@ -285,15 +280,13 @@
       <div class="footer-top">
         <div>
           <div class="footer-top__header">
-            <header>
-              <h1><span class="header-center__title">Street Sneaks</span></h1>
-            </header>
+              <h2><span class="header-center__title">Street Sneaks</span></h2>
           </div>
         </div>
         <div class="footer-top__link">
           <ul>
             <li><a href="views/question.html" class="footer-top__item">Preguntas Frecuentes</a></li>
-            <li><a href="views/tos.html" class="footer-top__item">Terminos y Servicio</a></li>
+            <li><a href="" class="footer-top__item">Terminos y Servicio</a></li>
           </ul>
         </div>
         <div class="footer-top__social">
@@ -311,7 +304,6 @@
         </div>
       </div>
     </footer>
-  </div>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
     crossorigin="anonymous"></script>
