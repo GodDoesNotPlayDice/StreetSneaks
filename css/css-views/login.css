@@ -1,0 +1,48 @@
+
+
+.login{
+
+    display: flex;
+    justify-content: center;
+    margin: 10rem;
+    padding: 2rem;
+    border-radius: 5px;
+    background-color: #0000001a;
+
+}
+
+.register{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10rem;
+    padding: 2rem;
+    border-radius: 5px;
+    background-color: #0000001a;
+
+}
+
+.container-form{
+
+    max-width: 40%;
+
+}
+
+.container-img{
+
+    width: 100%;
+    border-radius: 5px;
+    
+}
+
+.container-img img{
+
+    width: 100%;
+    
+}
+
+.form-group{
+
+    padding: 1.1rem 0;
+}
