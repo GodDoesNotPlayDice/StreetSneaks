@@ -1,0 +1,26 @@
+h3{
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.pay-content{
+    display: flex;
+    flex-wrap: wrap;   
+}
+
+.card-credit{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form-group{
+    margin: 0.5rem 0;
+}
+
+.btn-pay{
+    margin: 2rem;
+}
+
+.btn{
+    width: 100%;
+}
