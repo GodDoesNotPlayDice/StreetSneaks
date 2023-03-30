@@ -1,3 +1,28 @@
+@media only screen and (max-width: 1260px) {
+
+  
+  .order-card__time{
+    width: 100%;
+    align-items: center;
+  }
+
+  .order-ship-progress__text{
+    font-size: 12px;
+  }
+
+  .order-summary__text{
+    font-size: 16px;
+  }
+
+  .order-summary{
+    width: 35%;
+  }
+  .order-wrap{
+    align-items: flex-start;
+  }
+}
+
+
 @media only screen and (max-width: 800px) {
   .disable { 
     display: initial;
@@ -52,8 +77,10 @@
   .cart-wrap{
     justify-content: center;
 
-
   }
+
+
+
 }
 
 @media only screen and (max-width: 575px) {
@@ -157,6 +184,22 @@
   .sum .less{
     margin: 0;
   }
+
+  .order-cards{
+    margin: 1rem;
+    width: 100%;
+  }
+  
+  .order-wrap{
+    flex-wrap: wrap;
+  }
+
+
+  .order-summary{
+    width: 100%;
+    margin: 1rem;
+  }
+
 }
 
 @media only screen and (max-width: 300px){

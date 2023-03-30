@@ -1,0 +1,101 @@
+h2{
+    padding-top: 1.5rem;
+    text-align: center;
+}
+
+
+.fa-truck-fast,.fa-truck-arrow-right,
+.fa-house{
+    color: #4355ce;
+}
+.order-wrap{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-bottom: 10rem;
+}
+
+.order-card{
+    background-color: #f4f4f481;
+    padding: 1rem;
+    margin-bottom: 4rem;
+}
+.order-cards{
+    width: 50%;
+    height: 50%;
+}
+.order-card__content{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.order-card__img-container{
+    width: 25%;
+}
+
+.order-card__img{
+    width: 100%;
+}
+
+.order-card__details{
+    padding-left: 1rem;  
+}
+.order-card__texts{
+    font-size: 1rem;
+    color: #7a8188;
+}
+
+.order-card__time{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+    padding: 2rem 0 2rem 0.5rem;
+
+    width: 45%;
+}
+
+.order-card__texts:nth-child(1){
+    font-weight: 600;
+}
+
+.order-summary{
+    width: 25%;
+    padding: 1rem;
+    font-size: 20px;
+    border: 1px solid #7a818850;
+    border-radius: 5px;
+}
+
+.order-ship-progress__texts{
+    display: flex;
+    justify-content: space-around;
+    margin: 0 0 0.5rem 0;
+}
+
+.order-ship-progress__text{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.order-card__time__text{
+    font-weight: 600;
+    font-size: 1.1rem;  
+}
+
+
+.order-summary__top__date-number,.order-summary__mid-prod,
+.order-summary__mid-ship, .order-summary__bot__pay, .order-summary__bot-date-number{
+    display: flex;
+    justify-content: space-between;
+}
+
+.order-summary__bot__pay, .order-summary__bot-date-number
+,.order-summary__mid-ship,.order-summary__mid-prod{
+    padding: 0.4rem 0;
+}
+
+
+.progress-bar{
+    background-color: #4355ce;
+}
