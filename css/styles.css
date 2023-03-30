@@ -348,3 +348,14 @@ background-color: #1f1b1a;
     outline: none;
     box-shadow: none;
 }
+
+
+.perfil{
+  padding: 5%;
+
+}
+
+.perfil-img{
+
+  width: 20%;
+}
