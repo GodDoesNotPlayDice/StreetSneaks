@@ -1,0 +1,85 @@
+h4{
+    text-align: center;
+}
+
+.fa-sharp{
+    font-size: 60px;
+    color: #4355ce;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.user-panel{
+    width: 45%;
+}
+
+.user-wrap{
+    display: flex;
+    justify-content: center;
+    margin: 4rem;
+}
+
+.user-info-content{
+    padding: 1rem;
+}
+
+.user-info{
+    padding-left: 1rem;
+}
+
+.user-info-content{
+    display: flex;
+    align-items: center;
+}
+
+.user-info__text{
+    font-size: 30px;
+}
+.user-content{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 1rem;
+}
+
+.admin-link, .user-link{
+    padding: 0 0.5rem;
+}
+
+.product-sale{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: scroll;
+    overflow-x: hidden;
+    width: 100%;
+    height: 40rem;
+}
+
+.order-card{
+    width: 60%;
+}
+
+.admin-link{
+    color: red;
+}
+
+.status--green{
+    color: green;
+}
+.status--red{
+    color: red;
+}
+
+
+.line-contain{
+    display: flex;
+    justify-content: center;
+    margin-bottom:2rem;
+}
+
+.line-break{
+    width: 70%;
+    border: solid 0.1px;
+    border-color: #4355ce;
+    border-radius: 100%;
+}
