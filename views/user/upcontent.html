@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../../css/styles.css">
     <link rel="stylesheet" href="../../css/css-views/pedido.css">
     <link rel="stylesheet" href="../../css/css-views/pago.css">
+    <link rel="stylesheet" href="../../css/css-views/up-producto.css">
     <link rel="stylesheet" href="../../css/mediaquerys.css">
     <link rel="icon" type="image/x-icon" href="../../src/imgs/logo.png">
     <title>Subir Contenido</title>
@@ -114,8 +115,66 @@
         </div>
     </div>
     <div class="header-bottom"></div>
-
-
+    <section>
+        <h4 class="prod-title">Ingreso de producto</h4>
+        <div class="prod-wrap">
+            <div class="product-panel">
+                <div class="product-panel_specify-info">
+                    <div class="product-img-content">
+                        <div class="img_content">
+                            <img class="content__img"
+                                src="../../src/imgs/sneaks/Jose-Fuentes/Air-Force-1-Low-Retro/Air-Force-1-Low-Retro.webp"
+                                alt="Producto-img">
+                        </div>
+                        <div class="img-selector">
+                            <form>
+                                <label for="img">Selecciona una imagen</label>
+                                <input type="file" id="img" name="img" accept="image/*">
+                            </form>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="container mt-5">
+                            <form>
+                                <div class="form-group">
+                                    <label for="name">Nombre</label>
+                                    <input type="text" class="form-control" id="prod-name" placeholder="Ingrese el nombre">
+                                </div>
+                                <div class="form-group">
+                                    <label for="talla">Talla</label>
+                                    <input type="number" class="form-control" id="size-shoe" placeholder="Ingrese el precio">
+                                </div>
+                                <div class="form-group">
+                                    <label for="precio">Precio</label>
+                                    <input type="number" class="form-control" id="size-shoe" placeholder="Ingrese la talla">
+                                </div>
+                                <div class="form-group">
+                                    <label for="order">Tipo</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios"
+                                            id="exampleRadios1" value="option1" checked>
+                                        <label class="form-check-label" for="exampleRadios1">
+                                            EUR
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios"
+                                            id="exampleRadios2" value="option2">
+                                        <label class="form-check-label" for="exampleRadios2">
+                                            US
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="btn-content">
+                                    <button type="submit" class="btn btn-red">Subir</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <footer>
         <div class="footer-top">
             <div>
