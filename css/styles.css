@@ -301,16 +301,6 @@ background-color: #1f1b1a;
   color: var(--black-color);
 }
 
-.btn-orange, .btn-orange:active, .btn-orange:visited{
-  color: white;
-  background-color: var(--orange-color);
-}
-
-.btn-orange:active,.btn-orange:hover{
-  color: white;
-  background-color: var(--orange-color);
-}
-
 
 .sneaks__card__details__desc p {
   color: #707070;
