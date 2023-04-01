@@ -20,7 +20,6 @@
   .order-wrap{
     align-items: flex-start;
   }
-
 }
 
 
@@ -80,6 +79,32 @@
 
   }
 
+  .user-info-content{
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .user-panel{
+    width: 100%;
+  }
+
+  .user-content{
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    flex-wrap: wrap;
+  }
+  .user-info__text{
+    font-size: 16px;
+  }
+
+  .product-panel_specify-info{
+    display: block;
+  }
+
+  .product-img-content{
+    width: 100%;
+  }
 }
 
 @media only screen and (max-width: 575px) {
