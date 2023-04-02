@@ -1,0 +1,33 @@
+ol{
+    list-style: none;
+}
+
+.tos-title{
+    margin: 1rem 0 0 0;
+    text-align: center;
+}
+.wrap-terms{
+    display: flex;
+    margin: 1em;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.--center{
+    text-align: center;
+}
+
+.--weight-600{
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.terms-text{
+    margin: 1rem 0;
+}
+
+.sub-list{
+    margin-left: 3%;
+    list-style: circle;
+}
+
