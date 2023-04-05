@@ -30,6 +30,7 @@ p{
 .cart-prebuy{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 .cart-resume__details{
@@ -65,7 +66,7 @@ p{
 .cart-card__details{
     display: flex;
     flex-direction: column;
-   justify-content: space-between;
+    justify-content: space-between;
     padding: 0 1rem;
 }
 

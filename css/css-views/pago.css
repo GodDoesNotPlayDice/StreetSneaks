@@ -24,3 +24,11 @@ h3{
 .btn{
     width: 100%;
 }
+
+.pay-details{
+    padding: 1rem;
+}
+
+.pay-details__text{
+    font-size: 16px;
+}
