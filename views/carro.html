@@ -131,7 +131,7 @@
                             </div>
                             <div class="count-prod">
                                 <button type="submit" class="sum btn btn-red">-</button>
-                                <div id="quantity" value="10" min="1" max="100" class="count-prod__number">1</div>
+                                <div  class="count-prod__number">1</div>
                                 <button type="submit" class="less btn btn-red">+</button>
                             </div>
                         </div>
@@ -152,7 +152,7 @@
                             </div>
                             <div class="count-prod">
                                 <button type="submit" class="sum btn btn-red">-</button>
-                                <div id="quantity" value="10" min="1" max="100" class="count-prod__number">1</div>
+                                <div class="count-prod__number">1</div>
                                 <button type="submit" class="less btn btn-red">+</button>
                             </div>
                         </div>
@@ -162,9 +162,14 @@
                     <div class="cart-resume">
                         <h3 class="cart-resume__title">Resumen del pedido</h3>
                         <div class="cart-resume__details">
-                            <p class="cart-resuem__text">Productos: 2</p>
-                            <p class="cart-resuem__text">Precio: <span class="weight-600">$72.000</span></p>
-                            <p class="cart-resuem__text">Entrega: GRATIS</p>
+                            <p class="cart-resuem__text">Total de Productos: 2</p>
+                            <p class="cart-resuem__text">Total: <span class="weight-600">$72.000</span></p>
+                            <form>
+                                <div class="form-group">
+                                    <label for="name"></label>
+                                    <input type="text" class="form-control" id="name" placeholder="Cupon de descuento">
+                                </div>
+                            </form>
                         </div>
                     </div>
                     <div class="button-pay">

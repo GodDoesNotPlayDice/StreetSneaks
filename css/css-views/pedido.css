@@ -55,10 +55,6 @@ h2{
     width: 45%;
 }
 
-.order-card__texts:nth-child(1){
-    font-weight: 600;
-}
-
 .order-summary{
     width: 25%;
     padding: 1rem;
@@ -98,4 +94,8 @@ h2{
 
 .progress-bar{
     background-color: #4355ce;
+}
+
+.order-card__texts:nth-child(1){
+    font-weight: 600;
 }

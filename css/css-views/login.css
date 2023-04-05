@@ -36,13 +36,13 @@
     
 }
 
+.form-group{
+
+    padding: 1.1rem 0;
+}
+
 .container-img img{
 
     width: 100%;
     
-}
-
-.form-group{
-
-    padding: 1.1rem 0;
 }

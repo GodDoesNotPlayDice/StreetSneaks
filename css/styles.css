@@ -74,6 +74,10 @@ ul {
 }
 /* CSS GENERAL 10 WEIGHT */
 
+.--weight-600{
+  font-weight: 600;
+}
+
 
 .header-top {
   display: flex;
@@ -263,44 +267,31 @@ background-color: #1f1b1a;
   color: white;
 }
 
-.zoom:hover{
-  transform: scale(120%);
-  transition: ease-in-out 0.5s;
+.navbar-toggler{
+  margin: 0;
+}
+
+
+.perfil{
+  padding: 5%;
+
+}
+
+.perfil-img{
+  width: 20%;
+}
+.btn-red{
+  color: white;
+  background-color: var(--red-color);
+}
+.btn-blue{
+  color: white;
+  background-color: var(--blue-color);
 }
 
 .zoom{
   transition: ease-in 0.5s;
 }
-
-.btn-blue:active,.btn-blue:hover{
-  color: white;
-  background-color: var(--blue-color-hover);
-}
-
-.btn-red:active,.btn-red:hover{
-  color: white;
-  background-color: var(--red-color-hover);
-}
-
-
-.btn-blue, .btn-blue:visited {
-  color: var(--withe-color);
-  background-color: var(--blue-color);
-}
-
-.btn-red, .btn-red:active, .btn-red:visited {
-  color: var(--withe-color);
-  background-color: var(--red-color);
-}
-
-.btn.show{
-  background-color: var(--withe-color);
-}
-
-.btn.show:hover{
-  color: var(--black-color);
-}
-
 
 .sneaks__card__details__desc p {
   color: #707070;
@@ -328,8 +319,19 @@ background-color: #1f1b1a;
   transition: ease-in 0.2s;
 }
 
-.navbar-toggler{
-  margin: 0;
+.btn-red:active,.btn-red:hover{
+  color: white;
+  background-color: var(--red-color-hover);
+}
+
+.btn-red:active, .btn-red:visited {
+  color: var(--withe-color);
+  background-color: var(--red-color);
+}
+
+.zoom:hover{
+  transform: scale(120%);
+  transition: ease-in-out 0.5s;
 }
 
 .navbar-toggler:focus,
@@ -340,13 +342,24 @@ background-color: #1f1b1a;
 }
 
 
-.perfil{
-  padding: 5%;
-
+.btn-blue:active,.btn-blue:hover{
+  color: white;
+  background-color: var(--blue-color-hover);
 }
 
-.perfil-img{
-  width: 20%;
+
+
+
+.btn-blue:visited {
+  color: var(--withe-color);
+  background-color: var(--blue-color);
 }
 
+.btn.show{
+  background-color: var(--withe-color);
+}
+
+
+.btn.show:hover{
+  color: var(--black-color);
 }
