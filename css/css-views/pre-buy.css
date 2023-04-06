@@ -3,9 +3,6 @@ h4{
     text-align: center;
 }
 
-p{
-    
-}
 
 .btn-pagar {
     width: 20rem;
@@ -19,7 +16,6 @@ p{
 
 .cart-wrap{
     display: flex;
-    align-items: flex-center;
     justify-content: space-between;
     flex-wrap: wrap;
     width: 80%;
