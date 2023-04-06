@@ -14,7 +14,7 @@ li{
     --red-color: #e13838;
     --red-color-hover: #9f2727;
     --withe-color: #e4e4e4;
-  }
+    }
 
 .questions{
     padding: 5rem;
@@ -24,6 +24,7 @@ li{
     text-decoration: underline;
     text-align: center;
     margin-bottom: 3rem;
+    font-size: 2.5rem;
 }
 
 .questions-subtitle{
