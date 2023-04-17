@@ -3,9 +3,13 @@
     text-align: center;
 }
 
-.wrapper{
-    display: flex;
-    justify-content: center;
+.trab-contain{
+  display: flex;
+  justify-content: center;
+}
+
+.cv-wrapper{
+    width: 80%;
   }
   
   .cv{
