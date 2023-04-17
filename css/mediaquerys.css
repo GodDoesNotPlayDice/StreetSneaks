@@ -115,6 +115,11 @@
   .pay-details{
     padding: 0.2rem;
   }
+
+  .priv-container{
+    text-align: center;
+  }
+
 }
 
 @media only screen and (max-width: 575px) {

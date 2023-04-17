@@ -213,6 +213,7 @@ background-color: #1f1b1a;
   height: 100%;
 }
 .footer-top__item{
+  line-height: 2.5rem;
   color: var(--withe-color);
 }
 
