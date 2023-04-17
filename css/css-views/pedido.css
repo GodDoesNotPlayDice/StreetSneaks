@@ -48,7 +48,7 @@ h2{
 .order-card__time{
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+
     flex-direction: column;
     padding: 2rem 0 2rem 0.5rem;
 

@@ -1,0 +1,19 @@
+.priv-title{
+    margin: 1.5rem 0;
+    text-align: center;
+}
+.priv-wrapper{
+    display: flex;
+    justify-content: center;
+}
+.priv-container{
+    padding: 1rem;
+}
+
+.priv-text{
+    line-height: 2rem;
+}
+
+.priv-item{
+    margin-top: 1rem;
+}
