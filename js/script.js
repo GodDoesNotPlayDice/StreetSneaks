@@ -24,16 +24,12 @@ form.addEventListener("submit", e => {
         val = true
     }
 
-    if (propuesta.value.length < 30){
-        warningText = `El porque es muy corto`
+    if (propuesta.value.length < 500){
+        warningText = `El Porque quieres trabajar con nosotros? es muy corto`
         val = true
     }
     
     if(val){
-        warning.innerHTML = warningText;
-    } else{
-        warning.innerHTML = ""
+        alert(warningText)
     }
-    
-
 })
