@@ -11,22 +11,27 @@ $(document).ready(function() {
   
       $(".error").remove();
 
-      if (name.length < 3) {
+      if (name.length == 0) {
         $('#name').after('<span class="error">Este campo es obligatorio</span>');
+      }else if (name.length < 3) {
+        $(".error").remove();
+        $('#name').after('<span class="error">Este campo debe tener mínimo 3 caracteres</span>');
       }
-      if (email.length < 1) {
-        $('#email').after('<span class="error">este campo es obligatorio</span>');
+      if (email.length == 0) {
+        $('#email').after('<span class="error">Este campo es obligatorio</span>');
       } else {
-        var regEx = /^[A-Z0-9][A-Z0-9._%+-]{0,63}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/;
+        var regEx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
         var validEmail = regEx.test(email);
         if (!validEmail) {
-          $('#email').after('<span class="error">Enter a valid email</span>');
+          $('#email').after('<span class="error">Ingrese un Email válido</span>');
         }
       }
-      if (order.length < 6) {
+      if (order.length == 0) {
+        $('#order').after('<span class="error">Este campo es obligatorio.</span>');
+      }else if (order.length < 6) {
         $('#order').after('<span class="error">El número de orden es de mínimo 6 caracteres.</span>');
       }
-      if (subject.length < 1) {
+      if (subject.length == 0) {
         $('#subject').after('<span class="error">El asunto es obligatorio.</span>');
       }
     });
