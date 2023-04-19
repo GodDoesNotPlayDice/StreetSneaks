@@ -112,30 +112,38 @@
         <div class="trab-contain">
         <div class="cv-wrapper">
             <form class="cv" id="form">
+              <div class="name-group">
                 <label for="name" class="cv__label">
                     Nombre
                     <input type="text" id="name" name="name" placeholder="Ingresa tu nombre" class="cv__input" required>
-                    
+                </label>  
+                <p id="w_user" class="warning"></p>
+              </div>
+              Apellido
+                <label for="apellido" class="cv__label">
+                    <input type="text" id="apellido" name="surname" placeholder="Ingresa tu apellido paterno" class="cv__input" required>
                 </label>
-                <label for="appaterno" class="cv__label">
-                    Apellido parterno
-                    <input type="text" id="appaterno" name="surname" placeholder="Ingresa tu apellido paterno" class="cv__input" required>
-                    
-                </label>
+                <p id="w_last" class="warning"></p>
+                <label for="numero" class="cv__label">
+                  Celular
+                  <input type="text" id="numero" name="numero" placeholder="Ingresa tu numero de celular" class="cv__input" required>
+              </label>
+              <p id="w_cel" class="warning">
+              </p>
                 <label for="email" class="cv__label">
                     Email
-                    <input type="email" id="email" placeholder="Ingresa tu email" class="cv__input" required>
-                    
+                    <input type="email" id="email" name="email" placeholder="Ingresa tu email" class="cv__input" required>
                 </label>
+                <p id="w_email" class="warning"></p>
                 <label for="propuesta" class="cv__label">
                     Porque quieres trabajar con nosotros?
                     <textarea placeholder="almenos 500 caracteres" name="propuesta" id="propuesta" cols="30" rows="10" class="cv__text-area" required></textarea>
-                    
                 </label>
+                <p id="w_text" class="warning"></p>
                 <div class="block-submit">
                     <button class="cv__submit" type="submit">Enviar</button>
                     <div>
-                        <p id="warning" class="warning"></p>
+                        <p id="warning" class="warning">Hay un problema en el formulario.</p>
                     </div>
                 </div>
             </form>
