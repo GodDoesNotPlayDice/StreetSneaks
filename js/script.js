@@ -1,7 +1,7 @@
 const expresiones = {
 	nombre: /^[a-zA-ZÀ-ÿ\s]{5,15}$/, // Letras y espacios, pueden llevar acentos.
     apellido: /^[a-zA-ZÀ-ÿ\s]{5,15}$/,
-	email: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,}$/,
+	email: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
 	telefono: /^[0-9]{9}$/, // Expresion para el numero de chile de 9 digitos.
     textArea: /^.{500,1000}$/
 }
@@ -23,6 +23,19 @@ const number = document.getElementById('w_cel');
 const email = document.getElementById('w_email');
 const text = document.getElementById('w_text');
 
+const n_error = document.getElementById('fn-warn')
+const a_error = document.getElementById('fa-warn')
+const e_error = document.getElementById('fe-warn')
+const c_error = document.getElementById('fc-warn')
+const p_error = document.getElementById('fp-warn')
+
+const id_name = document.getElementById('name')
+const id_apellido = document.getElementById('apellido')
+const id_celular = document.getElementById('celular')
+const id_email = document.getElementById('email')
+const id_propuesta = document.getElementById('propuesta')
+
+
 const finalWarn = document.getElementById('warning');
 
 const validarFormulario = (e) => { // Funcion
@@ -30,9 +43,11 @@ const validarFormulario = (e) => { // Funcion
         case 'name':
             if(expresiones.nombre.test(e.target.value)){
                 first_name.classList.remove('enable')
+                id_name.classList.remove('cv_enable_input')
                 campos['first_name'] = true
             } else {
                 campos['first_name'] = false
+                id_name.classList.add('cv_enable_input')
                 first_name.classList.add('enable')
                 if (e.target.value.length > 15)
                 first_name.innerHTML = 'El nombre ingresado es muy largo.'
@@ -119,7 +134,7 @@ const validarFormulario = (e) => { // Funcion
                     if (e.target.value.length == 0){
                         text.classList.remove('enable')
                     } else {
-                        text.innerHTML = 'El Texto ingresado es muy corto.'
+                        text.innerHTML = `Recuerda que es minimo 500 caracteres: ${e.target.value.length}`
                     }
                 }
                 else{
@@ -145,6 +160,30 @@ form.addEventListener('submit', e => {
     } else {
         console.log(campos.email, campos.first_name, campos.last_name, campos.number, campos.text)
         finalWarn.classList.add('enable');
+        if (campos.email === false){
+            e_error.classList.add('enable');
+        } else {
+            e_error.classList.remove('enable');
+        }
+        if (campos.first_name === false) {
+            n_error.classList.add('enable');
+        } else {
+            n_error.classList.remove('enable');
+        }
+        if (campos.last_name === false) {
+            a_error.classList.add('enable');
+        } else {
+            a_error.classList.remove('enable');
+        }
+        if (campos.number === false) {
+            c_error.classList.add('enable');
+        } else {
+            c_error.classList.remove('enable');
+        }
+        if (campos.text === false) {
+            p_error.classList.add('enable')
+
+        }
     }
 
 });
