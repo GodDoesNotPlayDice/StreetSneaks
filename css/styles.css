@@ -187,6 +187,7 @@ background-color: #1f1b1a;
 .sneaks__card {
   display: inherit;
   justify-content: center;
+  margin: 1rem;
 }
 
 .sneaks__card__img {
@@ -195,10 +196,13 @@ background-color: #1f1b1a;
 }
 
 .sneaks__card__img__img {
+  background-color: #f6f6f6;
   width: 100%;
   height: 16rem;
 }
-
+.sneaks__card__details{
+  background-color: rgb(255, 255, 255);
+}
 .sneaks__card__details__name-price {
   display: flex;
   color: var(--black-color);
@@ -206,6 +210,7 @@ background-color: #1f1b1a;
   padding-bottom: 0.188rem;
   font-weight: bold;
   font-size: 14px;
+  margin-top: 2rem;
 }
 
 .corousel-section {
@@ -284,7 +289,7 @@ background-color: #1f1b1a;
 }
 
 .perfil-img{
-  width: 20%;
+  width: 30%;
 }
 .btn-red{
   color: white;
@@ -340,7 +345,7 @@ background-color: #1f1b1a;
 }
 
 .zoom:hover{
-  transform: scale(120%);
+  transform: scale(110%);
   transition: ease-in-out 0.5s;
 }
 
