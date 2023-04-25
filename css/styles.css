@@ -69,6 +69,17 @@ ul {
   display: none;
 }
 
+.warning{
+  color: red;
+  padding-left: 0.1rem;
+  display: none;
+}
+
+.enable{
+  display: block;
+}
+
+
 .fa-bars{
 
   color: var(--red-color);
