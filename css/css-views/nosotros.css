@@ -48,15 +48,6 @@
     align-items: flex-end;
   }
   
-  .warning{
-    color: red;
-    padding-left: 0.1rem;
-    display: none;
-  }
-
-  .enable{
-    display: block;
-  }
 
   .cv__submit:hover{
     background-color: rgb(103, 30, 30);
