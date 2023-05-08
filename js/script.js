@@ -31,7 +31,7 @@ const p_error = document.getElementById('fp-warn')
 
 const id_name = document.getElementById('name')
 const id_apellido = document.getElementById('apellido')
-const id_celular = document.getElementById('celular')
+const id_celular = document.getElementById('numero')
 const id_email = document.getElementById('email')
 const id_propuesta = document.getElementById('propuesta')
 
@@ -42,11 +42,13 @@ const validarFormulario = (e) => { // Funcion
     switch (e.target.name) {
         case 'name':
             if(expresiones.nombre.test(e.target.value)){
+                id_name.classList.add('cv_enable_input_check')
                 first_name.classList.remove('enable')
                 id_name.classList.remove('cv_enable_input')
                 campos['first_name'] = true
             } else {
                 campos['first_name'] = false
+                id_name.classList.remove('cv_enable_input_check')
                 id_name.classList.add('cv_enable_input')
                 first_name.classList.add('enable')
                 if (e.target.value.length > 15)
@@ -66,9 +68,13 @@ const validarFormulario = (e) => { // Funcion
             break;
         case 'surname':
             if(expresiones.apellido.test(e.target.value)){
+                id_apellido.classList.add('cv_enable_input_check')
                 last_name.classList.remove('enable')
+                id_apellido.classList.remove('cv_enable_input')
                 campos['last_name'] = true
             } else {
+                id_apellido.classList.remove('cv_enable_input_check')
+                id_apellido.classList.add('cv_enable_input')
                 campos['last_name'] = false
                 last_name.classList.add('enable')
                 if (e.target.value.length > 15)
@@ -87,9 +93,13 @@ const validarFormulario = (e) => { // Funcion
             break;
         case 'email':
             if(expresiones.email.test(e.target.value)){
+                id_email.classList.add('cv_enable_input_check')
                 email.classList.remove('enable')
+                id_email.classList.remove('cv_enable_input')
                 campos['email'] = true
             } else {
+                id_email.classList.remove('cv_enable_input_check')
+                id_email.classList.add('cv_enable_input')
                 campos['email'] = false
                 email.classList.add('enable')
                 if (e.target.value.length > 25)
@@ -108,9 +118,13 @@ const validarFormulario = (e) => { // Funcion
             break;
         case 'numero':
             if(expresiones.telefono.test(e.target.value)){
+                id_celular.classList.add('cv_enable_input_check')
+                id_celular.classList.remove('cv_enable_input')
                 number.classList.remove('enable')
                 campos['number'] = true
             } else {
+                id_celular.classList.remove('cv_enable_input_check')
+                id_celular.classList.add('cv_enable_input')
                 campos['number'] = false
                 if (e.target.value.length == 0){
                     number.classList.remove('enable')
