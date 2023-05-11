@@ -170,6 +170,11 @@ form.addEventListener('submit', e => {
     e.preventDefault() // Prevengo el comportamiento por defecto del formulario
     if (campos.email === true && campos.first_name === true && campos.last_name === true && campos.number === true && campos.text === true ){
         finalWarn.classList.remove('enable');
+        e_error.classList.remove('enable');
+        n_error.classList.remove('enable');
+        a_error.classList.remove('enable');
+        c_error.classList.remove('enable');
+        p_error.classList.remove('enable');
         form.reset();
     } else {
         console.log(campos.email, campos.first_name, campos.last_name, campos.number, campos.text)
@@ -196,7 +201,8 @@ form.addEventListener('submit', e => {
         }
         if (campos.text === false) {
             p_error.classList.add('enable')
-
+        } else {
+            p_error.classList.remove('enable')
         }
     }
 
