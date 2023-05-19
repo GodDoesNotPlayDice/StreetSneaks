@@ -1,1 +1,11 @@
-{% include 'components/base.html' %}
+{% extends 'base.html' %}
+	  {% block content %}
+          {% include 'components/carrousel.html' %}
+    <main>
+      <section>
+        <h2 class="main__h2">Zapatillas mas recientes</h2>
+        <div class="sneaks" id="sneaks">
+        </div>
+      </section>
+    </main>
+      {% endblock content %}
