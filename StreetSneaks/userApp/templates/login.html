@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+  {% block add_styles %}
+  <link rel="stylesheet" href="{% static '/css/css-views/intro.css' %}">
+  {% endblock add_styles %}
+  {% block content %}
+  <section>
+    <div class="panel">
+      <div class="container mt-5 container-form">
+        <h4>Iniciar Sesión</h4>
+        <form>
+          <div id="email_group" class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Ingrese su email">
+            <span class="warning">Error en el Email.</span>
+          </div>
+          <div id="password_group" class="form-group">
+            <label for="Contrasenna">Contraseña</label>
+            <input type="text" class="form-control" id="Contrasenna" placeholder="Ingrese su contraseña">
+            <span class="warning">Contraseña Incorrecta</span>
+          </div>
+          <div class="btn-links">
+            <button type="submit" class="btn btn-red">Iniciar Sesión</button>
+            <a href="{% url 'register' %}" class="btn-links__link">Aun no estas registrado?</a>
+          </div>
+        </form>
+      </div>
+      <div class="container-img">
+        <img src="{% static 'imgs/carrusel_img1.jpg' %}" alt="imagen de login">
+      </div>
+    </div>
+  </section>
+{% endblock content %}
