@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block add_styles %}
+<link rel="stylesheet" href="{% static '/css/css-views/priv.css' %}">
+{% endblock add_styles %}
+{% block content %}
+    <section>
+        <h2 class="priv-title">Declaración de Privacidad de Streat Sneaks</h2>
+        <div class="priv-wrapper">
+            <div class="priv-container">
+                <p class="priv-text">
+                    En Streat Sneaks, valoramos y respetamos su privacidad. Esta Declaración de Privacidad describe cómo recopilamos, utilizamos y protegemos la información personal que obtenemos de usted a través de nuestro sitio web.
+                </p>
+                <br>
+                <ol class="priv-wrap">
+                    <li class="priv-item">
+                        <h3>Información personal que recopilamos</h3>
+                        <p class="priv-text">Recopilamos información personal que nos proporciona directamente, como su nombre, dirección, número de teléfono, dirección de correo electrónico y otra información de contacto. También podemos recopilar información de su historial de compras, preferencias de producto, información de pago y cualquier otra información que proporcione al comprar productos o interactuar con nuestro sitio web o tienda física.</p>
+                    </li>
+                    <li class="priv-item">
+                        <h3>Uso de la información personal</h3>
+                        <p class="priv-text">Utilizamos la información personal que recopilamos para procesar su pedido, enviarle actualizaciones sobre su pedido, proporcionarle atención al cliente, mejorar nuestros productos y servicios, y personalizar su experiencia de compra. También podemos utilizar su información para enviarle promociones y ofertas especiales de vez en cuando.</p>
+                    </li>
+                    <li class="priv-item">
+                        <h3>Compartir información personal</h3>
+                        <p class="priv-text">
+                            No compartimos su información personal con terceros, salvo cuando sea necesario para procesar su pedido o cumplir con la ley.
+                        </p>
+                    </li>
+                    <li class="priv-item">
+                        <h3>Seguridad de la información personal</h3>
+                        <p class="priv-text">
+                            Tomamos medidas de seguridad razonables para proteger su información personal contra el acceso no autorizado, la divulgación y el uso indebido.
+                        </p>
+                    </li>
+                    <li class="priv-item">
+                        <h3>Cambios a esta Declaración de Privacidad</h3>
+                        <p class="priv-text">Nos reservamos el derecho de actualizar esta Declaración de Privacidad en cualquier momento. Si realizamos cambios significativos, se lo notificaremos a través de nuestro sitio web o por correo electrónico.</p>
+                    </li>
+                </ol>
+                <p class="priv-text">Si tiene alguna pregunta o inquietud sobre esta Declaración de Privacidad o cómo manejamos su información personal, no dude en ponerse en contacto con nosotros a través de los canales de contacto disponibles en nuestro sitio web o tienda física.</p>
+            </div>
+        </div>
+    </section>
+  {% endblock content %}

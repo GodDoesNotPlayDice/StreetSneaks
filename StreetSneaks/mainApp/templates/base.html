@@ -12,6 +12,8 @@
     crossorigin="anonymous" referrerpolicy="no-referrer">
     {% load static %}
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  {% block add_styles %}
+  {% endblock add_styles %}
   <link rel="stylesheet" href="{% static 'css/mediaquerys.css' %}">
   <link rel="icon" type="image/x-icon" href="{% static 'imgs/logo.png' %}">
   <title>Street Sneaks</title>
@@ -21,7 +23,6 @@
 	  {% block content %}
       {% endblock content %}
       {% include  'components/footer.html' %}
-
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
     crossorigin="anonymous"></script>
