@@ -1,0 +1,90 @@
+    {% extends 'base.html' %}
+    {% load static %}
+    {% block add_styles %}
+    <link rel="stylesheet" href="{% static '/css/css-views/tos.css' %}">
+    {% endblock add_styles %}
+    {% block content %}
+    <section>
+        <h2 class="tos-title">Términos y Condiciones de Uso</h2>
+        <div class="wrap-terms">
+            <p class="terms-text --center">
+                <span class="--weight-600">Bienvenido</span> a StreetSnaks, un sitio web de venta en línea de
+                zapatillas. Antes de utilizar nuestros servicios, lea detenidamente estos Términos y Condiciones (TOS)
+                de uso. Al acceder o utilizar nuestro sitio web, usted acepta estar obligado por estos términos. Si no
+                está de acuerdo con alguno de estos términos, no utilice nuestro sitio web.
+            </p>
+            <ol class="tos-list">
+                <li class="tos-item">
+                    <h3 class="h3-title">
+                        Acceso y uso de nuestro sitio web
+                    </h3>
+                    <p class="terms-text">
+                        StreetSnaks se reserva el derecho de modificar, suspender o descontinuar cualquier parte del
+                        sitio web en cualquier momento y sin previo aviso. El uso de nuestro sitio web es bajo su propio
+                        riesgo y responsabilidad. Al utilizar nuestro sitio web, se compromete a no hacer lo siguiente:
+                    </p>
+                    <ul class="sub-list">
+                        <li class="sub-item">
+                            <p class="terms-text">
+                                Utilizar nuestro sitio web con fines ilegales o no autorizados.
+                            </p>
+                        </li>
+                        <li class="sub-item">
+                            <p class="terms-text">
+                                Publicar contenido inapropiado o difamatorio en nuestro sitio web.
+                            </p>
+                        </li>
+                        <li class="sub-item">
+                            <p class="terms-text">
+                                Alterar o interferir con el funcionamiento del sitio web o su código fuente.
+
+                            </p>
+                        </li>
+                        <li class="sub-item">
+                            <p class="terms-text">
+                                Utilizar nuestro sitio web para enviar spam, correos electrónicos no solicitados o mensajes fraudulentos.
+                            </p>
+                        </li>
+                        <li class="sub-item">
+                            <p class="terms-text">
+                                Copiar o reproducir cualquier parte del sitio web o su contenido sin autorización previa de StreetSnaks.
+                            </p>
+                        </li>
+                    </ul>
+                </li>
+                <li class="tos-item">
+                    <h3 class="h3-title">
+                        Registro de cuenta
+                    </h3>
+                    <p class="terms-text">
+                        Para utilizar nuestros servicios, es necesario que se registre y cree una cuenta. Al registrarse en nuestro sitio web, se compromete a proporcionar información precisa y completa, incluyendo su nombre completo, dirección de correo electrónico y dirección de envío. Usted es responsable de mantener la confidencialidad de su información de inicio de sesión, así como de todas las actividades que ocurran en su cuenta. Si cree que su información de inicio de sesión ha sido comprometida o utilizada sin autorización, póngase en contacto con nosotros inmediatamente. StreetSnaks se reserva el derecho de rechazar cualquier registro de cuenta a su entera discreción.
+                    </p>
+                </li>
+                <li class="tos-item">
+                    <h3 class="h3-title">
+                        Compras y pagos
+                    </h3>
+                    <p class="terms-text">
+                        Al realizar una compra en StreetSnaks, acepta pagar el precio total de los productos y servicios adquiridos, incluyendo los impuestos aplicables y los gastos de envío. StreetSnaks se reserva el derecho de cambiar los precios de los productos y servicios en cualquier momento y sin previo aviso. Todos los pagos se procesan a través de servicios seguros de pago en línea, y StreetSnaks no almacena ni tiene acceso a la información de pago del cliente.
+                    </p>
+                </li>
+                <li class="tos-item">
+                    <h3 class="h3-title">
+                        Envío y entrega
+                    </h3>
+                    <p class="terms-text">
+                        StreetSnaks se compromete a enviar los productos adquiridos a la dirección proporcionada por el cliente en el momento de la compra. La entrega de los productos depende de la disponibilidad de inventario y de los servicios de envío. StreetSnaks no se hace responsable de los retrasos en la entrega que se deban a factores externos, como el clima, los desastres naturales, las restricciones gubernamentales o las huelgas. El cliente es responsable de proporcionar información de envío precisa y completa en el momento de la compra.
+                    </p>
+                </li>
+                <li class="tos-item">
+                    <h3 class="h3-title">
+                        Devoluciones y cambios
+                    </h3>
+                    <p class="terms-text">
+                        StreetSnaks acepta devoluciones y cambios de productos que se encuentren en perfecto estado y sin uso en un plazo de 14 días naturales después de la entrega. Los productos devueltos deben estar en su empaque original y con todas
+                    </p>
+                </li>
+            </ol>
+        </div>
+    </section>
+    {% endblock content %}
