@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'mainApp',
     'coreApp',
-    'sneakerApp'
+    'sneakerApp',
+    'userApp'
 ]
 
 MIDDLEWARE = [
