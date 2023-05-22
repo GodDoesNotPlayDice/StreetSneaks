@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 	  {% block content %}
           {% include 'components/carrousel.html' %}
     <main>
@@ -8,4 +9,7 @@
         </div>
       </section>
     </main>
+    {% block scripts %}
+      <script src="{% static 'js/sneaks.js' %}"></script>
+    {% endblock scripts %}  
       {% endblock content %}
