@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
 <main>
    <section>
@@ -6,4 +7,7 @@
       <div class="sneaks" id="sneaks"></div>
    </section>
 </main>
+    {% block scripts %}
+      <script src="{% static 'js/sneaks.js' %}"></script>
+    {% endblock scripts %}  
 {% endblock content %}
