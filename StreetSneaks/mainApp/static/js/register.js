@@ -4,8 +4,9 @@ $(document).ready(function() {
       var name = $('#name').val();
       var apellido = $('#apellido').val();
       var email = $('#email').val();
-      var password = $('#password').val();
-      var checkbox = $('#checkbox-form').val();
+      var password1 = $('#password1').val();
+      var password2 = $('#password2').val();
+      var celular = $('#celular').val();
       
       $(".error").remove();
       
@@ -38,26 +39,44 @@ $(document).ready(function() {
       if (email.length == 0) {
         $('#email').after('<span class="error">Este campo es obligatorio.</span>');
       } else {
-        var regEx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
+        var regEx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
         var validEmail = regEx.test(email);
         if (!validEmail) {
           $('#email').after('<span class="error">Ingrese un Email válido.</span>');
-        }
-      }
-      if (password.length == 0) {
-        
-        $('#password').after('<span class="error">Este campo es obligatorio.</span>');
-      } else{
-        var regEx =/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/
-        var validapassword = regEx.test(password);
-        if (!validapassword) {
-          $('#password').after('<span class="error">Ingrese una contraseña válida.</span>');
+        } else if (email.length >= 50) {
+          $('#email').after('<span class="error">El Email debe tener menos de 50 caracteres.</span>');
         }
       }
 
-      if (!$(checkbox).is(":checked"))  {
-        $('#checkbox-form').after('<span class="error"> <br> debe leer y aceptar nuestros terminos y condiciones para continuar.</span>');
+      if (celular.length == 0) {
+        $('#celular').after('<span class="error">Este campo es obligatorio.</span>');
+      } else {
+        var regEx = /^(\+?56)?(\s?)(0?9)(\s?)[98765432]\d{7}$/;
+        var validCelular = regEx.test(celular);
+        if (!validCelular) {
+          console.log('Error')
+          $('#celular').after('<span class="error">Ingrese un número de celular válido.</span>');
+        }
+      }   
+
+      if (password1.length == 0) {
+        $('#password1').after('<span class="error">Este campo es obligatorio.</span>');
+        console.log('algo?')
+      } else {
+        var regEx = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
+        var validPassword1 = regEx.test(password1);
+        if (!validPassword1) {
+          $('#password1').after('<span class="error">Ingrese una contraseña válida.</span>');
+        } else if (password1 !== password2) {
+          $('#password2').after('<span class="error">Las contraseñas no coinciden.</span>');
+        }
       }
+      
+      
+      if (!$('#checkbox-form').is(":checked")) {
+        $('#checkbox-form').after('<span class="error"> <br> Debe leer y aceptar nuestros términos y condiciones para continuar.</span>');
+      }
+      
     });
   });
 
