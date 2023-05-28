@@ -1,12 +1,11 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 # Create your models here.
+
 class Usuario(models.Model):
-    name = models.CharField(max_length=15, verbose_name="Nombre")
-    last_name = models.CharField(max_length=15, verbose_name="Apellido")
-    email = models.EmailField(max_length=50, verbose_name="Email")
-    password = models.CharField(max_length=50, verbose_name="Password")
+    celular = models.IntegerField(verbose_name="Celular")
+    direccion = models.CharField(max_length=150, verbose_name="Direccion", null=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     class Meta:
         verbose_name = "Usuario"
         verbose_name_plural = "Usuarios"
-
