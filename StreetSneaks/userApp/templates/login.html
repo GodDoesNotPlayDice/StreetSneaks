@@ -8,20 +8,21 @@
     <div class="panel">
       <div class="container mt-5 container-form">
         <h4>Iniciar Sesión</h4>
-        <form>
-          <div id="email_group" class="form-group">
-            <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="Ingrese su email">
-            <span class="warning">Error en el Email.</span>
+        <form method='POST' action="{% url 'login' %}">
+          {% csrf_token %}
+          <div id="usuario_group" class="form-group">
+            <label for="usuario">Usuario</label>
+            <input type="text" name="usuario" class="form-control" id="usuario" placeholder="Ingrese su usuario">
+            <span class="warning">Error en el Usuario.</span>
           </div>
           <div id="password_group" class="form-group">
-            <label for="Contrasenna">Contraseña</label>
-            <input type="text" class="form-control" id="Contrasenna" placeholder="Ingrese su contraseña">
+            <label for="password">Contraseña</label>
+            <input type="password" name="password" class="form-control" id="Contrasenna" placeholder="Ingrese su contraseña">
             <span class="warning">Contraseña Incorrecta</span>
           </div>
           <div class="btn-links">
             <button type="submit" class="btn btn-red">Iniciar Sesión</button>
-            <a href="{% url 'register' %}" class="btn-links__link">Aun no estas registrado?</a>
+            <a href="{% url 'register' %}" class="btn-links__link">Aun no estás registrado?</a>
           </div>
         </form>
       </div>

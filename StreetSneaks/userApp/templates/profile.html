@@ -1,6 +1,11 @@
   {% extends 'base.html' %}
+  {% load static %}
+  {% block add_styles %}
+  <link rel="stylesheet" href="{% static 'css/css-views/user.css' %}">
+  <link rel="stylesheet" href="{% static 'css/css-views/pedido.css' %}">
+  {% endblock add_styles %}
+  {% block content %}
   <section>
-    <h3 class="disable">title-seo</h3>
     <div class="user-wrap">
       <div class="user-panel">
         <div class="user-info-content">
@@ -8,7 +13,7 @@
             <i class="fa-sharp fa-solid fa-user"></i>
           </div>
           <div class="user-info">
-            <p class="user-info__text">Vicente Vasquez.</p>
+            <p class="user-info__text">{{user.username}} {{user.last_name}}</p>
           </div>
         </div>
         <div class="user-content">
@@ -149,3 +154,4 @@
     </div>
     <!-- ADMIN -->
   </section>
+  {% endblock content %}

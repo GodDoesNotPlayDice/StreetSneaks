@@ -61,7 +61,6 @@ $(document).ready(function() {
 
       if (password1.length == 0) {
         $('#password1').after('<span class="error">Este campo es obligatorio.</span>');
-        console.log('algo?')
       } else {
         var regEx = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
         var validPassword1 = regEx.test(password1);
@@ -71,12 +70,12 @@ $(document).ready(function() {
           $('#password2').after('<span class="error">Las contraseñas no coinciden.</span>');
         }
       }
-      
-      
       if (!$('#checkbox-form').is(":checked")) {
         $('#checkbox-form').after('<span class="error"> <br> Debe leer y aceptar nuestros términos y condiciones para continuar.</span>');
       }
-      
+      if ($(".error").length === 0) {
+        $('#register-form').unbind('submit').submit();
+      }
     });
   });
 

@@ -10,9 +10,17 @@
               </span></a>
             </li>
             <li class="header-top__item">
+              {% if user.is_authenticated %}
+              <a class="header-top__item__link" href="{% url 'profile' %}">
+                <i class="fa-solid fa-user"></i>
+                <span class="header-top__item__link__text">Bienvenido {{user.username}}</span></a>
+              <a class="header-top__item__link" href="{% url 'logout' %}">
+                <span class="header-top__item__link__text">LogOut</span></a>
+              {% else %}
               <a class="header-top__item__link" href="{% url 'login' %}">
                 <i class="fa-solid fa-user"></i>
                 <span class="header-top__item__link__text">Mi Cuenta</span></a>
+              {% endif %}
               </li>
             </ul>
           </nav>
@@ -66,8 +74,15 @@
               <a class="header-center__menu__item__link" href="{% url 'deportivo' %}">Deportivo</a>
             </li>
             <li class="header-center__menu__item">
-              <a class="header-center__menu__item__link disable" href="views/user/loign.html"><i class="fa-solid fa-user"></i> Mi cuenta</a>
+              {% if not user.is_authenticated %}
+              <a class="header-center__menu__item__link disable" href="{% url 'login' %}"><i class="fa-solid fa-user"></i> Mi cuenta</a>
+              {% else %}
+              <a class="header-center__menu__item__link disable" href="{% url 'profile' %}"><i class="fa-solid fa-user"></i> Mi cuenta</a>
             </li>
+            <li class="header-center__menu__item">
+              <a class="header-center__menu__item__link disable" href="{% url 'logout' %}"><i class="fa-solid fa-right-from-bracket"></i>Log out</a>
+            </li>
+              {% endif %}
             <li class="header-center__menu__item disable">
               <a class="header-center__menu__item__link" href="../views/user/pedido.html"><i class="fa-solid fa-truck"></i>Mis pedidos</a>
             </li>
