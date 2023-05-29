@@ -17,21 +17,18 @@
           </div>
         </div>
         <div class="user-content">
-          <a href="upcontent.html" class="admin-link">Subir un producto.</a>
-          <!-- ADMIN -->
-          <a href="#buys" class="admin-link">Ventas.</a>
-          <!-- ADMIN -->
+          {% if user.is_staff == 1 %}
+           <a href="{% url 'crear-zapatilla' %}" class="admin-link">Subir un producto.</a>
+          {% else %}
           <a href="#buys" class="user-link">Mis Compras.</a>
           <a href="pedido.html" class="user-link">Mis Pedidos.</a>
+          {% endif %}
         </div>
       </div>
     </div>
-    <!-- ADMIN -->
-    <section>
-      <div class="line-contain">
-        <div class="line-break"></div>
-      </div>
-      <h2>Ventas || <span class="admin-link">admin</span></h2>
+  </section>
+  {% if user.is_staff == 1 %}
+  <h2>Ventas</h2>
       <div class="product-sale" id="sales">
         <div class="order-card">
           <div class="order-card__content">
@@ -86,8 +83,7 @@
         </div>
       </div>
     </section>
-    <!-- ADMIN -->
-  </section>
+  {% else %}
   <section>
     <div class="line-contain">
       <div class="line-break"></div>
@@ -154,4 +150,5 @@
     </div>
     <!-- ADMIN -->
   </section>
+  {% endif %}
   {% endblock content %}
