@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block add_styles %}
+<link rel="stylesheet" href="{% static 'css/css-views/pedido.css' %}">
+<link rel="stylesheet" href="{% static '/css/css-views/pago.css' %}">
+<link rel="stylesheet" href="{% static '/css/css-views/up-producto.css' %}">
+{% endblock add_styles %}
+{% block content %}
+<section>
+        <h4 class="prod-title">Ingreso de producto</h4>
+        <div class="prod-wrap">
+            <div class="product-panel">
+                <form method='POST' action="{% url 'createSneak' %}">
+                    {% csrf_token %}
+                    <div class="product-panel_specify-info">
+                        <div class="product-img-content">
+                            <div class="img_content">
+                                <img class="content__img"
+                                    src=""alt="Imagen del producto">
+                            </div>
+                            <div class="img-selector">
+                                <label for="formFile" class="form-label">Selecciona la iamgen</label>
+                                <input name='formFile' class="form-control" type="file" id="formFile">
+                            </div>
+                        </div>
+                        <div class="product-info">
+                        <div class="container mt-5">
+                                <div class="form-group mb-4">
+                                    <label for="prod-name">Nombre</label>
+                                    <input name="prod-name" type="text" class="form-control" id="prod-name"
+                                        placeholder="Ingrese el nombre">
+                                </div>
+                                <div class="form-group mb-4">
+                                    <label for="categoria">Categoria</label>
+                                    <select class="form-select" name="categoria" aria-label="Default select example">
+                                        <option selected>Categoria</option>
+                                        {% for categoria in categorias %}
+                                        <option value="{{categoria.id}}">{{categoria.nombre}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="form-group mb-4">
+                                    <label for="talla">Tallas</label>
+                                    <select class="form-select" name="talla" aria-label="Default select example">
+                                        <option selected>Tallas EUR</option>
+                                        {% for talla in tallas %}
+                                        <option value="{{talla.id}}">{{talla.number}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="precio">Precio</label>
+                                    <input type="number" min="1" name="precio" class="form-control" id="size-shoe"
+                                        placeholder="Ingrese el precio">
+                                </div>
+                                <div class="btn-content">
+                                    <button type="submit" class="btn btn-red">Subir</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}
+{% block scripts %}
+<script src="{% static 'js/img-preview.js' %}"></script>
+{% endblock scripts %}

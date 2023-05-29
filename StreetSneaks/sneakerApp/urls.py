@@ -7,4 +7,6 @@ urlpatterns = [
     path('mujer/', views.mujer, name='mujer'),
     path('niño/', views.nino, name='niño'),
     path('deportivo/', views.deportivo, name='deportivo'),
+    path('crear-zapatilla/', views.sneakUp, name='crear-zapatilla'),
+    path('create', views.createSneak, name='createSneak'),
 ]
