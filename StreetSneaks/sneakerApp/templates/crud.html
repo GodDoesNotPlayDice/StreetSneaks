@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block header %}
+{% include 'components/admin-header.html' %}
+{% endblock header %}
+{% block boostrap %}
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
+{% endblock boostrap %}
+{% block content %}
+    {% include 'components/up.html' %}
+    {% include 'components/delete.html' %}
+{% endblock content %}
+{% block footer %}
+{% include 'components/admin-footer.html' %}
+{% endblock footer %}
+{% block scripts %}
+<script src="{% static 'js/img-preview.js' %}"></script>
+{% endblock scripts %}

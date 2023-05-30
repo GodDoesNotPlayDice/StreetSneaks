@@ -11,8 +11,15 @@ class Categoria(models.Model):
 
 class Zapatilla(models.Model):
     name = models.CharField(max_length=50, verbose_name="Nombre")
+    imagen = models.ImageField(verbose_name="Imagen", default="null", upload_to="zapatillas")
     precio = models.IntegerField(default=0, verbose_name="Valor")
     disponible = models.BooleanField(default=False, verbose_name="Disponible")
     tallaEUR = models.ForeignKey(TallaEUR, on_delete=models.CASCADE, verbose_name="Talla EUR", null=True)
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE, verbose_name="Categoría")
+    
+    class Meta:
+        verbose_name = "Zapatilla"
+        verbose_name_plural = "Zapatillas"
 
+    def __str__(self) -> str:
+        return self.name

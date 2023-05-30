@@ -18,7 +18,7 @@
         </div>
         <div class="user-content">
           {% if user.is_staff == 1 %}
-           <a href="{% url 'crear-zapatilla' %}" class="admin-link">Subir un producto.</a>
+           <a href="{% url 'gestion-zapatillas' %}" class="admin-link">Gestionar productos</a>
           {% else %}
           <a href="#buys" class="user-link">Mis Compras.</a>
           <a href="pedido.html" class="user-link">Mis Pedidos.</a>

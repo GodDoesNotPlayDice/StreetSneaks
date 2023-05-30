@@ -1,0 +1,17 @@
+<div class="sneaks__card zoom">
+    <div class="sneaks__card__img">
+      <a class="sneaks__card__img__link" href="#">
+        <img class="sneaks__card__img__img" src="{{zapatilla.imagen.url}}" alt="Sneaker Name">
+      </a>
+    </div>
+    <div class="sneaks__card__details">
+      <div class="sneaks__card__details__name-price">
+        <p>{{zapatilla.name}}</p>
+        <p>Precio: ${{zapatilla.precio}}</p>
+      </div>
+      <div class="sneaks__card__details__desc">
+        <p>Tipo: {{zapatilla.categoria.nombre}}</p>
+        <p>Talla: {{zapatilla.tallaEUR.number}} {{zapatilla.tallaEUR.tipo}}</p>
+      </div>
+    </div>
+  </div>
