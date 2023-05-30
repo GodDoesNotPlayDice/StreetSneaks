@@ -1,5 +1,5 @@
-const fileInput = document.getElementById('formFile');
-const imgPreview = document.querySelector('.content__img');
+const fileInput = document.getElementById('file_input');
+const imgPreview = document.querySelector('.preview');
 
 fileInput.addEventListener('change', function() {
     const file = fileInput.files[0];

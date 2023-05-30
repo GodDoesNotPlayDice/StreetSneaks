@@ -1,0 +1,11 @@
+<header>
+    <div class="bg-red-950 p-4">
+        <h1 class="text-xl md:text-4xl text-center md:text-start header-center__title text-white">Street Sneak - ADMIN</h1>
+        <nav>
+            <ul class="md:flex md:justify-center">
+                <li class=" px-3 text-center md:text-end"><a class="text-white font-bold" href="{% url 'index' %}">Inicio</a></li>
+                <li class=" px-3 text-center md:text-end"><a class="text-white font-bold" href="{% url 'profile' %}">Admin: {{user.username}}</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
