@@ -1,0 +1,42 @@
+  {% extends 'base.html' %}
+  {% load humanize %}
+  {% load static %}
+  {% block add_styles %}
+  <link rel="stylesheet" href="{% static '/css/css-views/sneaks.css' %}">
+  <link rel="stylesheet" href="{% static '/css/mediaquerys.css' %}">
+  {% endblock add_styles %}
+  {% block content %}
+  <section>
+    <h2 class="disable">title-seo</h2>
+    <div class="sneak">
+      <div class="sneak__card">
+        <div class="sneaks__card__img">
+          <a class="sneaks__card__img__link" href="">
+            <img class="sneaks__card__img__img"
+              src="{{sneak.imagen.url}}"
+              alt="Air Force 1 Low Retro">
+          </a>
+        </div>
+        <div class="sneaks__card__details">
+          <div class="sneaks__card__details__name-price">
+            <p>{{sneak.name}}</p>
+          </div>
+          <div class="sneaks__card__details__desc">
+            <p>Calzado Hombre</p>
+            <p>Talla 36</p>
+            <p>Stock: 5</p>
+            <p><span class="price">$ {{sneak.precio|intword}} CLP</span></p>
+            <button type="button" class="btn btn-blue">Añadir al carro</button>
+          </div>
+        </div>
+      </div>
+        <div class="sneaks__imgs">
+          <img
+          class="sneaks__imgs__img"
+            src="{{sneak.imagen_muestra.url}}" alt="Air-Force-1-Low-Retro-under">
+          <img class="sneaks__imgs__img"
+            src="{{sneak.imagen_muestra_2.url}}" alt="Air-Force-1-Low-Retro-Above">
+        </div>
+    </div>
+  </section>
+    {% endblock content %}

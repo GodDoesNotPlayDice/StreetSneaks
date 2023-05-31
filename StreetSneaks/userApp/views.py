@@ -5,12 +5,36 @@ from django.contrib.auth.models import User
 from userApp.models import Usuario
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+# from .models import Carro
+from sneakerApp.models import Zapatilla
 
 
 
 
 # Create your views here.
 #request -> response
+
+
+# @login_required
+# def agregar_al_carrito(request, producto_id):
+#     carro = get_object_or_404(Carro, user=request.user)
+#     producto = get_object_or_404(Zapatilla, id=producto_id)
+    
+#     carro.items.append(producto_id)
+#     carro.save()
+    
+#     return redirect('carro')
+
+# @login_required
+# def eliminar_del_carrito(request, producto_id):
+#     carro = get_object_or_404(Carro, user=request.user)
+    
+#     carro.items.remove(producto_id)
+#     carro.save()
+    
+#     return redirect('carro')
+
+
 def errors(request):
     return render(request, 'not_found.html')
 
@@ -19,6 +43,11 @@ def errors(request):
 def profile(request):
     ctx = {}
     return render(request, 'profile.html', ctx)
+
+@login_required
+def carro(request, username):
+    ctx = {'username': username}
+    return render(request, 'carro.html', ctx)
 
 
 def signup(request):

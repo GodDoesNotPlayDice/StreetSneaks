@@ -1,17 +1,32 @@
 {% load static %}
 <form method="POST" action="{% url 'createSneak' %}" enctype="multipart/form-data">
     {% csrf_token %}
-    <div class="md:flex p-5 md:items-center">
-        <div class="flex flex-col items-center md:w-2/4">
+    <div class="lg:flex p-5 lg:items-center">
+        <div class="flex flex-col items-center lg:w-2/4">
             <label class="block mb-2 text-lg font-medium text-gray-900" for="file_input">Imagen de la zapatilla</label>
-            <div class="border-gray-800 border-2 border-opacity-30 rounded-md w-9/12 my-5">
+            <div class="border-gray-800 border-2 border-opacity-30 rounded-md w-5/12 lg:w-9/12 my-5">
                 <img class="preview" src="{% static 'imgs/imgupload.png' %}" alt="">
+                <div class="flex justify-between">
+                    <img class="preview1 w-36" src="{% static 'imgs/imgupload.png' %}" alt="">
+                    <img class="preview2 w-36" src="{% static 'imgs/imgupload.png' %}" alt="">
+                </div>
             </div>
-            <input class="block w-full text-sm text-gray-400 border border-gray-300 rounded-lg cursor-pointer focus:outline-none" name="file_input" id="file_input" type="file">
+            <label for="file_input" class="w-full">
+                Imagen principal
+                <input class="block my-2 w-full text-sm text-gray-400 border border-gray-300 rounded-lg cursor-pointer focus:outline-none" name="file_input" id="file_input" type="file">
+            </label>
+            <label for="file_input1" class="w-full">
+                Imagen segundaria
+                <input class="block my-2 w-full text-sm text-gray-400 border border-gray-300 rounded-lg cursor-pointer focus:outline-none" name="file_input1" id="file_input1" type="file">
+            </label>
+            <label for="file_input2" class="w-full">
+                Imagen Tercera
+                <input class="block my-2 w-full text-sm text-gray-400 border border-gray-300 rounded-lg cursor-pointer focus:outline-none" name="file_input2" id="file_input2" type="file">
+            </label>
         </div>
-        <div class="md:w-full md:p-11">
+        <div class="lg:w-full lg:p-11">
             <div class="my-6">
-                <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Ingresa el nombre</label>
+                <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Ingresa el nombre</label> 
                 <input type="text" id="name" class="bg-gray-300 placeholder:text-gray-500 border border-gray-300 text-gray-950 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" name="name" placeholder="Nombre de la zapatilla">
             </div>
             <div class="my-6">
