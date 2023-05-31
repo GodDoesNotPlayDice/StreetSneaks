@@ -10,8 +10,11 @@ class Categoria(models.Model):
     nombre = models.CharField(max_length=50, verbose_name="Nombre")
 
 class Zapatilla(models.Model):
+    id_prod = models.CharField(max_length=50, verbose_name="ID", unique=True, null=True)
     name = models.CharField(max_length=50, verbose_name="Nombre")
     imagen = models.ImageField(verbose_name="Imagen", default="null", upload_to="zapatillas")
+    imagen_muestra = models.ImageField(verbose_name="Imagen muestra", default="null", blank=True, upload_to="imagen")
+    imagen_muestra_2 = models.ImageField(verbose_name="Imagen muestra", default="null", blank=True, upload_to="imagen")
     precio = models.IntegerField(default=0, verbose_name="Valor")
     disponible = models.BooleanField(default=False, verbose_name="Disponible")
     tallaEUR = models.ForeignKey(TallaEUR, on_delete=models.CASCADE, verbose_name="Talla EUR", null=True)
@@ -23,3 +26,6 @@ class Zapatilla(models.Model):
 
     def __str__(self) -> str:
         return self.name
+
+    def formatted_number(self):
+        return "{:,}".format(self.precio).replace(",", ".")

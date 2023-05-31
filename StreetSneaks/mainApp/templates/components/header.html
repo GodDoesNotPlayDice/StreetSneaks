@@ -45,8 +45,13 @@
             </nav>
           </div>
           <div class="header-center__shopping-car">
-            <a href="{% url 'login' %}" class="header-center__shopping-car__link">
+            {% if user.is_authenticated %}
+            <a href="{% url 'carro' username=user.username %}" class="header-center__shopping-car__link">
               <i class="fa-solid fa-cart-shopping"></i></a>
+              {% else %}
+              <a href="{% url 'login' %}" class="header-center__shopping-car__link">
+                <i class="fa-solid fa-cart-shopping"></i></a>
+            {% endif %}
           </div>
         </div>
       </header>

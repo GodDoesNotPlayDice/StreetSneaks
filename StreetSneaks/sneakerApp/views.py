@@ -1,10 +1,11 @@
 import os
 from django.conf import settings
-from django.shortcuts import redirect, render
+from django.shortcuts import get_object_or_404, redirect, render
 from .models import Categoria, TallaEUR
 from django.contrib.auth.decorators import login_required, user_passes_test
 # from django.core.files.storage import default_storage
 from .models import Zapatilla, TallaEUR, Categoria
+from .functions import id_prod
 
 # Create your views here.
 def novedades(request):
@@ -43,12 +44,16 @@ def createSneak(request):
         talla = request.POST['talla']
         precio = request.POST['precio']
         img = request.FILES['file_input']
-        print(name, categoria, talla, precio, img)
+        img1 = request.FILES['file_input1']
+        img2 = request.FILES['file_input2']
         categoria = Categoria.objects.get(id=categoria)
         talla = TallaEUR.objects.get(id=talla)
         nueva_zapatilla = Zapatilla(
+            id_prod=id_prod(),
             name=name,
             imagen=img,
+            imagen_muestra = img1,
+            imagen_muestra_2 = img2,
             precio=precio,
             disponible=True,
             tallaEUR=talla,
@@ -66,3 +71,8 @@ def deleteSneak(request,id):
     zapatilla.delete()
     del zapatilla
     return redirect('gestion-zapatillas')
+
+def sneak_details(request, nombre, sneak_id):
+    sneak = get_object_or_404(Zapatilla, id_prod=sneak_id)
+    ctx = {'sneak' : sneak}
+    return render(request, 'details.html', ctx)

@@ -3,17 +3,24 @@
 </div>
 <div class="">
     {% for zapatilla in zapatillas %}
-    <div class=" m-2 md:mx-16 md:m-5 flex items-center">
-        <div class="w-24 border-gray-500 border-2 border-opacity-30 rounded-md m-2">
-            <img src="{{zapatilla.imagen.url}}" alt="">
+    <div class="m-2 lg:mx-16 lg:m-5 lg:flex lg:items-center">
+        <div class="flex justify-center lg:justify-evenly lg:items-center lg:w-full lg:px-16 mx-3 lg:mx-0">
+            <div class="flex items-center justify-center lg:justify-normal lg:w-full">
+                <div class="w-24 border-gray-500 border-2 border-opacity-30 rounded-md m-2">
+                    <img src="{{zapatilla.imagen.url}}" alt="">
+                </div>
+                <div class='lg:flex lg:justify-between lg:items-center w-full'>
+                    <p class="my-2 lg:my-0 text-sm font-semibold text-gray-600">{{zapatilla.id_prod}}</p>
+                    <p class="my-2 lg:my-0 font-semibold text-gray-600">{{zapatilla.name}}</p>
+                    <p class="my-2 lg:my-0 font-semibold text-gray-600">${{zapatilla.precio}}</p>
+                    <p class="my-2 lg:my-0 font-semibold text-gray-600">{{zapatilla.tallaEUR.number}} {{zapatilla.tallaEUR.tipo}}</p>
+                    <div class="flex items-center"> 
+                        <p class="my-2 lg:my-0 font-semibold text-gray-600">{{zapatilla.categoria.nombre}}</p>
+                        <a href="{% url 'deleteSneak' id=zapatilla.id %}" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mx-10 lg:mx-10">Eliminar</a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="md:flex md:justify-evenly md:w-full md:px-16 mx-3 md:mx-0">
-            <p class="my-2 md:my-0 font-semibold text-gray-600">{{zapatilla.name}}</p>
-            <p class="my-2 md:my-0 font-semibold text-gray-600">${{zapatilla.precio}}</p>
-            <p class="my-2 md:my-0 font-semibold text-gray-600">{{zapatilla.tallaEUR.number}} {{zapatilla.tallaEUR.tipo}}</p>
-            <p class="my-2 md:my-0 font-semibold text-gray-600">{{zapatilla.categoria.nombre}}</p>
-        </div>
-        <a href="{% url 'deleteSneak' id=zapatilla.id %}" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 mx-10 md:mx-0">Eliminar</a>
     </div>
     {% endfor %}
 </div>

@@ -10,6 +10,8 @@ class Usuario(models.Model):
         verbose_name = "Usuario"
         verbose_name_plural = "Usuarios"
 
+
 # class Carro(models.Model):
 #     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    
+#     items = models.JSONField(verbose_name="Items en el carrito", default=list)
+ 

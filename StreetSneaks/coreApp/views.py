@@ -1,15 +1,19 @@
 from django.shortcuts import render
-from mainApp.views import ZAPATILLA
+from sneakerApp.models import Zapatilla
 # Create your views here.
 def work(request):
-    ctx = {'items': ZAPATILLA}
+    zapatillas = Zapatilla.objects.all()
+    ctx = {'items': zapatillas}
     return render(request, 'trabaja.html', ctx)
 def tos(request):
-    ctx = {'items': ZAPATILLA}
+    zapatillas = Zapatilla.objects.all()
+    ctx = {'items': zapatillas}
     return render(request, 'tos.html', ctx)
 def faq(request):
-    ctx = {'items': ZAPATILLA}
+    zapatillas = Zapatilla.objects.all()
+    ctx = {'items': zapatillas}
     return render(request, 'question.html', ctx)
 def priv(request):
-    ctx = {'items': ZAPATILLA}
+    zapatillas = Zapatilla.objects.all()
+    ctx = {'items': zapatillas}
     return render(request, 'privacidad.html', ctx)

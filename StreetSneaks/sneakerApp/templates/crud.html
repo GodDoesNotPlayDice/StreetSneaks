@@ -8,6 +8,21 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
 {% endblock boostrap %}
 {% block content %}
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          backgroundColor: {
+            's-blue': '#4355ce',
+            's-red': '#e13838',
+            's-black': '#1f1b1a',
+          }
+        }
+      }
+    }
+  </script>
+  
+  
     {% include 'components/up.html' %}
     {% include 'components/delete.html' %}
 {% endblock content %}
