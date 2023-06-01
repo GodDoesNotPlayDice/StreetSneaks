@@ -17,7 +17,8 @@ Including another URLconf
 from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
-from userApp.views import profile, errors, carro
+from userApp.views import profile, carro
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,9 +28,6 @@ urlpatterns = [
     path('auth/', include('userApp.urls')),
     path('profile', profile, name='profile'),
     path('profile/<str:username>/carro', carro, name="carro"),
-    path('404', errors, name='404'),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-if settings.DEBUG:
-    from django.conf.urls.static import static
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+handler404 = 'mainApp.views.custom_404'

@@ -7,7 +7,6 @@
   {% endblock add_styles %}
   {% block content %}
   <section>
-    <h2 class="disable">title-seo</h2>
     <div class="sneak">
       <div class="sneak__card">
         <div class="sneaks__card__img">
@@ -22,8 +21,8 @@
             <p>{{sneak.name}}</p>
           </div>
           <div class="sneaks__card__details__desc">
-            <p>Calzado Hombre</p>
-            <p>Talla 36</p>
+            <p>Calzado {{sneak.categoria.nombre}}</p>
+            <p>Talla {{sneak.tallaEUR.number}}</p>
             <p>Stock: 5</p>
             <p><span class="price">$ {{sneak.precio|intword}} CLP</span></p>
             <button type="button" class="btn btn-blue">Añadir al carro</button>
@@ -38,5 +37,9 @@
             src="{{sneak.imagen_muestra_2.url}}" alt="Air-Force-1-Low-Retro-Above">
         </div>
     </div>
+  </section>
+  <section>
+    <h3 class="text-center">Tabla con Tallas en EU, US y CM</h3>
+    {% include 'components/tabla.html' %}
   </section>
     {% endblock content %}

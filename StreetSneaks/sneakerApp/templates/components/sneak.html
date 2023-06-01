@@ -8,10 +8,10 @@
     <div class="sneaks__card__details">
       <div class="sneaks__card__details__name-price">
         <p>{{zapatilla.name}}</p>
-        <p>Precio: ${{zapatilla.precio|intword}}</p>
+        <p>${{zapatilla.precio|intword}}</p>
       </div>
       <div class="sneaks__card__details__desc">
-        <p>Tipo: {{zapatilla.categoria.nombre}}</p>
+        <p>Categoria: {{zapatilla.categoria.nombre}}</p>
         <p>Talla: {{zapatilla.tallaEUR.number}} {{zapatilla.tallaEUR.tipo}}</p>
       </div>
     </div>

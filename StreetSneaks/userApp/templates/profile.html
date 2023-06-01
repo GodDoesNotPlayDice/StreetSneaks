@@ -26,7 +26,65 @@
         </div>
       </div>
     </div>
-  </section>
+    
+    <section>
+      <form action="{% url 'save_direccion' %}" method="POST">
+        {% csrf_token %}
+        <div class="container">
+          <div class="form-group">
+            <label for="direccion">
+              Direccion
+              <input type="text" name="direccion" class="form-control" id="direccion" placeholder="Ingresa tu dirección">
+            </label>
+          </div>
+          <div class="form-group my-2">
+            <label for="region">
+              <p>Selecciona una región</p>
+              <select name="region" id="region" class="form-select">
+                {% for region in regiones %}
+                <option value="{{region.id}}">{{region.region}}</option>
+                {% endfor %}
+              </select>
+            </label>
+          </div>
+          <div>
+            <button type="submit" class="btn w-25 btn-primary btn-block">Guardar</button>
+          </div>
+        </div>
+      </form>
+    </section>
+    
+    <section>
+      <div class="container">
+        <h3 class="text-center">Tus Direcciones</h3>
+      <div class="d-flex justify-content-center">
+        <div class="w-100 p-2">
+          <div class="table-responsive">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Dirección</th>
+                  <th scope="col">Región</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for direccion in direcciones %}
+                <tr>
+                  <th scope="row">{{ forloop.counter }}</th>
+                  <td>{{ direccion.direccion }}</td>
+                  <td>{{ direccion.region.region }}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+    
+    
   {% if user.is_staff == 1 %}
   <h2>Ventas</h2>
       <div class="product-sale" id="sales">
@@ -44,40 +102,6 @@
             </div>
             <div class="order-card__time">
               <p class="order-card__time__text"><span class="status--red">En Vendido</span></p>
-            </div>
-          </div>
-        </div>
-        <div class="order-card">
-          <div class="order-card__content">
-            <div class="order-card__img-container">
-              <img src="../../src/imgs/sneaks/Jose-Fuentes/Air-Force-1-Low-Retro/Air-Force-1-Low-Retro.webp" alt=""
-                class="order-card__img">
-            </div>
-            <div class="order-card__details">
-              <p class="order-card__texts">Air Force 1 Low Retro</p>
-              <p class="order-card__texts">Talla 36 EUR</p>
-              <p class="order-card__texts">$36.000 CLP</p>
-              <p class="order-card__texts">ID: #15636</p>
-            </div>
-            <div class="order-card__time">
-              <p class="order-card__time__text"><span class="status--green">En venta</span></p>
-            </div>
-          </div>
-        </div>
-        <div class="order-card">
-          <div class="order-card__content">
-            <div class="order-card__img-container">
-              <img src="../../src/imgs/sneaks/Jose-Fuentes/Air-Force-1-Low-Retro/Air-Force-1-Low-Retro.webp" alt=""
-                class="order-card__img">
-            </div>
-            <div class="order-card__details">
-              <p class="order-card__texts">Air Force 1 Low Retro</p>
-              <p class="order-card__texts">Talla 36 EUR</p>
-              <p class="order-card__texts">$36.000 CLP</p>
-              <p class="order-card__texts">ID: #15636</p>
-            </div>
-            <div class="order-card__time">
-              <p class="order-card__time__text"><span class="status--green">En venta</span></p>
             </div>
           </div>
         </div>
@@ -105,44 +129,6 @@
           </div>
           <div class="order-card__time">
             <p class="order-card__time__text"><span class="status--red">Entregado</span></p>
-            <a href="pedido.html" target="_blank" class="order-card__link">Pedidos</a>
-          </div>
-        </div>
-      </div>
-      <div class="order-card">
-        <div class="order-card__content">
-          <div class="order-card__img-container">
-            <img src="../../src/imgs/sneaks/Jose-Fuentes/Air-Force-1-Low-Retro/Air-Force-1-Low-Retro.webp" alt=""
-              class="order-card__img">
-          </div>
-          <div class="order-card__details">
-            <p class="order-card__texts">Air Force 1 Low Retro</p>
-            <p class="order-card__texts">Talla 36 EUR</p>
-            <p class="order-card__texts">$36.000 CLP</p>
-            <p class="order-card__texts">Nro-Orden: #123455678</p>
-            <p class="order-card__texts">Compra: 31/03/2023</p>
-          </div>
-          <div class="order-card__time">
-            <p class="order-card__time__text"><span class="status--green">En Entrega</span></p>
-            <a href="pedido.html" target="_blank" class="order-card__link">Pedidos</a>
-          </div>
-        </div>
-      </div>
-      <div class="order-card">
-        <div class="order-card__content">
-          <div class="order-card__img-container">
-            <img src="../../src/imgs/sneaks/Jose-Fuentes/Air-Force-1-Low-Retro/Air-Force-1-Low-Retro.webp" alt=""
-              class="order-card__img">
-          </div>
-          <div class="order-card__details">
-            <p class="order-card__texts">Air Force 1 Low Retro</p>
-            <p class="order-card__texts">Talla 36 EUR</p>
-            <p class="order-card__texts">$36.000 CLP</p>
-            <p class="order-card__texts">Nro-Orden: #123455678</p>
-            <p class="order-card__texts">Compra: 31/03/2023</p>
-          </div>
-          <div class="order-card__time">
-            <p class="order-card__time__text"><span class="status--green">En Entrega</span></p>
             <a href="pedido.html" target="_blank" class="order-card__link">Pedidos</a>
           </div>
         </div>
