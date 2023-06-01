@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-&m)3%a_-d-++hkv!a$0jknh0wl#o=ufjo7w(1zxkd&47nzjbbu
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 import mimetypes

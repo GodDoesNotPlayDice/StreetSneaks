@@ -2,7 +2,7 @@ from django.shortcuts import redirect, render, get_object_or_404
 from django.db import IntegrityError
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.models import User
-from userApp.models import Usuario
+from userApp.models import Usuario, Direccion, Region
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 # from .models import Carro
@@ -35,13 +35,20 @@ from sneakerApp.models import Zapatilla
 #     return redirect('carro')
 
 
-def errors(request):
-    return render(request, 'not_found.html')
 
+@login_required
+def save_direccion(request):
+    if request.method == 'POST':
+        region = request.POST['region']
+        region = Region.objects.get(id=region)
+        Direccion(region=region, user=request.user, direccion=request.POST['direccion']).save()
+        return redirect('profile')
 
 @login_required
 def profile(request):
-    ctx = {}
+    regiones = Region.objects.all()
+    direcciones = Direccion.objects.all()
+    ctx = {'regiones': regiones, 'title': request.user.username, 'direcciones': direcciones}
     return render(request, 'profile.html', ctx)
 
 @login_required

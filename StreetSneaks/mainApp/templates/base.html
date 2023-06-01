@@ -20,7 +20,9 @@
   {% endblock add_styles %}
   <link rel="stylesheet" href="{% static 'css/mediaquerys.css' %}">
   <link rel="icon" type="image/x-icon" href="{% static 'imgs/logo.png' %}">
-  <title>Street Sneaks</title>
+  {% block title %}
+  <title>{{title}}</title>
+  {% endblock title %}
 </head>
 <body>
   {% block header %}
