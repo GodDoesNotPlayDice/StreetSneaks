@@ -57,31 +57,31 @@
     <section>
       <div class="container">
         <h3 class="text-center">Tus Direcciones</h3>
-      <div class="d-flex justify-content-center">
-        <div class="w-100 p-2">
-          <div class="table-responsive">
-            <table class="table table-bordered">
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Dirección</th>
-                  <th scope="col">Región</th>
-                </tr>
-              </thead>
-              <tbody>
-                {% for direccion in direcciones %}
-                <tr>
-                  <th scope="row">{{ forloop.counter }}</th>
-                  <td>{{ direccion.direccion }}</td>
-                  <td>{{ direccion.region.region }}</td>
-                </tr>
-                {% endfor %}
-              </tbody>
-            </table>
+        <div class="d-flex justify-content-center">
+          <div class="w-100 p-2">
+            <div class="table-responsive">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Dirección</th>
+                    <th scope="col">Región</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for direccion in direcciones %}
+                      <tr>
+                        <th scope="row">{{ forloop.counter }}</th>
+                        <td>{{ direccion.direccion }}</td>
+                        <td>{{ direccion.region.region }}</td>
+                      </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
-    </div>
     </section>
     
     

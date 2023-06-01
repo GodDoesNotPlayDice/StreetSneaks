@@ -28,6 +28,7 @@ urlpatterns = [
     path('auth/', include('userApp.urls')),
     path('profile', profile, name='profile'),
     path('profile/<str:username>/carro', carro, name="carro"),
+    path('venta/', include('ventaApp.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = 'mainApp.views.custom_404'

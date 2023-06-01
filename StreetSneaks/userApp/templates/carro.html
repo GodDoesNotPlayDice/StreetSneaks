@@ -10,54 +10,34 @@
         <div class="cart-container">
             <div class="cart-wrap">
                 <div class="cart-sneaks-container">
+                    {% for zapatilla in carro %}
                     <div class="cart-card">
                         <div class="cart-card__img-contain">
-                            <img class="cart-card__img"
-                                src="../src/imgs/sneaks/Example/Air-Force-1-Low-Retro/Air-Force-1-Low-Retro.png"
-                                alt="Low Retro">
-                        </div>
-                        <div class="cart-card__details">
-                            <div class="cart-card__texts">
-                                <p class="cart-card__details__text weight-600">Air Force 1 Low Retro Orange</p>
-                                <p class="cart-card__details__text">Talla: 36 EUR</p>
-                                <p class="cart-card__details__text">Stock: 5</p>
-                                <p class="cart-card__details__text">Precio: <span class="weight-600">$36.000 CLP</span>
-                                </p>
-                            </div>
-                            <div class="count-prod">
-                                <button class="sum btn btn-red">-</button>
-                                <p id="count-number" class="count-prod__number">1</p>
-                                <button class="less btn btn-red">+</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cart-card">
-                        <div class="cart-card__img-contain">
-                            <img class="cart-card__img" src="../src/imgs/sneaks/AirJordan4Grey.png" alt="Low Retro">
+                            <img class="cart-card__img" src="{{zapatilla.items.imagen.url}}" alt="Low Retro">
                         </div>
                         <div class="cart-card__details">
                             <div class="cart-card__texts">
                                 <p class="cart-card__details__text weight-600">Gray Air Jordan 4</p>
-                                <p class="cart-card__details__text">Talla: 40 EUR</p>
-                                <p class="cart-card__details__text">Stock: 2</p>
+                                <p class="cart-card__details__text">Talla: {{zapatilla.items.tallaEUR.number}}</p>
+                                {% if zapatilla.items.disponible %}
+                                <p class="cart-card__details__text">Stock: Hay Stock</p>
+                                {% else %}
+                                <p class="cart-card__details__text">Stock: No hay Stock</p>
+                                {% endif %}
                                 <p class="cart-card__details__text"></p>
-                                <p class="cart-card__details__text">Precio: <span class="weight-600">$80.000 CLP</span>
+                                <p class="cart-card__details__text">Precio: <span class="weight-600">${{zapatilla.items.precio}} CLP</span>
                                 </p>
-                            </div>
-                            <div class="count-prod">
-                                <button type="submit" class="sum btn btn-red">-</button>
-                                <p class="count-prod__number">1</p>
-                                <button type="submit" class="less btn btn-red">+</button>
                             </div>
                         </div>
                     </div>
+                    {% endfor %}
                 </div>
                 <div class="cart-prebuy">
                     <div class="cart-resume">
                         <h3 class="cart-resume__title">Resumen del pedido</h3>
                         <div class="cart-resume__details">
-                            <p class="cart-resuem__text">Total de Productos: 2</p>
-                            <p class="cart-resuem__text">Total: <span class="weight-600">$72.000</span></p>
+                            <p class="cart-resuem__text">Total de Productos: {{total_prods}}</p>
+                            <p class="cart-resuem__text">Total: <span class="weight-600">${{total_precio}}</span></p>
                             <form>
                                 <div class="form-group">
                                     <label for="name"></label>
@@ -66,14 +46,6 @@
                                 <div class="form-group">
                                     <label for="direccion">Direccion</label>
                                     <input type="text" class="form-control" id="direccion" placeholder="Ciudad">
-                                </div>
-                                <div class="form-group">
-                                    <label for="direccion">Comuna</label>
-                                    <input type="text" class="form-control" id="direccion" placeholder="Comuna">
-                                </div>
-                                <div class="form-group">
-                                    <label for="direccion">Calle y Numero de depto o casa</label>
-                                    <input type="text" class="form-control" id="direccion" placeholder="Calle,Vivienda">
                                 </div>
                             </form>
                         </div>

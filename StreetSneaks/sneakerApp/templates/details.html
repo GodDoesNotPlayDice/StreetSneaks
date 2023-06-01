@@ -23,9 +23,13 @@
           <div class="sneaks__card__details__desc">
             <p>Calzado {{sneak.categoria.nombre}}</p>
             <p>Talla {{sneak.tallaEUR.number}}</p>
-            <p>Stock: 5</p>
+            {% if sneak.disponible %}
+              <p>Hay stock disponible</p>
+              {% else %}
+              <p>No hay stock de este producto</p>
+              {% endif %}
             <p><span class="price">$ {{sneak.precio|intword}} CLP</span></p>
-            <button type="button" class="btn btn-blue">Añadir al carro</button>
+            <a href="{% url 'agregar_carro' id_prod=sneak.id %}" class="btn m-2 btn-blue">Añadir al carro</a>
           </div>
         </div>
       </div>

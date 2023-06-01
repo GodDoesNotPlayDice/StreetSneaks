@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'mainApp',
     'coreApp',
     'sneakerApp',
-    'userApp'
+    'userApp',
+    'ventaApp'
 ]
 
 MIDDLEWARE = [

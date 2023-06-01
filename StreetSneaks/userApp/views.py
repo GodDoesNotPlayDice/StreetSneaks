@@ -2,6 +2,7 @@ from django.shortcuts import redirect, render, get_object_or_404
 from django.db import IntegrityError
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.models import User
+from userApp.models import Carro
 from userApp.models import Usuario, Direccion, Region
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -47,13 +48,19 @@ def save_direccion(request):
 @login_required
 def profile(request):
     regiones = Region.objects.all()
-    direcciones = Direccion.objects.all()
+    direcciones = Direccion.objects.filter(user=request.user)  # Filtrar por el usuario actual
     ctx = {'regiones': regiones, 'title': request.user.username, 'direcciones': direcciones}
     return render(request, 'profile.html', ctx)
 
 @login_required
 def carro(request, username):
-    ctx = {'username': username}
+    prods = 0
+    total_precio = 0
+    carro = Carro.objects.filter(user=request.user)
+    for i in carro:
+       total_precio += i.items.precio
+       prods+=1
+    ctx = {'username': username, 'carro': carro, 'total_prods':prods, 'total_precio': total_precio}
     return render(request, 'carro.html', ctx)
 
 
