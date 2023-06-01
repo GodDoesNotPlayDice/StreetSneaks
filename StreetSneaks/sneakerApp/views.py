@@ -1,28 +1,28 @@
 import os
 from django.conf import settings
 from django.shortcuts import get_object_or_404, redirect, render
-from .models import Categoria, TallaEUR
 from django.contrib.auth.decorators import login_required, user_passes_test
 # from django.core.files.storage import default_storage
 from .models import Zapatilla, TallaEUR, Categoria
 from .functions import id_prod
 
 # Create your views here.
+def items():
+    
+    return Zapatilla.objects.all()    
 def novedades(request):
-    ctx = {'title': 'Novedades' }
+    ctx = {'title': 'Novedades','zapatillas': items()} 
     return render(request, 'sneaks.html', ctx)
 def hombre(request):
-    ctx = {'title': 'Hombre'}
+    ctx = {'title': 'Hombre','zapatillas': items()}
     return render(request, 'sneaks.html', ctx)
 def nino(request):
-    ctx = {'title': 'Niño'}
+    ctx = {'title': 'Niño','zapatillas': items()}
     return render(request, 'sneaks.html', ctx)
 def mujer(request):
-    ctx = {'title': 'Mujer'}
+    ctx = {'title': 'Mujer','zapatillas': items()}
     return render(request, 'sneaks.html', ctx)
-def deportivo(request):
-    ctx = {'title': 'Deportivo'}
-    return render(request, 'sneaks.html', ctx)
+
 
 
 
@@ -76,3 +76,13 @@ def sneak_details(request, nombre, sneak_id):
     sneak = get_object_or_404(Zapatilla, id_prod=sneak_id)
     ctx = {'sneak' : sneak}
     return render(request, 'details.html', ctx)
+
+def filtrar_productos(request):
+    filtro = request.GET.get('Categoria')  # Obtén la categoría seleccionada desde la solicitud GET
+
+    productos_filtrados = sneaks.objects.all()  # Obtén todos los productos
+
+    if filtro:
+        productos_filtrados = productos_filtrados.filter(categoria=filtro)  # Filtra por categoría
+
+    return render(request, 'index.html', {'productos': productos_filtrados})

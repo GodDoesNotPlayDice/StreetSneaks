@@ -1,5 +1,4 @@
 from django.db import models
-
 # Create your models here.
 
 class TallaEUR(models.Model):
@@ -29,3 +28,4 @@ class Zapatilla(models.Model):
 
     def formatted_number(self):
         return "{:,}".format(self.precio).replace(",", ".")
+    

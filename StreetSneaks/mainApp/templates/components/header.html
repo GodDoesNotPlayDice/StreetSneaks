@@ -76,9 +76,6 @@
               <a class="header-center__menu__item__link" href="{% url 'niño' %}">Niño</a>
             </li>
             <li class="header-center__menu__item">
-              <a class="header-center__menu__item__link" href="{% url 'deportivo' %}">Deportivo</a>
-            </li>
-            <li class="header-center__menu__item">
               {% if not user.is_authenticated %}
               <a class="header-center__menu__item__link disable" href="{% url 'login' %}"><i class="fa-solid fa-user"></i> Mi cuenta</a>
               {% else %}
