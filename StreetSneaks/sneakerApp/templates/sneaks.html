@@ -4,10 +4,18 @@
 <main>
    <section>
       <h2 id="title" class="main__h2">{{title}}</h2>
-      <div class="sneaks" id="sneaks"></div>
+      <div class="sneaks" id="sneaks">
+        {% for zapatilla in zapatillas %}
+        {% if title == zapatilla.categoria.nombre %}
+        {% include 'components/sneak.html' %}
+        {% endif %}
+        
+        {% endfor %}
+      </div>
    </section>
 </main>
     {% block scripts %}
       <script src="{% static 'js/sneaks.js' %}"></script>
     {% endblock scripts %}  
+
 {% endblock content %}
