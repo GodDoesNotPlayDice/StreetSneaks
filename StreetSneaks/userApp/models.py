@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from sneakerApp.models import Zapatilla
 # Create your models here.
 
 class Usuario(models.Model):
@@ -23,9 +24,9 @@ class Direccion(models.Model):
         verbose_name_plural = "Direcciones"
 
 
-    
+class Carro(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    items = models.ForeignKey(Zapatilla, on_delete=models.CASCADE)
 
-# class Carro(models.Model):
-#     user = models.ForeignKey(User, on_delete=models.CASCADE)
-#     items = models.JSONField(verbose_name="Items en el carrito", default=list)
+
  

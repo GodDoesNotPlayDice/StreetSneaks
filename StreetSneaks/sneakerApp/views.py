@@ -76,13 +76,3 @@ def sneak_details(request, nombre, sneak_id):
     sneak = get_object_or_404(Zapatilla, id_prod=sneak_id)
     ctx = {'sneak' : sneak}
     return render(request, 'details.html', ctx)
-
-def filtrar_productos(request):
-    filtro = request.GET.get('Categoria')  # Obtén la categoría seleccionada desde la solicitud GET
-
-    productos_filtrados = sneaks.objects.all()  # Obtén todos los productos
-
-    if filtro:
-        productos_filtrados = productos_filtrados.filter(categoria=filtro)  # Filtra por categoría
-
-    return render(request, 'index.html', {'productos': productos_filtrados})
