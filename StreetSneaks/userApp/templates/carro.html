@@ -1,5 +1,6 @@
     {% extends 'base.html' %}
     {% load static %}
+    {% load filters %}
     {% block add_styles %}
     <link rel="stylesheet" href="{% static '/css/css-views/pre-buy.css' %}">
     <link rel="stylesheet" href="{% static '/css/mediaquerys.css' %}">
@@ -17,7 +18,7 @@
                         </div>
                         <div class="cart-card__details">
                             <div class="cart-card__texts">
-                                <p class="cart-card__details__text weight-600">Gray Air Jordan 4</p>
+                                <p class="cart-card__details__text weight-600">{{zapatilla.items.name}}</p>
                                 <p class="cart-card__details__text">Talla: {{zapatilla.items.tallaEUR.number}}</p>
                                 {% if zapatilla.items.disponible %}
                                 <p class="cart-card__details__text">Stock: Hay Stock</p>
@@ -25,7 +26,7 @@
                                 <p class="cart-card__details__text">Stock: No hay Stock</p>
                                 {% endif %}
                                 <p class="cart-card__details__text"></p>
-                                <p class="cart-card__details__text">Precio: <span class="weight-600">${{zapatilla.items.precio}} CLP</span>
+                                <p class="cart-card__details__text">Precio: <span class="weight-600">${{zapatilla.items.precio|precio}} CLP</span>
                                 </p>
                             </div>
                         </div>
@@ -37,15 +38,19 @@
                         <h3 class="cart-resume__title">Resumen del pedido</h3>
                         <div class="cart-resume__details">
                             <p class="cart-resuem__text">Total de Productos: {{total_prods}}</p>
-                            <p class="cart-resuem__text">Total: <span class="weight-600">${{total_precio}}</span></p>
+                            <p class="cart-resuem__text">Total: <span class="weight-600">${{total_precio|precio}} CLP</span></p>
                             <form>
                                 <div class="form-group">
                                     <label for="name"></label>
                                     <input type="text" class="form-control" id="name" placeholder="Cupon de descuento">
                                 </div>
                                 <div class="form-group">
-                                    <label for="direccion">Direccion</label>
-                                    <input type="text" class="form-control" id="direccion" placeholder="Ciudad">
+                                    <label for="direccion">Tus Direccion</label>
+                                        <select class="form-control">
+                                        {% for direccion in direcciones %}
+                                            <option>{{direccion.direccion}} | {{direccion.region.region}}</option>
+                                            {% endfor %}
+                                    </select>
                                 </div>
                             </form>
                         </div>

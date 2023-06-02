@@ -1,3 +1,4 @@
+{% load filters %}
 <div class="flex justify-center my-5">
     <div class="bg-red-600 p-1 w-4/5"></div>
 </div>
@@ -12,7 +13,7 @@
                 <div class='lg:flex lg:justify-between lg:items-center w-full'>
                     <p class="my-2 lg:my-0 text-sm font-semibold text-gray-600">{{zapatilla.id_prod}}</p>
                     <p class="my-2 lg:my-0 font-semibold text-gray-600">{{zapatilla.name}}</p>
-                    <p class="my-2 lg:my-0 font-semibold text-gray-600">${{zapatilla.precio}}</p>
+                    <p class="my-2 lg:my-0 font-semibold text-gray-600">${{zapatilla.precio|precio}}</p>
                     <p class="my-2 lg:my-0 font-semibold text-gray-600">{{zapatilla.tallaEUR.number}} {{zapatilla.tallaEUR.tipo}}</p>
                     <div class="flex items-center"> 
                         <p class="my-2 lg:my-0 font-semibold text-gray-600">{{zapatilla.categoria.nombre}}</p>

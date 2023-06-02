@@ -1,4 +1,4 @@
-{% load humanize %}
+{% load filters %}
 <div class="sneaks__card zoom">
     <div class="sneaks__card__img">
       <a class="sneaks__card__img__link" href="{% url 'sneak_details' nombre=zapatilla.name sneak_id=zapatilla.id_prod %}">
@@ -8,7 +8,7 @@
     <div class="sneaks__card__details">
       <div class="sneaks__card__details__name-price">
         <p>{{zapatilla.name}}</p>
-        <p>${{zapatilla.precio|intword}}</p>
+        <p>${{zapatilla.precio|precio}}</p>
       </div>
       <div class="sneaks__card__details__desc">
         <p>Categoria: {{zapatilla.categoria.nombre}}</p>

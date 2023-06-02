@@ -25,7 +25,4 @@ class Zapatilla(models.Model):
 
     def __str__(self) -> str:
         return self.name
-
-    def formatted_number(self):
-        return "{:,}".format(self.precio).replace(",", ".")
     
