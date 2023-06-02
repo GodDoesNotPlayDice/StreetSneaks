@@ -48,7 +48,7 @@ def save_direccion(request):
 @login_required
 def profile(request):
     regiones = Region.objects.all()
-    direcciones = Direccion.objects.filter(user=request.user)  # Filtrar por el usuario actual
+    direcciones = Direccion.objects.filter(user=request.user)
     ctx = {'regiones': regiones, 'title': request.user.username, 'direcciones': direcciones}
     return render(request, 'profile.html', ctx)
 
@@ -57,10 +57,11 @@ def carro(request, username):
     prods = 0
     total_precio = 0
     carro = Carro.objects.filter(user=request.user)
+    direcciones =  Direccion.objects.filter(user=request.user)
     for i in carro:
        total_precio += i.items.precio
        prods+=1
-    ctx = {'username': username, 'carro': carro, 'total_prods':prods, 'total_precio': total_precio}
+    ctx = {'username': username, 'carro': carro, 'total_prods':prods, 'total_precio': total_precio, 'direcciones' : direcciones}
     return render(request, 'carro.html', ctx)
 
 
