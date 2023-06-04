@@ -97,4 +97,9 @@ h4{
 }
 
 
-
+@media screen and (max-width: 600px){
+    .cart-card__img-contain{
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
