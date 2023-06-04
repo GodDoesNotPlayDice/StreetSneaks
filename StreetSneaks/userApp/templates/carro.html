@@ -28,8 +28,10 @@
                                 <p class="cart-card__details__text"></p>
                                 <p class="cart-card__details__text">Precio: <span class="weight-600">${{zapatilla.items.precio|precio}} CLP</span>
                                 </p>
+                                <a href="{% url 'eliminar_carro' carro_id=zapatilla.id %}" class="text-danger">eliminar del carrito</a>
                             </div>
                         </div>
+
                     </div>
                     {% endfor %}
                 </div>
@@ -38,13 +40,14 @@
                         <h3 class="cart-resume__title">Resumen del pedido</h3>
                         <div class="cart-resume__details">
                             <p class="cart-resuem__text">Total de Productos: {{total_prods}}</p>
-                            <p class="cart-resuem__text">Total: <span class="weight-600">${{total_precio|precio}} CLP</span></p>
+                            <p class="cart-resuem__text">Total: <span class="weight-600"><span id="total-text">${{total_precio|precio}}</span> CLP <span id="cupon-text"></span></span></p>
                             <form>
+                            {% csrf_token %}
                                 <div class="form-group">
-                                    <label for="name"></label>
+                                    <label for="name">Cupon</label>
                                     <input type="text" class="form-control" id="name" placeholder="Cupon de descuento">
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group my-3">
                                     <label for="direccion">Tus Direccion</label>
                                         <select class="form-control">
                                         {% for direccion in direcciones %}
@@ -56,10 +59,13 @@
                         </div>
                     </div>
                     <div class="button-pay">
-                        <button type="button" class="btn btn-pagar btn-blue">Ir a pagar</button>
+                        <button type="submit" class="btn btn-pagar btn-blue">Ir a pagar</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     {% endblock content %}
+    {% block scripts %}
+    <script src="{% static 'js/cupon.js' %}"></script>
+    {% endblock scripts %}

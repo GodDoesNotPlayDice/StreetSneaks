@@ -1,0 +1,23 @@
+<div class="">
+    <h3 class="text-center text-2xl font-semibold lg:text-3xl">Gestion de Cupones</h3>
+     <div class="px-8 m-3">
+      <form action="{% url 'agregar_cupon' %}" method="POST">
+        {% csrf_token %}
+        <label for="nombre" class="block mb-2 text-xl font-medium text-gray-900">Cupon</label>
+            <input name="nombre" type="text" id="cupon_nombre" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Nombre cupon" required>
+
+        <label for="valor" class="block mb-2 text-xl font-medium text-gray-900">Valor del cupon</label>
+            <input name="valor" type="number" id="cupon_valor" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Valor porcentual ejemplo: 30%" required>
+            <button type="submit" class="focus:outline-none my-4 text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Guardar</button>
+      </form>
+      <h3 class="text-2xl">Cupones activos</h3>
+      {% for cupon in cupones %}
+        <div class="flex bg-black bg-opacity-10 rounded-xl p-3 my-1 justify-between">
+          <p class="">
+            <span class="font-semibold">Nombre:</span> {{cupon.name}} <span class="font-semibold">Valor:</span> {{cupon.valor}}%
+          </p>
+          <a class="text-red-600 mx-2" href="{% url 'eliminar_cupon' id_cupon=cupon.id %}">Eliminar cupon</a>
+        </div>
+      {% endfor %}
+     </div>
+  </div>

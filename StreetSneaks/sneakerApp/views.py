@@ -4,6 +4,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth.decorators import login_required, user_passes_test
 # from django.core.files.storage import default_storage
 from .models import Zapatilla, TallaEUR, Categoria
+from ventaApp.models import Cupon
 from .functions import id_prod
 
 # Create your views here.
@@ -32,7 +33,8 @@ def sneaks(request):
     categoria = Categoria.objects.all()
     talla = TallaEUR.objects.all()
     items = Zapatilla.objects.all()
-    ctx = {'categorias' : categoria, 'tallas': talla, 'zapatillas': items}
+    cupones = Cupon.objects.all()
+    ctx = {'categorias' : categoria, 'tallas': talla, 'zapatillas': items, 'cupones': cupones}
     return render(request, 'crud.html',ctx)
 
 @login_required

@@ -203,7 +203,7 @@
     padding: 0;
   }
   .cart-card{
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
     padding: 0;
   }
@@ -215,7 +215,7 @@
     border-style: none;
   }
   .cart-card__details{
-    padding: 0;
+    padding: 0 2rem;
   }
   .cart-card__details__text{
     font-size: 12px;
