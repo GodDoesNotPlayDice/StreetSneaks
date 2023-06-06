@@ -59,5 +59,10 @@ def validar_cupon(request):
             return JsonResponse(context, status=404)
         
 @login_required
-def pagar(request):
-    pass
+def pagar(request, carro_id):
+    if request.method == 'POST':
+        carro = Carro.objects.get(pk=carro_id)
+        ctx = {}
+        print(request.POST['valor'])
+        
+        return render(request, 'pago.html', ctx)

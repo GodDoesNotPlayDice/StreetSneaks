@@ -11,6 +11,7 @@
         <div class="cart-container">
             <div class="cart-wrap">
                 <div class="cart-sneaks-container">
+                    {{carro}}
                     {% for zapatilla in carro %}
                     <div class="cart-card">
                         <div class="cart-card__img-contain">
@@ -31,7 +32,6 @@
                                 <a href="{% url 'eliminar_carro' carro_id=zapatilla.id %}" class="text-danger">eliminar del carrito</a>
                             </div>
                         </div>
-
                     </div>
                     {% endfor %}
                 </div>
@@ -39,9 +39,9 @@
                     <div class="cart-resume">
                         <h3 class="cart-resume__title">Resumen del pedido</h3>
                         <div class="cart-resume__details">
-                            <p class="cart-resuem__text">Total de Productos: {{total_prods}}</p>
-                            <p class="cart-resuem__text">Total: <span class="weight-600"><span id="total-text">${{total_precio|precio}}</span> CLP <span id="cupon-text"></span></span></p>
-                            <form>
+                            <p name="total" class="cart-resuem__text">Total de Productos: {{total_prods}}</p>
+                            <p name="valor" class="cart-resuem__text">Total: <span class="weight-600"><span id="total-text">${{total_precio|precio}}</span> CLP <span id="cupon-text"></span></span></p>
+                            <form  method='POST' action="">
                             {% csrf_token %}
                                 <div class="form-group">
                                     <label for="name">Cupon</label>
@@ -49,17 +49,17 @@
                                 </div>
                                 <div class="form-group my-3">
                                     <label for="direccion">Tus Direccion</label>
-                                        <select class="form-control">
+                                        <select name="direccion" class="form-control">
                                         {% for direccion in direcciones %}
                                             <option>{{direccion.direccion}} | {{direccion.region.region}}</option>
                                             {% endfor %}
                                     </select>
                                 </div>
-                            </form>
+                            </div>
                         </div>
-                    </div>
-                    <div class="button-pay">
-                        <button type="submit" class="btn btn-pagar btn-blue">Ir a pagar</button>
+                        <div class="button-pay">
+                            <button type="submit" class="btn btn-pagar btn-blue">Ir a pagar</button>
+                        </form>
                     </div>
                 </div>
             </div>

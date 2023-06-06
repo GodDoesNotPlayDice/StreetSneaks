@@ -57,6 +57,7 @@ def carro(request, username):
     prods = 0
     total_precio = 0
     carro = Carro.objects.filter(user=request.user)
+    # mandar productos
     direcciones =  Direccion.objects.filter(user=request.user)
     for i in carro:
        total_precio += i.items.precio
