@@ -4,7 +4,7 @@ from sneakerApp.models import Zapatilla
 
 def index(request):
     zapatillas = Zapatilla.objects.all()
-    ctx = {'items': zapatillas}
+    ctx = {'items': zapatillas, 'title':"Inicio"}
     return render(request, 'index.html', ctx)
 
 

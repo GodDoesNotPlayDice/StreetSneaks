@@ -34,7 +34,7 @@ def sneaks(request):
     talla = TallaEUR.objects.all()
     items = Zapatilla.objects.all()
     cupones = Cupon.objects.all()
-    ctx = {'categorias' : categoria, 'tallas': talla, 'zapatillas': items, 'cupones': cupones}
+    ctx = {'categorias' : categoria, 'tallas': talla, 'zapatillas': items, 'cupones': cupones, 'title': 'ADMIN'}
     return render(request, 'crud.html',ctx)
 
 @login_required
@@ -76,5 +76,5 @@ def deleteSneak(request,id):
 
 def sneak_details(request, nombre, sneak_id):
     sneak = get_object_or_404(Zapatilla, id_prod=sneak_id)
-    ctx = {'sneak' : sneak}
+    ctx = {'sneak' : sneak, 'title': sneak.name}
     return render(request, 'details.html', ctx)
