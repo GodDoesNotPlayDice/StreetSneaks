@@ -45,24 +45,25 @@ def validar_cupon(request):
         context = {}
         cuponText = request.POST['name']
         try:
-            user = User.objects.get(username=request.user.username)
-            carro = user.carro_set.all()
+            # user = User.objects.get(username=request.user.username)
+            carro = Carro.objects.filter(user=request.user)
             monto = 0
+            cupon = Cupon.objects.get(name=cuponText)
             for c in carro:
                 monto += c.items.precio
-            cupon = Cupon.objects.get(name=cuponText)
+                c.cupon = cupon
+                c.save()
             total = monto - (monto * cupon.valor / 100)
             context['total'] = precio(total)
             return JsonResponse(context, status=200)
         except Exception as e:
             print(e)
             return JsonResponse(context, status=404)
-        
 @login_required
-def pagar(request, carro_id):
+def pagar(request):
     if request.method == 'POST':
-        carro = Carro.objects.get(pk=carro_id)
-        ctx = {}
+        carro = Carro.objects.filter(user=request.user)
+        ctx = {'carro': carro}
         print(request.POST['valor'])
         
         return render(request, 'pago.html', ctx)

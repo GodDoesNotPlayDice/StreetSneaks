@@ -11,11 +11,10 @@
         <div class="cart-container">
             <div class="cart-wrap">
                 <div class="cart-sneaks-container">
-                    {{carro}}
                     {% for zapatilla in carro %}
                     <div class="cart-card">
                         <div class="cart-card__img-contain">
-                            <img class="cart-card__img" src="{{zapatilla.items.imagen.url}}" alt="Low Retro">
+                            <img class="cart-card__img" src="{{zapatilla.items.imagen.url}}" alt="{{zapatilla.items.nombre}}">
                         </div>
                         <div class="cart-card__details">
                             <div class="cart-card__texts">
@@ -38,11 +37,9 @@
                 <div class="cart-prebuy">
                     <div class="cart-resume">
                         <h3 class="cart-resume__title">Resumen del pedido</h3>
-                        <div class="cart-resume__details">
-                            <p name="total" class="cart-resuem__text">Total de Productos: {{total_prods}}</p>
-                            <p name="valor" class="cart-resuem__text">Total: <span class="weight-600"><span id="total-text">${{total_precio|precio}}</span> CLP <span id="cupon-text"></span></span></p>
-                            <form  method='POST' action="">
-                            {% csrf_token %}
+                        <div class="cart-resume__details">  
+                            <p class="cart-resuem__text">Total de Productos: {{total_prods}}</p>
+                            <p class="cart-resuem__text">Total: <span class="weight-600"><span id="total-text">${{total_precio|precio}}</span> CLP <span id="cupon-text"></span></span></p>
                                 <div class="form-group">
                                     <label for="name">Cupon</label>
                                     <input type="text" class="form-control" id="name" placeholder="Cupon de descuento">
@@ -57,7 +54,10 @@
                                 </div>
                             </div>
                         </div>
+                        <form  method='POST' action="">
+                        {% csrf_token %}
                         <div class="button-pay">
+                            {{total}}
                             <button type="submit" class="btn btn-pagar btn-blue">Ir a pagar</button>
                         </form>
                     </div>
