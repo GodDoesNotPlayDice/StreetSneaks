@@ -61,14 +61,14 @@ def carro(request, username):
     for i in carro:
        total_precio += i.items.precio
        prods+=1
-    ctx = {'username': username, 'carro': carro, 'total_prods':prods, 'total_precio': total_precio, 'direcciones' : direcciones}
+    ctx = {'username': username, 'carro': carro, 'total_prods':prods, 'total_precio': total_precio, 'direcciones' : direcciones, 'title': 'Carro'}
     return render(request, 'carro.html', ctx)
 
 
 def signup(request):
-    ctx={}
+    ctx={'title': 'Register'}
     if request.method == 'GET':
-        return render(request, 'register.html')
+        return render(request, 'register.html', ctx)
     else:
         if request.POST['password1'] == request.POST['password2']:
             try:
@@ -85,19 +85,19 @@ def signup(request):
                 return redirect('profile')
             except IntegrityError:
                 messages.error(request, 'Ocurrio un error en el servidor')
-                return render(request,'register.html')
+                return render(request,'register.html', ctx)
         else:
             messages.warning(request, 'Password no coinciden')
-            return render(request,'register.html')
+            return render(request,'register.html', ctx)
         
 def signin(request):
-        ctx = {}
+        ctx = {'title' : 'Login'}
         if request.method == 'GET':
             return render(request, 'login.html', ctx)
         else:
             user = authenticate(request, username=request.POST['usuario'], password=request.POST['password'])
             if user is None:
-                return render(request, 'login.html', {'error': 'error'})
+                return render(request, 'login.html', {'error': 'error', 'title':'Login'})
             else:
                 login(request, user)
                 print(request.POST)

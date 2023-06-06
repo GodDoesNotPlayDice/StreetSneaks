@@ -2,7 +2,7 @@ $(document).ready(function () {
     const cuponElement = $('#name')
     const totalTextElement = $('#total-text')
     const cuponTextElement = $('#cupon-text')
-	const token        = document.getElementsByName( 'csrfmiddlewaretoken' )[0]
+	const token = document.getElementsByName( 'csrfmiddlewaretoken' )[0]
 
 	cuponElement.on('blur', function (e) {
 		const formData = new FormData()
@@ -24,7 +24,7 @@ $(document).ready(function () {
 		peticion.done(function (response) {
 			console.log('done')
 			const total = response.total
-			totalTextElement.text("$" + total)
+			totalTextElement.text("$" + total)	
 			cuponTextElement.text('(Cupon Aplicado)')
 		})
 

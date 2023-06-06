@@ -57,3 +57,7 @@ def validar_cupon(request):
         except Exception as e:
             print(e)
             return JsonResponse(context, status=404)
+        
+@login_required
+def pagar(request):
+    pass
