@@ -2,6 +2,7 @@ from django.shortcuts import redirect, render, get_object_or_404
 from django.db import IntegrityError
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.models import User
+from ventaApp.models import Cupon
 from userApp.models import Carro
 from userApp.models import Usuario, Direccion, Region
 from django.contrib import messages

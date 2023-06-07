@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from sneakerApp.models import Zapatilla
+from ventaApp.models import Cupon
 # Create your models here.
 
 class Usuario(models.Model):
@@ -27,6 +28,10 @@ class Direccion(models.Model):
 class Carro(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     items = models.ForeignKey(Zapatilla, on_delete=models.CASCADE)
+    cupon = models.ForeignKey(Cupon, on_delete=models.CASCADE, null=True)
+    direccion = models.ForeignKey(Direccion, on_delete=models.CASCADE, null=True)
+
+    
 
 
  

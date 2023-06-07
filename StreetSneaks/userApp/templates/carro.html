@@ -14,7 +14,7 @@
                     {% for zapatilla in carro %}
                     <div class="cart-card">
                         <div class="cart-card__img-contain">
-                            <img class="cart-card__img" src="{{zapatilla.items.imagen.url}}" alt="Low Retro">
+                            <img class="cart-card__img" src="{{zapatilla.items.imagen.url}}" alt="{{zapatilla.items.nombre}}">
                         </div>
                         <div class="cart-card__details">
                             <div class="cart-card__texts">
@@ -31,35 +31,38 @@
                                 <a href="{% url 'eliminar_carro' carro_id=zapatilla.id %}" class="text-danger">eliminar del carrito</a>
                             </div>
                         </div>
-
                     </div>
                     {% endfor %}
                 </div>
                 <div class="cart-prebuy">
                     <div class="cart-resume">
                         <h3 class="cart-resume__title">Resumen del pedido</h3>
-                        <div class="cart-resume__details">
+                        <div class="cart-resume__details">  
                             <p class="cart-resuem__text">Total de Productos: {{total_prods}}</p>
                             <p class="cart-resuem__text">Total: <span class="weight-600"><span id="total-text">${{total_precio|precio}}</span> CLP <span id="cupon-text"></span></span></p>
-                            <form>
-                            {% csrf_token %}
                                 <div class="form-group">
                                     <label for="name">Cupon</label>
                                     <input type="text" class="form-control" id="name" placeholder="Cupon de descuento">
                                 </div>
                                 <div class="form-group my-3">
                                     <label for="direccion">Tus Direccion</label>
-                                        <select class="form-control">
+                                        <select  id="direccion" name="direccion" class="form-control">
                                         {% for direccion in direcciones %}
-                                            <option>{{direccion.direccion}} | {{direccion.region.region}}</option>
+                                            <option value="{{direccion.id}}">{{direccion.direccion}} | {{direccion.region.region}}</option>
                                             {% endfor %}
                                     </select>
                                 </div>
-                            </form>
+                            </div>
                         </div>
-                    </div>
-                    <div class="button-pay">
-                        <button type="submit" class="btn btn-pagar btn-blue">Ir a pagar</button>
+                        <form  method='POST' action="{% url 'pago' %}">
+                        {% csrf_token %}
+                        <div class="button-pay">
+                            {% if total_prods < 1 %}
+                            <a href="{% url 'carro' %}" class="btn btn-pagar btn-blue">No hay nada para pagar!</a>
+                            {% else %}
+                            <button class="btn btn-pagar btn-blue">Pagar</button>
+                            {% endif %}
+                        </form>
                     </div>
                 </div>
             </div>
@@ -68,4 +71,5 @@
     {% endblock content %}
     {% block scripts %}
     <script src="{% static 'js/cupon.js' %}"></script>
+    <script src="{% static 'js/direccion.js' %}"></script>
     {% endblock scripts %}
