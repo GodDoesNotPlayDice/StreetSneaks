@@ -1,45 +1,33 @@
-    {% include 'base.html' %}
+    {% extends 'base.html' %}
     {% load static %}
+    {% load filters %}
     {% block add_styles %}
     <link rel="stylesheet" href="{% static '/css/css-views/pedido.css' %}">
     <link rel="stylesheet" href="{% static '/css/css-views/pago.css' %}">
     {% endblock add_styles %}
+    {% block content %}
     <section>
         <h3>Pago</h3>
         <div class="order-wrap">
             <div class="order-cards">
+                {% for item in items %}
                 <div class="order-card">
                     <div class="order-card__content">
                         <div class="order-card__img-container">
-                            <img src="../../src/imgs/sneaks/Example/Air-Force-1-Low-Retro/Air-Force-1-Low-Retro.png"
+                            <img src="{{item.imagen.url}}"
                                 alt="" class="order-card__img">
                         </div>
                         <div class="order-card__details">
-                            <p class="order-card__texts">Air Force 1 Low Retro</p>
-                            <p class="order-card__texts">Talla 36 EUR</p>
-                            <p class="order-card__texts">$36.000 CLP</p>
+                            <p class="order-card__texts">{{item.name}}</p>
+                            <p class="order-card__texts">Talla {{item.tallaEUR.number}} {{item.tallaEUR.tipo}}</p>
+                            <p class="order-card__texts">${{item.precio|precio}} CLP</p>
                         </div>
                         <div class="order-card__time">  
-                            <p class="order-card__time__text">Fecha estimada 18 de Febrero</p>
+                            <p class="order-card__time__text">{{fecha}}</p>
                         </div>
                     </div>
                 </div>
-                <div class="order-card">
-                    <div class="order-card__content">
-                        <div class="order-card__img-container">
-                            <img src="../../src/imgs/sneaks/Example/Air-Force-1-Low-Retro/Air-Force-1-Low-Retro.png"
-                                alt="" class="order-card__img">
-                        </div>
-                        <div class="order-card__details">
-                            <p class="order-card__texts">Air Force 1 Low Retro</p>
-                            <p class="order-card__texts">Talla 36 EUR</p>
-                            <p class="order-card__texts">$36.000 CLP</p>
-                        </div>
-                        <div class="order-card__time">
-                            <p class="order-card__time__text">Fecha estimada 18 de Febrero</p>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
             <div class="pay-content">
                 <div class="pay-content__location">
@@ -47,14 +35,6 @@
                         <div class="container mt-5">
                             <h5 class="text-center mb-5" id="form-quest">Ingrese sus datos</h5>
                             <form>
-                                <div class="form-group">
-                                    <label for="name">Nombre</label>
-                                    <input type="text" class="form-control" id="name" placeholder="Ingrese su nombre">
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Email</label>
-                                    <input type="email" class="form-control" id="email" placeholder="Ingrese su email">
-                                </div>
                                 <div class="form-group">
                                     <label for="nro-credit">Nro.Tarjeta, Debito/Credito</label>
                                     <input type="text" class="form-control" id="nro-credit"
@@ -73,10 +53,16 @@
                                     </div>
                                 </div>
                                 <div class="pay-details">
-                                    <p class="pay-details__text"><span class="--weight-600">Descuentos:</span> $0 </p>
-                                    <p class="pay-details__text"><span class="--weight-600">Codigo descuento:</span> No hay </p>
-                                    <p class="pay-details__text"><span class="--weight-600">Sub total:</span> $50.000</p>
-                                    <p class="pay-details__text"><span class="--weight-600">Total a Pagar:</span> $50.000</p>
+                                    <p class="pay-details__text"><span class="--weight-600">Descuentos:</span> ${{descuento}}</p>
+                                    <p class="pay-details__text"><span class="--weight-600">Codigo descuento:</span> {{cupon_nombre}}</p>
+                                    <p class="pay-details__text"><span class="--weight-600">Sub total:</span></p>
+                                    <p>
+                                        {% for item in items %}
+                                        <span>{{item.precio}} + </span>
+                                        {% endfor %}
+                                        %{{iva}} IVA - {{descuento}}
+                                    </p>
+                                    <p class="pay-details__text"><span class="--weight-600">Total a Pagar:</span> ${{total}}</p>
                                 </div>
                                 <div class="btn-pay">
                                     <button type="submit" class="btn btn-red">Pagar</button>
@@ -88,3 +74,4 @@
             </div>
         </div>
     </section>
+{% endblock content %}

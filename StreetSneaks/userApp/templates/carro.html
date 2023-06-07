@@ -46,19 +46,22 @@
                                 </div>
                                 <div class="form-group my-3">
                                     <label for="direccion">Tus Direccion</label>
-                                        <select name="direccion" class="form-control">
+                                        <select  id="direccion" name="direccion" class="form-control">
                                         {% for direccion in direcciones %}
-                                            <option>{{direccion.direccion}} | {{direccion.region.region}}</option>
+                                            <option value="{{direccion.id}}">{{direccion.direccion}} | {{direccion.region.region}}</option>
                                             {% endfor %}
                                     </select>
                                 </div>
                             </div>
                         </div>
-                        <form  method='POST' action="">
+                        <form  method='POST' action="{% url 'pago' %}">
                         {% csrf_token %}
                         <div class="button-pay">
-                            {{total}}
-                            <button type="submit" class="btn btn-pagar btn-blue">Ir a pagar</button>
+                            {% if total_prods < 1 %}
+                            <a href="{% url 'carro' %}" class="btn btn-pagar btn-blue">No hay nada para pagar!</a>
+                            {% else %}
+                            <button class="btn btn-pagar btn-blue">Pagar</button>
+                            {% endif %}
                         </form>
                     </div>
                 </div>
@@ -68,4 +71,5 @@
     {% endblock content %}
     {% block scripts %}
     <script src="{% static 'js/cupon.js' %}"></script>
+    <script src="{% static 'js/direccion.js' %}"></script>
     {% endblock scripts %}

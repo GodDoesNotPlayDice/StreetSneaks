@@ -29,6 +29,9 @@ class Carro(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     items = models.ForeignKey(Zapatilla, on_delete=models.CASCADE)
     cupon = models.ForeignKey(Cupon, on_delete=models.CASCADE, null=True)
+    direccion = models.ForeignKey(Direccion, on_delete=models.CASCADE, null=True)
+
+    
 
 
  
