@@ -36,6 +36,7 @@
               Direccion
               <input type="text" name="direccion" class="form-control" id="direccion" placeholder="Ingresa tu dirección">
             </label>
+            <p id="err"></p>
           </div>
           <div class="form-group my-2">
             <label for="region">
@@ -138,3 +139,6 @@
   </section>
   {% endif %}
   {% endblock content %}
+  {% block scripts %}
+  <script src="{% static 'js/direccion_null.js' %}"></script>
+  {% endblock scripts %}

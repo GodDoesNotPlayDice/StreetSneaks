@@ -10,7 +10,6 @@ from mainApp.templatetags.filters import precio
 from datetime import datetime, timedelta
 import locale
 
-
 # Create your views here.
 
 @login_required
@@ -92,26 +91,33 @@ def validar_direccion(request):
 
 @login_required
 def pagar(request):
-    iva = Iva.objects.get(id=1).valor
-    locale.setlocale(locale.LC_ALL, 'es_ES.utf8')
-    fecha_actual = datetime.now().date()
-    fecha_nueva = fecha_actual + timedelta(days=3)
-    fecha_formateada = fecha_nueva.strftime('%d de %B del %Y')
-    carro = Carro.objects.filter(user=request.user)
-    items = [c.items for c in carro]
-    total = sum(item.precio for item in items)
-    cupon = [c.cupon for c in carro]
     try:
-        cupon_valores = sum([c.cupon.valor for c in carro])
+        iva = Iva.objects.get(id=1).valor
+        locale.setlocale(locale.LC_ALL, 'es_ES.utf8')
+        fecha_actual = datetime.now().date()
+        fecha_nueva = fecha_actual + timedelta(days=3)
+        fecha_formateada = fecha_nueva.strftime('%d de %B del %Y')
+        carro = Carro.objects.filter(user=request.user)
+        items = [c.items for c in carro]
+        total = sum(item.precio for item in items)
+        cupon = [c.cupon for c in carro]
+        cupon_valores_1 = [c.cupon.valor for c in carro]
+
+        for i in cupon_valores_1:
+            cupon_valores = i
+            break
+
         for i in cupon:
             cupon_nombre = i.name
     except:
         cupon_valores = 0
         cupon_nombre = "No hay"
-    descuento = int(total * cupon_valores / 100)
+    descuento = int(total * (cupon_valores / 100))
     direccion = [c.direccion for c in carro]
+    print(total)
+    print(cupon_valores)
     total_con_descuento = total - descuento
-    total_con_iva = total_con_descuento + (total_con_descuento * iva / 100)
+    total_con_iva = total_con_descuento + (total_con_descuento * (iva / 100))
     
     ctx = {
         'items': items,
