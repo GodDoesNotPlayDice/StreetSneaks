@@ -1,31 +1,20 @@
-// validacion.js
+// En el archivo validacion.js
+$(document).ready(function() {
+  $("#direccionForm").submit(function(event) {
+    event.preventDefault(); // Evita que el formulario se envíe automáticamente
 
-document.getElementById("direccion").addEventListener("blur", function(event) {
-    validarDireccion(event);
-  });
-  
-  function validarDireccion(event) {
-    event.preventDefault(); // Evitar envío del formulario por defecto
-  
-    var direccionInput = document.getElementById("direccion");
-    var direccion = direccionInput.value.trim(); // Eliminar espacios en blanco al principio y al final
-  
-    var caracteresEspeciales = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/;
-    var hayError = false; // Variable para rastrear si hay errores
-  
-    if (direccion === "") {
-      document.getElementById("err").textContent = "Dirección vacía. Por favor, ingresa tu dirección.";
-      hayError = true;
-    } else if (caracteresEspeciales.test(direccion)) {
-      document.getElementById("err").textContent = "Dirección inválida. No se permiten caracteres especiales.";
-      hayError = true;
+    // Obtén el valor del campo de dirección
+    var direccion = $("#direccion").val();
+
+    // Expresión regular para verificar caracteres especiales
+    var specialChars = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+
+    // Verifica si la dirección está vacía o contiene caracteres especiales
+    if (direccion === "" || specialChars.test(direccion)) {
+      $("#err").text("La dirección es inválida.");
     } else {
-      document.getElementById("err").textContent = ""; // Limpiar el mensaje de error si la dirección es válida
+      // Si la validación es exitosa, envía el formulario
+      $("#direccionForm").unbind("submit").submit();
     }
-  
-    if (!hayError) {
-      // Si no hay errores, permitir el envío del formulario
-      document.getElementById("direccion").form.submit();
-    }
-  }
-  
+  });
+});

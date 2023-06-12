@@ -112,7 +112,8 @@ def pagar(request):
     except:
         cupon_valores = 0
         cupon_nombre = "No hay"
-    descuento = int(total * (cupon_valores / 100))
+        
+    descuento = int(total * cupon_valores / 100)
     direccion = [c.direccion for c in carro]
     print(total)
     print(cupon_valores)
