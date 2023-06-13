@@ -115,8 +115,6 @@ def pagar(request):
         
     descuento = int(total * cupon_valores / 100)
     direccion = [c.direccion for c in carro]
-    print(total)
-    print(cupon_valores)
     total_con_descuento = total - descuento
     total_con_iva = total_con_descuento + (total_con_descuento * (iva / 100))
     

@@ -30,17 +30,21 @@
       {% csrf_token %}
       <div class="my-6">
       <label for="name_editar" class="block mb-2 text-sm font-medium text-gray-900">Ingresa el nombre</label> 
-      <input type="text" id="name_editar" class="bg-gray-300 placeholder:text-gray-500 border border-gray-300 text-gray-950 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" name="name_editar" placeholder="Nombre de la zapatilla">
+      <input type="text" id="name_editar" class="bg-gray-300 placeholder:text-gray-500 border border-gray-300 text-gray-950 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" name="name_editar" placeholder="Nombre de la zapatilla: Actual ({{zapatilla.name}})">
     </div>
     <div class="my-6">
       <label for="precio_editar" class="block mb-2 text-sm font-medium text-gray-900">Precio</label> 
-      <input type="text" id="precio_editar" class="bg-gray-300 placeholder:text-gray-500 border border-gray-300 text-gray-950 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" name="precio_editar" placeholder="Precio">
+      <input type="number" id="precio_editar" class="bg-gray-300 placeholder:text-gray-500 border border-gray-300 text-gray-950 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" name="precio_editar" placeholder="Precio: Actual ({{zapatilla.precio}})">
     </div>
     <div class="my-6">
       <label for="categoria" class="block mb-2 text-sm font-medium text-gray-900">Selecciona una categoria</label>
       <select id="categoria_editar" name="categoria_editar" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
         {% for c in categoria %}
+        {% if c.id == zapatilla.categoria.pk %}
+        <option selected value="{{c.id}}">{{c.nombre}}</option>
+        {% elif c.id != zapatilla.categoria.pk %}
         <option value="{{c.id}}">{{c.nombre}}</option>
+        {% endif  %}
         {% endfor %}
       </select>
     </div>
@@ -48,7 +52,11 @@
       <label for="talla" class="block mb-2 text-sm font-medium text-gray-900">Selecciona una talla</label>
       <select id="talla_editar" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" name="talla_editar">
         {% for t in talla %}
+        {% if t.id == zapatilla.tallaEUR.pk %}
+        <option selected value="{{t.id}}">{{t.number}}</option>
+        {% elif t.id != zapatilla.tallaEUR.pk %}
         <option value="{{t.id}}">{{t.number}}</option>
+        {% endif %}
         {% endfor %}
       </select>
     </div>

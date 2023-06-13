@@ -82,9 +82,12 @@ def editar_zapatilla(request, id):
 def editSneak(request, id):
     if request.method == 'POST':
         zapatilla = Zapatilla.objects.get(pk=id)
-        zapatilla.name = request.POST['name_editar']
-        zapatilla.precio = request.POST['precio_editar']
-        zapatilla.categoria = Categoria.objects.get(id=request.POST['categoria_editar'])
+        if request.POST['name_editar'] != '':
+            zapatilla.name = request.POST['name_editar']
+        if request.POST['precio_editar'] != '':
+            zapatilla.precio = request.POST['precio_editar']
+        if request.POST['categoria_editar'] != zapatilla.tallaEUR.pk:
+            zapatilla.categoria = Categoria.objects.get(id=request.POST['categoria_editar'])
         zapatilla.tallaEUR = TallaEUR.objects.get(id=request.POST['talla_editar'])
         zapatilla.save()
         return redirect('gestion-zapatillas')
