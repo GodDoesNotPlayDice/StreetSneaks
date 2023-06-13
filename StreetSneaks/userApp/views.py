@@ -45,6 +45,12 @@ def save_direccion(request):
         region = Region.objects.get(id=region)
         Direccion(region=region, user=request.user, direccion=request.POST['direccion']).save()
         return redirect('profile')
+    
+def del_direccion(request, id_direccion):
+    direc = Direccion.objects.get(pk=id_direccion)
+    direc.delete()
+    del direc
+    return redirect('profile')
 
 @login_required
 def profile(request):
