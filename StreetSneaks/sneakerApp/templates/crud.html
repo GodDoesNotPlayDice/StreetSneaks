@@ -32,48 +32,6 @@
       <div class="bg-red-600 p-1 w-4/5"></div>
   </div>
   {% include 'components/cupon.html' %}
-  <div class="flex justify-center my-5">
-    <div class="bg-red-600 p-1 w-4/5"></div>
-</div>
-<div class="mx-10">
-  <h3 class="text-2xl text-center">Editar un Producto</h3>
-  <div class="my-6">
-    <label for="id_prod" class="block mb-2 text-sm font-medium text-gray-900">Ingresa un ID del Producto</label> 
-    <input type="text" id="id_prod" class="bg-gray-300 placeholder:text-gray-500 border border-gray-300 text-gray-950 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" name="id_prod" placeholder="ID del producto">
-  </div>
-  <div class="flex justify-center my-5">
-    <div class="bg-red-600 p-1 w-4/5"></div>
-  </div>
-  <form action="">
-    <div class="my-6">
-      <label for="name_editar" class="block mb-2 text-sm font-medium text-gray-900">Ingresa el nombre</label> 
-      <input type="text" id="name_editar" class="bg-gray-300 placeholder:text-gray-500 border border-gray-300 text-gray-950 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" name="name_editar" placeholder="Nombre de la zapatilla" readonly>
-    </div>
-    <div class="my-6">
-      <label for="precio_editar" class="block mb-2 text-sm font-medium text-gray-900">Precio</label> 
-      <input type="text" id="precio_editar" class="bg-gray-300 placeholder:text-gray-500 border border-gray-300 text-gray-950 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" name="precio_editar" placeholder="Precio" readonly>
-    </div>
-    <div class="my-6">
-      <label for="categoria" class="block mb-2 text-sm font-medium text-gray-900">Selecciona una categoria</label>
-      <select id="categoria_editar" name="categoria" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-          {% for categoria in categorias %}
-          <option value="{{categoria.id}}">{{categoria.nombre}}</option>
-          {% endfor %}
-      </select>
-  </div>
-  <div class="my-6">
-      <label for="talla" class="block mb-2 text-sm font-medium text-gray-900">Selecciona una talla</label>
-      <select id="talla_editar" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" name="talla">
-          {% for talla in tallas %}
-          <option value="{{talla.id}}">{{talla.number}}</option>
-          {% endfor %}
-      </select>
-  </div>
-  <div class="flex justify-center my-5">
-    <div class="bg-red-600 p-1 w-4/5"></div>
-</div>
-  </form>
-</div>
 {% endblock content %}
 {% block footer %}
 {% include 'components/admin-footer.html' %}

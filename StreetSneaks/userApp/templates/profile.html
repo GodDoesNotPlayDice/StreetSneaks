@@ -71,12 +71,15 @@
                 </thead>
                 <tbody>
                   {% for direccion in direcciones %}
-                      <tr>
-                        <th scope="row">{{ forloop.counter }}</th>
-                        <td>{{ direccion.direccion }}</td>
-                        <td>{{ direccion.region.region }}</td>
-                      </tr>
-                  {% endfor %}
+                  <form action="{% url 'del_direccion' id_direccion=direccion.id %}">
+                    <tr>
+                      <th scope="row">{{ forloop.counter }}</th>
+                      <td>{{ direccion.direccion }}</td>
+                      <td>{{ direccion.region.region }}</td>
+                      <td><button type="submit" class="btn w-100 btn-danger btn-block">Borrar</button></td>
+                    </tr>
+                    {% endfor %}
+                  </form>
                 </tbody>
               </table>
             </div>

@@ -13,9 +13,11 @@
                     <p class="my-2 lg:my-0 font-semibold text-gray-600">{{zapatilla.name}}</p>
                     <p class="my-2 lg:my-0 font-semibold text-gray-600">${{zapatilla.precio|precio}} CLP</p>
                     <p class="my-2 lg:my-0 font-semibold text-gray-600">{{zapatilla.tallaEUR.number}} {{zapatilla.tallaEUR.tipo}}</p>
+                    <p class="my-2 lg:my-0 font-semibold text-gray-600">{{zapatilla.categoria.nombre}}</p>
                     <div class="lg:flex lg:items-center"> 
-                        <p class="my-2 lg:my-0 font-semibold text-gray-600">{{zapatilla.categoria.nombre}}</p>
-                        <a href="{% url 'deleteSneak' id=zapatilla.id %}" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mx-10 lg:mx-10">Eliminar</a>
+                        <a href="{% url 'deleteSneak' id=zapatilla.id %}" class="block focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 my-5 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mx-10 lg:mx- q10">Eliminar</a>
+                        
+                        <a href="{% url 'editar' zapatilla.id %}" class="block my-5 focus:outline-none text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mx-10 lg:mx-10">Editar</a>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block header %}
+{% include 'components/admin-header.html' %}
+{% endblock header %}
+{% block boostrap %}
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
+{% endblock boostrap %}
+{% block content %}
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          backgroundColor: {
+            's-blue': '#4355ce',
+            's-red': '#e13838',
+            's-black': '#1f1b1a',
+          }
+        }
+      }
+    }
+  </script>
+  <div class="px-14 m-14">
+    <div class="lg:flex">
+      <h3 class="lg:text-2xl" >Zapatilla numero: {{zapatilla.id_prod}}</h3>
+      <img class="w-14 ml-7" src="{{zapatilla.imagen.url}}" alt="">
+    </div>
+    <form action="{% url 'update' zapatilla.id %}" method="POST">
+      {% csrf_token %}
+      <div class="my-6">
+      <label for="name_editar" class="block mb-2 text-sm font-medium text-gray-900">Ingresa el nombre</label> 
+      <input type="text" id="name_editar" class="bg-gray-300 placeholder:text-gray-500 border border-gray-300 text-gray-950 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" name="name_editar" placeholder="Nombre de la zapatilla">
+    </div>
+    <div class="my-6">
+      <label for="precio_editar" class="block mb-2 text-sm font-medium text-gray-900">Precio</label> 
+      <input type="text" id="precio_editar" class="bg-gray-300 placeholder:text-gray-500 border border-gray-300 text-gray-950 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" name="precio_editar" placeholder="Precio">
+    </div>
+    <div class="my-6">
+      <label for="categoria" class="block mb-2 text-sm font-medium text-gray-900">Selecciona una categoria</label>
+      <select id="categoria_editar" name="categoria_editar" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+        {% for c in categoria %}
+        <option value="{{c.id}}">{{c.nombre}}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="my-6">
+      <label for="talla" class="block mb-2 text-sm font-medium text-gray-900">Selecciona una talla</label>
+      <select id="talla_editar" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" name="talla_editar">
+        {% for t in talla %}
+        <option value="{{t.id}}">{{t.number}}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <button type="submit" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Guardar</button>
+  </form>
+</div>
+  
+  {% endblock content %}
+  {% block footer %}
+{% include 'components/admin-footer.html' %}
+{% endblock footer %}
+{% block scripts %}
+<script src="{% static 'js/img-preview.js' %}"></script>
+{% endblock scripts %}
+
+

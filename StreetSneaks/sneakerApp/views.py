@@ -24,9 +24,6 @@ def mujer(request):
     ctx = {'title': 'Mujer','zapatillas': items()}
     return render(request, 'sneaks.html', ctx)
 
-
-
-
 @login_required
 @user_passes_test(lambda user: user.is_superuser)
 def sneaks(request):
@@ -71,10 +68,29 @@ def createSneak(request):
 def deleteSneak(request,id):
     zapatilla = Zapatilla.objects.get(pk=id)
     zapatilla.delete()
-    del zapatilla
     return redirect('gestion-zapatillas')
+
+def editar_zapatilla(request, id):
+    try:
+        categoria = Categoria.objects.all()
+        talla = TallaEUR.objects.all()
+        zapatilla = Zapatilla.objects.get(pk=id)
+        return render(request, 'modify.html', {'zapatilla': zapatilla, 'talla': talla, 'categoria': categoria})
+    except Exception as e:
+        print(e)       
+
+def editSneak(request, id):
+    if request.method == 'POST':
+        zapatilla = Zapatilla.objects.get(pk=id)
+        zapatilla.name = request.POST['name_editar']
+        zapatilla.precio = request.POST['precio_editar']
+        zapatilla.categoria = Categoria.objects.get(id=request.POST['categoria_editar'])
+        zapatilla.tallaEUR = TallaEUR.objects.get(id=request.POST['talla_editar'])
+        zapatilla.save()
+        return redirect('gestion-zapatillas')
+
 
 def sneak_details(request, nombre, sneak_id):
     sneak = get_object_or_404(Zapatilla, id_prod=sneak_id)
     ctx = {'sneak' : sneak, 'title': sneak.name}
-    return render(request, 'details.html', ctx)
+    return render(request, 'details.html', ctx) 
