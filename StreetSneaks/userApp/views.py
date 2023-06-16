@@ -45,12 +45,31 @@ def save_direccion(request):
         region = Region.objects.get(id=region)
         Direccion(region=region, user=request.user, direccion=request.POST['direccion']).save()
         return redirect('profile')
-    
+@login_required
 def del_direccion(request, id_direccion):
     direc = Direccion.objects.get(pk=id_direccion)
     direc.delete()
     del direc
     return redirect('profile')
+
+
+@login_required
+def edit_direccion(request, id_direccion):
+    direc = Direccion.objects.get(pk=id_direccion)
+    regiones = Region.objects.all()
+    ctx = {'direccion': direc,'regiones': regiones, 'title': 'Editar direccion'}
+    return render(request, 'direccion_editar.html', ctx)
+
+
+@login_required
+def edi_direct(request, id_direccion):
+    direc = Direccion.objects.get(pk=id_direccion)
+    if request.method == 'POST':
+        if request.POST['nueva_direccion'] != '':
+            direc.direccion = request.POST['nueva_direccion']
+        direc.region = Region.objects.get(pk=request.POST['region'])
+        direc.save()
+        return redirect('profile')
 
 @login_required
 def profile(request):

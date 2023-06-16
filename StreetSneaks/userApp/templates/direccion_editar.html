@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+  <div class="col-md-6">
+    <h2 class="text-center mb-4">Cambiar dirección</h2>
+    <div class="mb-2">
+      <p>Direccion actual: <b>{{direccion.direccion}} | {{direccion.region.region}}</b></p>
+  </div>
+    <form action="{% url 'edi_direct' direccion.id %}" method="post">
+      {% csrf_token %}
+      <div class="form-group my-2">
+        <label for="region">
+          <p>Selecciona una región</p>
+          <select name="region" id="region" class="form-select">
+            {% for r in regiones %}
+            {% if r.id == direccion.region.pk %}
+              <option selected value="{{r.id}}">{{r.region}}</option>
+            {% elif r.id != direccion.region.pk %}
+              <option value="{{r.id}}">{{r.region}}</option>
+            {% endif %}
+            {% endfor %}
+          </select>
+        </label>
+      </div>
+      <div class="form-group">
+        <label for="nueva_direccion">Nueva dirección:</label>
+        <input type="text" class="form-control" id="nueva_direccion" name="nueva_direccion">
+      </div>
+      <button type="submit" class="mt-4 btn btn-primary btn-block">Guardar cambios</button>
+    </form>
+  </div>
+</div>
+{% endblock content %}
