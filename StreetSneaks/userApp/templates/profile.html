@@ -76,7 +76,12 @@
                       <th scope="row">{{ forloop.counter }}</th>
                       <td>{{ direccion.direccion }}</td>
                       <td>{{ direccion.region.region }}</td>
-                      <td><button type="submit" class="btn w-100 btn-danger btn-block">Borrar</button></td>
+                      <td>
+                        <div class="d-flex flex-wrap">
+                          <button type="submit" class="mx-2 btn btn-danger flex-fill">Borrar</button>
+                          <a href="{% url 'edit_direccion' direccion.id %}" class="btn btn-primary flex-fill">Editar</a>
+                        </div>
+                      </td>
                     </tr>
                     {% endfor %}
                   </form>

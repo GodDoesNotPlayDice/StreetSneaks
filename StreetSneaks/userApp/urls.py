@@ -7,5 +7,7 @@ urlpatterns = [
     path('register/', views.signup, name='register'),
     path('signout', views.signout, name='logout'),
     path('save_direccion', views.save_direccion, name='save_direccion'),
-    path('del_direccion<int:id_direccion>', views.del_direccion, name='del_direccion')
+    path('del_direccion<int:id_direccion>', views.del_direccion, name='del_direccion'),
+    path('edit_direccion/<int:id_direccion>', views.edit_direccion , name='edit_direccion'),
+    path('edi_direct/<int:id_direccion>', views.edi_direct, name='edi_direct'),
 ]
