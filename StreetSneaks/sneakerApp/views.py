@@ -9,7 +9,6 @@ from .functions import id_prod
 
 # Create your views here.
 def items():
-    
     return Zapatilla.objects.all()    
 def novedades(request):
     ctx = {'title': 'Novedades','zapatillas': items()} 
@@ -31,7 +30,8 @@ def sneaks(request):
     talla = TallaEUR.objects.all()
     items = Zapatilla.objects.all()
     cupones = Cupon.objects.all()
-    ctx = {'categorias' : categoria, 'tallas': talla, 'zapatillas': items, 'cupones': cupones, 'title': 'ADMIN'}
+    modal = False
+    ctx = {'categorias' : categoria, 'tallas': talla, 'zapatillas': items, 'cupones': cupones, 'title': 'ADMIN', 'modal': modal}
     return render(request, 'crud.html',ctx)
 
 @login_required
@@ -63,6 +63,7 @@ def createSneak(request):
     else:
         return redirect('gestion-zapatillas') 
 
+
 @login_required
 @user_passes_test(lambda user: user.is_superuser)
 def deleteSneak(request,id):
@@ -70,6 +71,9 @@ def deleteSneak(request,id):
     zapatilla.delete()
     return redirect('gestion-zapatillas')
 
+
+@login_required
+@user_passes_test(lambda user: user.is_superuser)
 def editar_zapatilla(request, id):
     try:
         categoria = Categoria.objects.all()
@@ -79,6 +83,8 @@ def editar_zapatilla(request, id):
     except Exception as e:
         print(e)       
 
+@login_required
+@user_passes_test(lambda user: user.is_superuser)
 def editSneak(request, id):
     if request.method == 'POST':
         zapatilla = Zapatilla.objects.get(pk=id)
