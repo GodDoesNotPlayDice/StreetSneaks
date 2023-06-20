@@ -42,3 +42,7 @@ INSERT INTO sneakerApp_categoria (id, nombre) VALUES (4, 'Niño');
 ### Ciudades
 
 INSERT INTO userApp_region (id, region) VALUES (1, 'Arica y Parinacota'), (2, 'Tarapacá'), (3, 'Antofagasta'), (4, 'Atacama'), (5, 'Coquimbo'), (6, 'Valparaíso'), (7, 'Metropolitana de Santiago'), (8, 'Libertador General Bernardo O''Higgins'), (9, 'Maule'), (10, 'Ñuble'), (11, 'Biobío'), (12, 'La Araucanía'), (13, 'Los Ríos'), (14, 'Los Lagos'), (15, 'Aysén del General Carlos Ibáñez del Campo'), (16, 'Magallanes y de la Antártica Chilena');
+
+
+### IVA
+INSERT INTO ventaApp_iva (id,valor)VALUES (1,19);
