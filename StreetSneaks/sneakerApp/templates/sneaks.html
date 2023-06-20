@@ -8,8 +8,11 @@
         {% for zapatilla in zapatillas %}
         {% if title == zapatilla.categoria.nombre %}
         {% include 'components/sneak.html' %}
+        {% else %}
+        {% include 'components/sneak.html' %}
+        {{zapatilla.fecha_creacion}}  
+        {{fecha_actual}}
         {% endif %}
-        
         {% endfor %}
       </div>
    </section>
