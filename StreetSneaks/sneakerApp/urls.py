@@ -11,5 +11,5 @@ urlpatterns = [
     path('detalle/<str:nombre>/<str:sneak_id>', views.sneak_details, name='sneak_details'),
     path('delete/<int:id>', views.deleteSneak, name='deleteSneak'),
     path('editar/<int:id>', views.editar_zapatilla, name='editar'),
-    path('modify/<int:id>', views.editSneak ,name='update')
+    path('modify/<int:id>', views.editSneak ,name='update'),
 ]

@@ -11,8 +11,23 @@ class Usuario(models.Model):
         verbose_name = "Usuario"
         verbose_name_plural = "Usuarios"
 
+    class Meta:
+        verbose_name = "Usuario"
+        verbose_name_plural = "Usuarios"
+    
+    def __str__(self) -> str:
+        return self.user.username
+    
+
 class Region(models.Model):
     region = models.CharField(max_length=150, verbose_name="Regiones")
+
+    class Meta:
+        verbose_name = "Región"
+        verbose_name_plural = "Regiones"
+    
+    def __str__(self) -> str:
+        return self.region
 
 
 class Direccion(models.Model):
@@ -24,12 +39,23 @@ class Direccion(models.Model):
         verbose_name = "Dirección"
         verbose_name_plural = "Direcciones"
 
+    def __str__(self) -> str:
+        return self.direccion
+    
+
 
 class Carro(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     items = models.ForeignKey(Zapatilla, on_delete=models.CASCADE)
     cupon = models.ForeignKey(Cupon, on_delete=models.CASCADE, null=True)
     direccion = models.ForeignKey(Direccion, on_delete=models.CASCADE, null=True)
+
+    class Meta:
+        verbose_name = "Carro"
+        verbose_name_plural = "Carros"
+
+    def __str__(self) -> str:
+        return self.user.username
 
     
 

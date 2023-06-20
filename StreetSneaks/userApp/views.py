@@ -12,32 +12,6 @@ from sneakerApp.models import Zapatilla
 
 
 
-
-# Create your views here.
-#request -> response
-
-
-# @login_required
-# def agregar_al_carrito(request, producto_id):
-#     carro = get_object_or_404(Carro, user=request.user)
-#     producto = get_object_or_404(Zapatilla, id=producto_id)
-    
-#     carro.items.append(producto_id)
-#     carro.save()
-    
-#     return redirect('carro')
-
-# @login_required
-# def eliminar_del_carrito(request, producto_id):
-#     carro = get_object_or_404(Carro, user=request.user)
-    
-#     carro.items.remove(producto_id)
-#     carro.save()
-    
-#     return redirect('carro')
-
-
-
 @login_required
 def save_direccion(request):
     if request.method == 'POST':
