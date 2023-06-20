@@ -1,5 +1,4 @@
 from django.db import models
-from userApp.models import Carro
 class Cupon(models.Model):
     name = models.CharField(max_length=255, verbose_name="Cupones")
     valor = models.IntegerField(null=True, verbose_name="Valor")
@@ -24,7 +23,7 @@ class Iva(models.Model):
     
 class Boleta(models.Model):
     id_boleta = models.CharField(max_length=255, verbose_name="Id Boleta")
-    productos = models.ForeignKey(Carro, on_delete=models.CASCADE, verbose_name="Productos")
+    productos = models.ForeignKey('userApp.Carro', on_delete=models.CASCADE, verbose_name="Productos")
     fecha = models.DateField(auto_now_add=True, verbose_name="Fecha")
     total = models.IntegerField(null=True, verbose_name="Total")
     iva = models.ForeignKey(Iva, on_delete=models.CASCADE, verbose_name="Iva")
