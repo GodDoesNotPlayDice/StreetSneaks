@@ -2,13 +2,10 @@ from django.shortcuts import redirect, render, get_object_or_404
 from django.db import IntegrityError
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.models import User
-from ventaApp.models import Cupon
 from userApp.models import Carro
 from userApp.models import Usuario, Direccion, Region
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-# from .models import Carro
-from sneakerApp.models import Zapatilla
 
 
 
@@ -22,9 +19,10 @@ def save_direccion(request):
 @login_required
 def del_direccion(request, id_direccion):
     direc = Direccion.objects.get(pk=id_direccion)
+    Carro.objects.filter(direccion=direc).update(direccion=None)
     direc.delete()
-    del direc
     return redirect('profile')
+
 
 
 @login_required

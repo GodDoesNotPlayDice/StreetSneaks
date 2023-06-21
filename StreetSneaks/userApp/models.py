@@ -57,6 +57,13 @@ class Carro(models.Model):
     def __str__(self) -> str:
         return self.user.username
 
+
+class Tarjeta(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    numero = models.IntegerField(verbose_name="Numero")
+    fecha_vencimiento = models.DateField(verbose_name="Fecha de vencimiento")
+    cvv = models.IntegerField(verbose_name="CVV")
+    
     
 
 

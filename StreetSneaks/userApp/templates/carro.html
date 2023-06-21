@@ -4,6 +4,7 @@
     {% block add_styles %}
     <link rel="stylesheet" href="{% static '/css/css-views/pre-buy.css' %}">
     <link rel="stylesheet" href="{% static '/css/mediaquerys.css' %}">
+    <link rel="stylesheet" href="sweetalert2.min.css">
     {% endblock add_styles %}
     {% block content %}
     <section>
@@ -47,6 +48,7 @@
                                 <div class="form-group my-3">
                                     <label for="direccion">Tus Direccion</label>
                                         <select  id="direccion" name="direccion" class="form-control">
+                                            <option selected value="nan">Selecciona una Direccion</option>
                                         {% for direccion in direcciones %}
                                             <option value="{{direccion.id}}">{{direccion.direccion}} | {{direccion.region.region}}</option>
                                             {% endfor %}
@@ -60,7 +62,7 @@
                             {% if total_prods < 1 %}
                             <a href="#" class="btn btn-pagar btn-blue">No hay nada para pagar!</a>
                             {% else %}
-                            <button class="btn btn-pagar btn-blue">Pagar</button>
+                            <button class="btn btn-pagar btn-blue">Ir a Pagar</button>
                             {% endif %}
                         </form>
                     </div>
@@ -72,4 +74,7 @@
     {% block scripts %}
     <script src="{% static 'js/cupon.js' %}"></script>
     <script src="{% static 'js/direccion.js' %}"></script>
+    <script src="{% static 'js/carro_direcciones.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     {% endblock scripts %}

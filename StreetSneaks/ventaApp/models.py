@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 class Cupon(models.Model):
     name = models.CharField(max_length=255, verbose_name="Cupones")
     valor = models.IntegerField(null=True, verbose_name="Valor")
@@ -22,12 +23,15 @@ class Iva(models.Model):
         return str(self.valor)
     
 class Boleta(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name="Usuario" , null=True)
     id_boleta = models.CharField(max_length=255, verbose_name="Id Boleta")
-    productos = models.ForeignKey('userApp.Carro', on_delete=models.CASCADE, verbose_name="Productos")
+    productos = models.ManyToManyField('userApp.Carro', verbose_name="Productos")
     fecha = models.DateField(auto_now_add=True, verbose_name="Fecha")
     total = models.IntegerField(null=True, verbose_name="Total")
-    iva = models.ForeignKey(Iva, on_delete=models.CASCADE, verbose_name="Iva")
-    cupon = models.ForeignKey(Cupon, on_delete=models.CASCADE, verbose_name="Cupon")
+    iva = models.IntegerField(null=True, verbose_name="Iva")
+    cupon = models.ForeignKey(Cupon, on_delete=models.CASCADE, verbose_name="Cupon", null=True)
+    descuento = models.IntegerField(null=True, verbose_name="Descuento")
+    direccion = models.ForeignKey('userApp.Direccion', on_delete=models.CASCADE, verbose_name="Direccion", null=True)
 
     class Meta:
         verbose_name = "Boleta"

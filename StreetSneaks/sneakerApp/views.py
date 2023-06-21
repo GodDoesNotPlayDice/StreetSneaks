@@ -11,8 +11,8 @@ from .functions import id_prod
 def items():
     return Zapatilla.objects.all()    
 def novedades(request):
-    fecha_actual = datetime.now().date()
-    ctx = {'title': 'Novedades','zapatillas': items(), 'fecha_actual': fecha_actual} 
+    zapatillas = Zapatilla.objects.order_by('-fecha_creacion').all()
+    ctx = {'title': 'Novedades','zapatillas': zapatillas} 
     return render(request, 'sneaks.html', ctx)
 def hombre(request):
     ctx = {'title': 'Hombre','zapatillas': items()}
