@@ -1,6 +1,6 @@
 {% load static %}
 
-<form method="POST" action="{% url 'createSneak' %}" enctype="multipart/form-data">
+<form id="up-form" method="POST" action="{% url 'createSneak' %}" enctype="multipart/form-data">
     {% csrf_token %}
    
     <div class="lg:flex p-5 lg:items-center">

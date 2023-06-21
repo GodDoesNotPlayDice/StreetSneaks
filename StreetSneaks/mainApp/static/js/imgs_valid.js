@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $("form").submit(function(event) {
+    $("#up-form").submit(function(event) {
       var fileInput1 = $("#file_input").get(0).files[0];
       var fileInput2 = $("#file_input1").get(0).files[0];
       var fileInput3 = $("#file_input2").get(0).files[0];

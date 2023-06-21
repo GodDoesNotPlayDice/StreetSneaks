@@ -4,10 +4,17 @@
       <nav>
         <ul>
           <li class="header-top__item">
+            {% if not user.is_authenticated %}
             <a class="header-top__item__link" href="{% url 'login' %}">
               <i class="fa-solid fa-truck"></i><span class="header-top__item__link__text">
                 Estado de mi Pedido
               </span></a>
+              {% else %}
+              <a class="header-top__item__link" href="{% url 'mis_pedidos' %}">
+                <i class="fa-solid fa-truck"></i><span class="header-top__item__link__text">
+                  Estado de mi Pedido
+                </span></a>
+              {% endif %}
             </li>
             <li class="header-top__item">
               {% if user.is_authenticated %}
@@ -36,9 +43,9 @@
           <div class="header-center__search">
             <nav>
               <div class="input-group rounded">
-                <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+                <input hidden type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
                   aria-describedby="search-addon">
-                <span class="input-group-text border-0 bg-transparent text-white" id="search-addon">
+                <span hidden class="input-group-text border-0 bg-transparent text-white" id="search-addon">
                   <i class="fas fa-search"></i>
                 </span>
               </div>
@@ -86,7 +93,12 @@
             </li>
               {% endif %}
             <li class="header-center__menu__item disable">
-              <a class="header-center__menu__item__link" href="../views/user/pedido.html"><i class="fa-solid fa-truck"></i>Mis pedidos</a>
+              {% if not user.is_authenticated %}
+              <a class="header-center__menu__item__link" href="{% url 'login' %}"><i class="fa-solid fa-truck"></i>Mis pedidos</a>
+              {% else %}
+              <li class="header-center__menu__item disable">
+              <a class="header-center__menu__item__link" href="{% url 'mis_pedidos' %}"><i class="fa-solid fa-truck"></i>Mis pedidos</a>
+              {% endif %}
             </li>
           </ul>
         </div>
@@ -95,9 +107,9 @@
       <div class="header-center__search_under">
         <nav>
           <div class="input-group rounded">
-            <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+            <input hidden type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
               aria-describedby="search-addon">
-            <span class="input-group-text border-0 bg-transparent text-white" id="search-addon-mobile">
+            <span hidden class="input-group-text border-0 bg-transparent text-white" id="search-addon-mobile">
               <i class="fas fa-search"></i>
             </span>
           </div>

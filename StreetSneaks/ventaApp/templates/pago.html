@@ -4,6 +4,7 @@
     {% block add_styles %}
     <link rel="stylesheet" href="{% static '/css/css-views/pedido.css' %}">
     <link rel="stylesheet" href="{% static '/css/css-views/pago.css' %}">
+    <link rel="stylesheet" href="sweetalert2.min.css">
     {% endblock add_styles %}
     {% block content %}
     <section>
@@ -34,23 +35,26 @@
                     <section>
                         <div class="container mt-5">
                             <h5 class="text-center mb-5" id="form-quest">Ingrese sus datos</h5>
-                            <form>
+                            <form action="{% url 'pagando' fecha %}" method="POST">
+                                {% csrf_token %}
                                 <div class="form-group">
                                     <label for="nro-credit">Nro.Tarjeta, Debito/Credito</label>
-                                    <input type="text" class="form-control" id="nro-credit"
-                                        placeholder="Ejemplo: 4513 2568 5876 0869">
-                                </div>
-                                <div class="card-credit">
-                                    <div class="form-group">
-                                        <label for="fecha-card">Fecha de caducidad</label>
-                                        <input type="text" class="form-control credit-label" id="fecha-card"
-                                            placeholder="Ejemplo: 02/25">
+                                    <input name="nro-credit" type="text" class="form-control" id="nro-credit" placeholder="Ejemplo: 4513 2568 5876 0869">
+                                    <span class="invalid-feedback inline"></span>
+                                  </div>
+                                  <div class="card-credit">
+                                    <div class="form-group mx-2">
+                                      <label for="fecha-card">Fecha de caducidad</label>
+                                      <input name="fecha-card" type="text" class="form-control credit-label" id="fecha-card" placeholder="Ejemplo: 02/25">
+                                      <span class="invalid-feedback inline"></span>
                                     </div>
                                     <div class="form-group">
-                                        <label for="subject">CVV</label>
-                                        <input type="text" class="form-control credit-label" id="cvv-card"
-                                            placeholder="Ejemplo: 273">
+                                      <label for="cvv">CVV</label>
+                                      <input name="cvv" type="text" class="form-control credit-label" id="cvv-card" placeholder="Ejemplo: 273">
+                                      <span class="invalid-feedback inline"></span>
                                     </div>
+                                  </div>
+                                                                                    
                                 </div>
                                 <div class="pay-details">
                                     <p class="pay-details__text"><span class="--weight-600">Descuentos:</span> ${{descuento}}</p>
@@ -65,7 +69,7 @@
                                     <p class="pay-details__text"><span class="--weight-600">Total a Pagar:</span> ${{total}}</p>
                                 </div>
                                 <div class="btn-pay">
-                                    <button type="submit" class="btn btn-red">Pagar</button>
+                                    <button id="pagar" class="btn btn-red">Pagar</button>
                                 </div>
                             </form>
                         </div>
@@ -75,3 +79,7 @@
         </div>
     </section>
 {% endblock content %}
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="{% static 'js/valid_tarjeta.js' %}"></script>
+{% endblock scripts %}

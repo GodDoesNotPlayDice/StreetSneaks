@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block add_styles %}
+<link rel="stylesheet" href="{% static 'css/css-views/pedido.css' %}">
+{% endblock add_styles %}
+{% block content %}
+    <section>
+      <h2>Estado de tu/s Pedido/s</h2>
+      <div class="order-wrap">
+        <div class="order-cards">
+          {% for b in boleta %}
+          {% include 'components/order-card.html' %}
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+  {% endblock content %}

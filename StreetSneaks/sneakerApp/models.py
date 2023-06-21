@@ -33,8 +33,9 @@ class Zapatilla(models.Model):
     precio = models.IntegerField(default=0, verbose_name="Valor")
     disponible = models.BooleanField(default=False, verbose_name="Disponible")
     tallaEUR = models.ForeignKey(TallaEUR, on_delete=models.CASCADE, verbose_name="Talla EUR", null=True)
+    fecha_creacion = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de creación", null=True)
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE, verbose_name="Categoría")
-    
+        
     class Meta:
         verbose_name = "Zapatilla"
         verbose_name_plural = "Zapatillas"

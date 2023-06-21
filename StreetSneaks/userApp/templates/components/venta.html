@@ -1,0 +1,17 @@
+<div class="order-card">
+    <div class="order-card__content">
+      <div class="order-card__img-container">
+        <img src="{{v.items.imagen.url}}" alt=""
+          class="order-card__img">
+      </div>
+      <div class="order-card__details">
+        <p class="order-card__texts">{{v.items.name}}</p>
+        <p class="order-card__texts">Talla {{v.items.tallaEUR.number}} {{v.items.tallaEUR.tipo}}</p>
+        <p class="order-card__texts">${{v.items.precio}} CLP</p>
+        <p class="order-card__texts">ID: {{v.items.id_prod}}</p>
+      </div>
+      <div class="order-card__time">
+        <p class="order-card__time__text"><span class="status--red">En Vendido</span></p>
+      </div>
+    </div>
+  </div>

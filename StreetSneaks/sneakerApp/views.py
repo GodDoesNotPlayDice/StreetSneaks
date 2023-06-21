@@ -1,4 +1,4 @@
-import os
+from datetime import datetime
 from django.conf import settings
 from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth.decorators import login_required, user_passes_test
@@ -11,7 +11,8 @@ from .functions import id_prod
 def items():
     return Zapatilla.objects.all()    
 def novedades(request):
-    ctx = {'title': 'Novedades','zapatillas': items()} 
+    zapatillas = Zapatilla.objects.order_by('-fecha_creacion').all()
+    ctx = {'title': 'Novedades','zapatillas': zapatillas} 
     return render(request, 'sneaks.html', ctx)
 def hombre(request):
     ctx = {'title': 'Hombre','zapatillas': items()}
@@ -33,6 +34,7 @@ def sneaks(request):
     modal = False
     ctx = {'categorias' : categoria, 'tallas': talla, 'zapatillas': items, 'cupones': cupones, 'title': 'ADMIN', 'modal': modal}
     return render(request, 'crud.html',ctx)
+
 
 @login_required
 @user_passes_test(lambda user: user.is_superuser)

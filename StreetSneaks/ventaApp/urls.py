@@ -8,5 +8,7 @@ urlpatterns = [
     path('eliminar_cupon/<int:id_cupon>', views.eliminar_cupon, name='eliminar_cupon'),
     path('api/validar_cupon', views.validar_cupon, name='validar_cupon'),
     path('api/validar_direccion', views.validar_direccion, name='validar_direccion'),
-    path('pago/', views.pagar, name='pago')
+    path('pago/', views.pagar, name='pago'),
+    path('pedidos/mis_pedidos/', views.pedidos, name='mis_pedidos'),
+    path('confirmacion_pago/<str:fecha_entrega>', views.pagar_confirmar, name='pagando'),
 ]

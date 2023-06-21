@@ -1,0 +1,29 @@
+<div class="order-card">
+    <div class="order-card__content">
+      <div class="order-card__img-container">
+        <img src="{{b.productos.items.imagen.url}}" alt="" class="order-card__img">
+      </div>
+      <div class="order-card__details">
+        <p class="order-card__texts">{{b.productos.items.name}}</p>
+        <p class="order-card__texts">${{b.productos.items.precio}} CLP</p>
+        <p class="order-card__texts">Compra: {{b.fecha_actual}}</p>
+      </div>
+    </div>
+    <div class="order-card__time">
+      <p class="order-card__time__text">Fecha estimada {{b.fecha}}</p>
+      <a href="pedido-detalle.html" target="_blank" class="order-card__link">Detalles</a>
+    </div>
+    <div class="order-ship-progress">
+      <div class="order-ship-progress__texts">
+        <p class="order-ship-progress__text">
+          <i class="fa-solid fa-truck-fast"></i> Saliendo</p>
+        <p class="order-ship-progress__text">
+          <i class="fa-solid fa-truck-arrow-right"></i> A mitad de camino</p>
+        <p class="order-ship-progress__text">
+          <i class="fa-solid fa-house"></i> Llegando</p>
+      </div>
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+      </div>
+    </div>
+  </div>
