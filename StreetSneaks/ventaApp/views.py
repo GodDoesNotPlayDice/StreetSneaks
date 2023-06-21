@@ -1,7 +1,6 @@
 import time
 from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth.decorators import login_required, user_passes_test
-from django.contrib.auth.models import User
 from django.http import JsonResponse
 from userApp.models import Direccion, Tarjeta
 from sneakerApp.models import Zapatilla
