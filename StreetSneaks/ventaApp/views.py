@@ -137,12 +137,12 @@ def pagar(request):
 
 
 @login_required
-def pagar_confirmar(request):
+def pagar_confirmar(request, fecha_entrega):
+    print(fecha_entrega)
     if request.method == 'POST':
         nro_tarjeta = request.POST['nro-credit']
         cvv = request.POST['cvv']
         fecha_vencimiento = request.POST['fecha-card']
-
         fecha_vencimiento = datetime.strptime(fecha_vencimiento, '%m/%y').date()
         Tarjeta(
             user=request.user,
@@ -153,13 +153,9 @@ def pagar_confirmar(request):
         try:
             iva = Iva.objects.get(id=1).valor
             locale.setlocale(locale.LC_ALL, 'es_ES.utf8')
-            fecha_actual = datetime.now().date()
-            fecha_nueva = fecha_actual + timedelta(days=3)
-            fecha_formateada = fecha_nueva.strftime('%d de %B del %Y')
             carro = Carro.objects.filter(user=request.user)
             items = [c.items for c in carro]
             total = sum(item.precio for item in items)
-            cupon = [c.cupon for c in carro]
             cupon_valores_1 = [c.cupon.valor for c in carro]
             for i in cupon_valores_1:
                 cupon_valores = i
@@ -168,7 +164,6 @@ def pagar_confirmar(request):
             cupon_valores = 0
         
         descuento = int(total * cupon_valores / 100)
-        direccion = [c.direccion for c in carro][0]
         total_con_descuento = total - descuento
         total_con_iva = total_con_descuento + (total_con_descuento * (iva / 100))
 
@@ -176,6 +171,7 @@ def pagar_confirmar(request):
             cupon = None
 
         id_boleta = generar_id_boleta()
+        # fecha_entrega = (datetime.now().date() + timedelta(days=3)).strftime('%d de %B del %Y')
         for c in carro:
             venta = Venta(
                 user=c.user,
@@ -188,7 +184,8 @@ def pagar_confirmar(request):
                 user=request.user,
                 id_boleta= id_boleta,
                 productos=venta,
-                fecha=fecha_formateada,
+                fecha=fecha_entrega,
+                fecha_actual=(datetime.now().date()).strftime('%d de %B del %Y'),
                 total=int(total_con_iva),
                 iva=iva,
                 descuento=descuento,

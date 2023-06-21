@@ -10,5 +10,5 @@ urlpatterns = [
     path('api/validar_direccion', views.validar_direccion, name='validar_direccion'),
     path('pago/', views.pagar, name='pago'),
     path('pedidos/mis_pedidos/', views.pedidos, name='mis_pedidos'),
-    path('confirmacion_pago', views.pagar_confirmar, name='pagando'),
+    path('confirmacion_pago/<str:fecha_entrega>', views.pagar_confirmar, name='pagando'),
 ]

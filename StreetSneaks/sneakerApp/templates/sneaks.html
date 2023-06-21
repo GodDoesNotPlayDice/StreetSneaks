@@ -8,7 +8,7 @@
         {% for zapatilla in zapatillas %}
         {% if title == zapatilla.categoria.nombre %}
         {% include 'components/sneak.html' %}
-        {% else %}
+        {% elif title == "Novedades" %}
         {% include 'components/sneak.html' %}
         {% endif %}
         {% endfor %}

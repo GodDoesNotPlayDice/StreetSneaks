@@ -97,23 +97,9 @@
   {% if user.is_staff == 1 %}
   <h2>Ventas</h2>
       <div class="product-sale" id="sales">
-        <div class="order-card">
-          <div class="order-card__content">
-            <div class="order-card__img-container">
-              <img src="../../src/imgs/sneaks/Jose-Fuentes/Air-Force-1-Low-Retro/Air-Force-1-Low-Retro.webp" alt=""
-                class="order-card__img">
-            </div>
-            <div class="order-card__details">
-              <p class="order-card__texts">Air Force 1 Low Retro</p>
-              <p class="order-card__texts">Talla 36 EUR</p>
-              <p class="order-card__texts">$36.000 CLP</p>
-              <p class="order-card__texts">ID: #15636</p>
-            </div>
-            <div class="order-card__time">
-              <p class="order-card__time__text"><span class="status--red">En Vendido</span></p>
-            </div>
-          </div>
-        </div>
+        {% for v in ventas %}
+        {% include 'components/venta.html' %}
+        {% endfor %}
       </div>
     </section>
   {% else %}
@@ -123,25 +109,9 @@
     </div>
     <h2>Mis Compras</h2>
     <div class="product-sale" id="bought">
-      <div class="order-card">
-        <div class="order-card__content">
-          <div class="order-card__img-container">
-            <img src="../../src/imgs/sneaks/Jose-Fuentes/Air-Force-1-Low-Retro/Air-Force-1-Low-Retro.webp" alt=""
-              class="order-card__img">
-          </div>
-          <div class="order-card__details">
-            <p class="order-card__texts">Air Force 1 Low Retro</p>
-            <p class="order-card__texts">Talla 36 EUR</p>
-            <p class="order-card__texts">$36.000 CLP</p>
-            <p class="order-card__texts">Nro-Orden: #123455678</p>
-            <p class="order-card__texts">Compra: 31/03/2023</p>
-          </div>
-          <div class="order-card__time">
-            <p class="order-card__time__text"><span class="status--red">Entregado</span></p>
-            <a href="pedido.html" target="_blank" class="order-card__link">Pedidos</a>
-          </div>
-        </div>
-      </div>
+      {% for b in boleta %}
+      {% include 'components/compra.html' %}
+      {% endfor %}
     </div>
     <!-- ADMIN -->
   </section>

@@ -2,6 +2,7 @@ from django.shortcuts import redirect, render, get_object_or_404
 from django.db import IntegrityError
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.models import User
+from ventaApp.models import Venta, Boleta
 from userApp.models import Carro
 from userApp.models import Usuario, Direccion, Region
 from django.contrib import messages
@@ -45,9 +46,11 @@ def edi_direct(request, id_direccion):
 
 @login_required
 def profile(request):
+    ventas = Venta.objects.all()
+    boleta = Boleta.objects.filter(user=request.user)
     regiones = Region.objects.all()
     direcciones = Direccion.objects.filter(user=request.user)
-    ctx = {'regiones': regiones, 'title': request.user.username, 'direcciones': direcciones}
+    ctx = {'regiones': regiones, 'title': request.user.username, 'direcciones': direcciones, 'ventas' : ventas, 'boleta': boleta}
     return render(request, 'profile.html', ctx)
 
 @login_required
@@ -64,6 +67,7 @@ def carro(request, username):
 
 
 def signup(request):
+
     ctx={'title': 'Register'}
     if request.method == 'GET':
         return render(request, 'register.html', ctx)

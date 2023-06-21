@@ -35,7 +35,7 @@
                     <section>
                         <div class="container mt-5">
                             <h5 class="text-center mb-5" id="form-quest">Ingrese sus datos</h5>
-                            <form action="{% url 'pagando' %}" method="POST">
+                            <form action="{% url 'pagando' fecha %}" method="POST">
                                 {% csrf_token %}
                                 <div class="form-group">
                                     <label for="nro-credit">Nro.Tarjeta, Debito/Credito</label>

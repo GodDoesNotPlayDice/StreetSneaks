@@ -1,0 +1,20 @@
+<div class="order-card">
+    <div class="order-card__content">
+      <div class="order-card__img-container">
+        <img src="{{b.productos.items.imagen.url}}" alt="{{b.productos.items.imagen.url}}"
+          class="order-card__img">
+      </div>
+      <div class="order-card__details">
+        <p class="order-card__texts">{{b.productos.items.name}}</p>
+        <p class="order-card__texts">Talla {{b.productos.items.tallaEur.number}} {{b.productos.items.tallaEur.tipo}}</p>
+        <p class="order-card__texts">${{b.productos.items.precio}} CLP</p>
+        <p class="order-card__texts">Nro-Orden: {{b.id_boleta}}</p>
+        <p class="order-card__texts">Compra: {{b.fecha_actual}}</p>
+        <p class="order-card__texts">Fecha entrega estimada: {{b.fecha}}</p>
+      </div>
+      <div class="order-card__time">
+        <p class="order-card__time__text"><span class="status--red">Entregado</span></p>
+        <a href="{% url 'mis_pedidos' %}" class="order-card__link">Pedidos</a>
+      </div>
+    </div>
+  </div>
