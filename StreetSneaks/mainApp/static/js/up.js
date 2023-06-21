@@ -1,6 +1,6 @@
 $(document).ready(function() {
     // Función de validación del formulario
-    $("form").submit(function(event) {
+    $("#up-form").submit(function(event) {
       // Obtener los valores de los campos de nombre y precio
       var name = $("#name").val().trim();
       var precio = $("#precio").val().trim();

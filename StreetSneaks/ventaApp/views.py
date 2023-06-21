@@ -7,6 +7,7 @@ from userApp.models import Direccion, Tarjeta
 from sneakerApp.models import Zapatilla
 from userApp.models import Carro
 from .models import Boleta, Cupon, Iva
+from ventaApp.models import Venta
 from mainApp.templatetags.filters import precio
 from datetime import datetime, timedelta
 import locale
@@ -174,19 +175,27 @@ def pagar_confirmar(request):
         if cupon_valores == 0:
             cupon = None
 
-        boleta = Boleta.objects.create(
-            user=request.user,
-            id_boleta= generar_id_boleta(),
-            fecha=fecha_formateada,
-            total=int(total_con_iva),
-            iva=iva,
-            cupon=cupon,
-            descuento=descuento,
-            direccion=direccion
-        )
+        id_boleta = generar_id_boleta()
+        for c in carro:
+            venta = Venta(
+                user=c.user,
+                items=c.items,
+                cupon=c.cupon,
+                direccion=c.direccion)
+            venta.save()
 
-        boleta.productos.set(carro)
-        boleta.save()
+            boleta = Boleta.objects.create(
+                user=request.user,
+                id_boleta= id_boleta,
+                productos=venta,
+                fecha=fecha_formateada,
+                total=int(total_con_iva),
+                iva=iva,
+                descuento=descuento,
+                numero_tarjeta = nro_tarjeta
+            )
+            boleta.save()
+        
         carro.delete()
         time.sleep(3)
         return redirect('mis_pedidos')
