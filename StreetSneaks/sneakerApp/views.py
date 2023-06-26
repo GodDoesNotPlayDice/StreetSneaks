@@ -25,7 +25,7 @@ def mujer(request):
     return render(request, 'sneaks.html', ctx)
 
 @login_required
-@user_passes_test(lambda user: user.is_superuser)
+@user_passes_test(lambda user: user.is_staff)
 def sneaks(request):
     categoria = Categoria.objects.all()
     talla = TallaEUR.objects.all()
@@ -37,7 +37,7 @@ def sneaks(request):
 
 
 @login_required
-@user_passes_test(lambda user: user.is_superuser)
+@user_passes_test(lambda user: user.is_staff)
 def createSneak(request):
     if request.method == 'POST':
         name = request.POST['name']
@@ -67,7 +67,7 @@ def createSneak(request):
 
 
 @login_required
-@user_passes_test(lambda user: user.is_superuser)
+@user_passes_test(lambda user: user.is_staff)
 def deleteSneak(request,id):
     zapatilla = Zapatilla.objects.get(pk=id)
     zapatilla.delete()
@@ -75,7 +75,7 @@ def deleteSneak(request,id):
 
 
 @login_required
-@user_passes_test(lambda user: user.is_superuser)
+@user_passes_test(lambda user: user.is_staff)
 def editar_zapatilla(request, id):
     try:
         categoria = Categoria.objects.all()
@@ -86,7 +86,7 @@ def editar_zapatilla(request, id):
         print(e)       
 
 @login_required
-@user_passes_test(lambda user: user.is_superuser)
+@user_passes_test(lambda user: user.is_staff)
 def editSneak(request, id):
     if request.method == 'POST':
         zapatilla = Zapatilla.objects.get(pk=id)
@@ -99,6 +99,14 @@ def editSneak(request, id):
         zapatilla.tallaEUR = TallaEUR.objects.get(id=request.POST['talla_editar'])
         zapatilla.save()
         return redirect('gestion-zapatillas')
+
+@login_required
+@user_passes_test(lambda user: user.is_staff)
+def vendedores(request):
+    ctx = {'title': 'Vendedores'}
+    return render(request, 'vendedores.html', ctx)
+
+
 
 
 def sneak_details(request, nombre, sneak_id):
