@@ -28,6 +28,14 @@ class Venta(models.Model):
     cupon = models.ForeignKey(Cupon, on_delete=models.CASCADE, verbose_name="Cupon", null=True)
     direccion = models.ForeignKey('userApp.Direccion', on_delete=models.CASCADE, verbose_name="Direccion", null=True)
 
+    class Meta:
+        verbose_name = "Venta"
+        verbose_name_plural = "Ventas"
+    
+    def __str__(self) -> str:
+        return str(self.items)
+    
+
 
 class Boleta(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name="Usuario" , null=True)
