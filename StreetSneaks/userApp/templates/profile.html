@@ -18,13 +18,17 @@
         </div>
         <div class="user-content">
           {% if user.is_superuser == 1 %}
+          <a href="#buys" class="user-link">Mis Compras.</a>
+          <a href="{% url 'mis_pedidos' %}" class="user-link">Mis Pedidos.</a>
            <a href="{% url 'gestion-zapatillas' %}" class="admin-link">Gestionar productos</a>
-            <a href="{% url 'vendedores' %}" class="admin-link">Vendedores</a>
+            <a href="{% url 'vendedores' %}" class="admin-link">Usuarios</a>
           {% elif user.is_staff == 1%}
+          <a href="#buys" class="user-link">Mis Compras.</a>
+          <a href="{% url 'mis_pedidos' %}" class="user-link">Mis Pedidos.</a>
             <a href="{% url 'gestion-zapatillas' %}" class="admin-link">Gestionar productos</a>
           {% else %}
           <a href="#buys" class="user-link">Mis Compras.</a>
-          <a href="pedido.html" class="user-link">Mis Pedidos.</a>
+          <a href="{% url 'mis_pedidos' %}" class="user-link">Mis Pedidos.</a>
           {% endif %}
         </div>
       </div>

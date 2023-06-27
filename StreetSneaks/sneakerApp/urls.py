@@ -13,4 +13,8 @@ urlpatterns = [
     path('editar/<int:id>', views.editar_zapatilla, name='editar'),
     path('modify/<int:id>', views.editSneak ,name='update'),
     path('vendedores/', views.vendedores, name='vendedores'),
+    path('deleteUser/<int:id>', views.deleteUser, name='deleteUser'),
+    path('acenderVendedor/<int:id>', views.acenderVendedor, name='acenderVendedor'),
+    path('decenderVendedor/<int:id>', views.decenderVendedor, name='decenderVendedor'),
+    path('busquedaUser/', views.busquedaUser, name='busquedaUser'),
 ]

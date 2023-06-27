@@ -1,3 +1,4 @@
+import time
 from django.shortcuts import redirect, render, get_object_or_404
 from django.db import IntegrityError
 from django.contrib.auth import login, logout, authenticate
@@ -17,6 +18,8 @@ def save_direccion(request):
         region = Region.objects.get(id=region)
         Direccion(region=region, user=request.user, direccion=request.POST['direccion']).save()
         return redirect('profile')
+    
+    
 @login_required
 def del_direccion(request, id_direccion):
     direc = Direccion.objects.get(pk=id_direccion)
@@ -108,3 +111,30 @@ def signin(request):
 def signout(request):
     logout(request)
     return redirect('index')
+
+@login_required
+def goEdit(request):
+    try:
+        usuario = Usuario.objects.get(user=request.user)
+    except:
+        usuario = None
+    ctx = {'title': 'Editar perfil', 'usuario': usuario}
+    return render(request, 'editar_user.html', ctx)
+
+@login_required
+def editarUsuario(request):
+    if request.method == 'POST':
+        user = User.objects.get(username=request.user.username)
+        usuario = Usuario.objects.get(user=request.user)
+        if request.POST['username'] != '':
+            user.username = request.POST['username']
+        if request.POST['email'] != '':
+            user.email = request.POST['email']
+        if request.POST['lastname'] != '':
+            user.last_name = request.POST['lastname']
+        if request.POST['celular'] != '':
+            usuario.celular = request.POST['celular']
+        usuario.save()
+        user.save()
+        time.sleep(2)
+        return redirect('profile')

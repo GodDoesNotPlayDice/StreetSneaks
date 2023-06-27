@@ -2,13 +2,15 @@
 {% load static %}
 {% block add_styles %}
   <link rel="stylesheet" href="{% static 'css/css-views/nosotros.css' %}">
+  <link rel="stylesheet" href="sweetalert2.min.css">
 {% endblock add_styles %}
 {% block content %}
 <section>
   <h2 class="trabaja__title">Trabaja con nosotros</h2>
   <div class="trab-contain">
   <div class="cv-wrapper">
-      <form class="cv" id="form">
+      <form class="cv" id="form" method="POST" action="{% url 'contactanos' %}">
+        {% csrf_token %}
         <div class="name-group">
           <label for="name" class="cv__label">
               Nombre <span id="fn-warn" class="warning">* Debe rellenar el campo nombre</span>
@@ -49,6 +51,7 @@
 </section>
 {% block scripts %}
 <script src="{% static 'js/script.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 {% endblock scripts %}
 {% endblock content %}
 

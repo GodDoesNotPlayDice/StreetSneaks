@@ -10,4 +10,6 @@ urlpatterns = [
     path('del_direccion<int:id_direccion>', views.del_direccion, name='del_direccion'),
     path('edit_direccion/<int:id_direccion>', views.edit_direccion , name='edit_direccion'),
     path('edi_direct/<int:id_direccion>', views.edi_direct, name='edi_direct'),
+    path('editar_profile/', views.goEdit, name='editar_usuario'),
+    path('editar_usuario/', views.editarUsuario, name='editUser'),
 ]

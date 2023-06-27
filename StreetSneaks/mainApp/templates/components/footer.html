@@ -12,6 +12,10 @@
             <li><a href="{% url 'tos' %}" class="footer-top__item">Terminos y Servicio</a></li>
             <li><a href="{% url 'work' %}" class="footer-top__item">Trabaja con nosotros</a></li>
             <li><a href="{% url 'priv' %}" class="footer-top__item">Declaracion de privacidad</a></li>
+            {% if user.is_superuser == 1 %}
+            <li><a href="{% url 'respuestas' %}" class="footer-top__item">Mensajes de Empleo</a></li>
+            <li><a href="{% url 'respuestas' %}" class="footer-top__item">Preguntas</a></li>
+            {% endif %}
           </ul>
         </div>
         <div class="footer-top__social">
