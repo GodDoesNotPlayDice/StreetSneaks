@@ -175,6 +175,12 @@ form.addEventListener('submit', e => {
         a_error.classList.remove('enable');
         c_error.classList.remove('enable');
         p_error.classList.remove('enable');
+        Swal.fire({
+            icon: 'success',
+            title: 'Enviado con éxito',
+            text: 'Su propuesta ha sido enviada con éxito, nos pondremos en contacto con usted lo antes posible.',
+          });
+        form.submit();
         form.reset();
     } else {
         console.log(campos.email, campos.first_name, campos.last_name, campos.number, campos.text)

@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block header %}
+{% include 'components/admin-header.html' %}
+{% endblock header %}
+{% block boostrap %}
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="sweetalert2.min.css">
+{% endblock boostrap %}
+{% block content %}
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          backgroundColor: {
+            's-blue': '#4355ce',
+            's-red': '#e13838',
+            's-black': '#1f1b1a',
+          }
+        }
+      }
+    }
+  </script>
+  <div class="p-3">
+    <h2 class="my-5 text-center text-3xl">Preguntas y Empleos</h2>
+    {% for pregunta in preguntas %}
+    {% if not pregunta.nro_pedido == None %}
+    <div class="border p-3 my-5">
+      <p class="text-3xl">Pregunta</p>
+      <p>{{pregunta.nombre}}</p>
+      <p>{{pregunta.email}}</p>
+      <p><b>{{pregunta.nro_pedido}}</b></p>
+      <div class="my-5">
+        <h3 class="text-2xl">{{pregunta.asunto}}</h3>
+        <p class="flex flex-col">{{pregunta.mensaje}}</p>
+      </div>
+      <a href="https://mail.google.com/?" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Contactar al Email</a>
+    </div>
+    {% else %}
+    <div class="border p-3 my-5">
+      <p class="text-3xl">Trabajo</p>
+      <p>{{pregunta.nombre}}</p>
+      <p>{{pregunta.email}}</p>
+      <p>{{pregunta.celular}}</p>
+      <div class="my-3">
+        <p class="w-full overflow-scroll">{{pregunta.propuesta}}</p>
+      </div>
+      <a href="https://mail.google.com/?" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Contactar al Email</a>
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+  
+{% endblock content %}
+{% block footer %}
+{% include 'components/admin-footer.html' %}
+{% endblock footer %}
+{% block scripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+{% endblock scripts %}

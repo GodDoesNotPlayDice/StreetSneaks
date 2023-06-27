@@ -1,13 +1,12 @@
-from datetime import datetime
-from django.conf import settings
+import time
 from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth.decorators import login_required, user_passes_test
-# from django.core.files.storage import default_storage
 from .models import Zapatilla, TallaEUR, Categoria
 from ventaApp.models import Cupon
 from .functions import id_prod
+from django.contrib.auth.models import User
+from userApp.models import Usuario
 
-# Create your views here.
 def items():
     return Zapatilla.objects.all()    
 def novedades(request):
@@ -25,7 +24,7 @@ def mujer(request):
     return render(request, 'sneaks.html', ctx)
 
 @login_required
-@user_passes_test(lambda user: user.is_superuser)
+@user_passes_test(lambda user: user.is_staff)
 def sneaks(request):
     categoria = Categoria.objects.all()
     talla = TallaEUR.objects.all()
@@ -37,7 +36,7 @@ def sneaks(request):
 
 
 @login_required
-@user_passes_test(lambda user: user.is_superuser)
+@user_passes_test(lambda user: user.is_staff)
 def createSneak(request):
     if request.method == 'POST':
         name = request.POST['name']
@@ -67,7 +66,7 @@ def createSneak(request):
 
 
 @login_required
-@user_passes_test(lambda user: user.is_superuser)
+@user_passes_test(lambda user: user.is_staff)
 def deleteSneak(request,id):
     zapatilla = Zapatilla.objects.get(pk=id)
     zapatilla.delete()
@@ -75,7 +74,7 @@ def deleteSneak(request,id):
 
 
 @login_required
-@user_passes_test(lambda user: user.is_superuser)
+@user_passes_test(lambda user: user.is_staff)
 def editar_zapatilla(request, id):
     try:
         categoria = Categoria.objects.all()
@@ -86,7 +85,7 @@ def editar_zapatilla(request, id):
         print(e)       
 
 @login_required
-@user_passes_test(lambda user: user.is_superuser)
+@user_passes_test(lambda user: user.is_staff)
 def editSneak(request, id):
     if request.method == 'POST':
         zapatilla = Zapatilla.objects.get(pk=id)
@@ -100,8 +99,55 @@ def editSneak(request, id):
         zapatilla.save()
         return redirect('gestion-zapatillas')
 
+@login_required
+@user_passes_test(lambda user: user.is_superuser)
+def vendedores(request):
+    usuarios = Usuario.objects.all()
+    print(usuarios)
+    ctx = {'title': 'Usuarios', 'usuarios': usuarios}
+    return render(request, 'vendedores.html', ctx)
 
+def busquedaUser(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        usuarios = Usuario.objects.filter(user__username__icontains=username)
+        ctx = {'title': 'Usuarios', 'usuarios': usuarios}
+        return render(request, 'vendedores.html', ctx)
+    else:
+        return redirect('vendedores')
+
+
+
+@login_required
+@user_passes_test(lambda user: user.is_superuser)
+def deleteUser(request, id):
+    usuario = User.objects.get(pk=id)
+    usuario.delete()
+    return redirect('vendedores')
+
+
+@login_required
+@user_passes_test(lambda user: user.is_superuser)
+def acenderVendedor(request, id):
+    usuario = User.objects.get(pk=id)
+    usuario.is_staff = True
+    usuario.save()
+    time.sleep(1)
+    return redirect('vendedores')
+
+@login_required
+@user_passes_test(lambda user: user.is_superuser)
+def decenderVendedor(request, id):
+    usuario = User.objects.get(pk=id)
+    usuario.is_staff = False
+    usuario.save()
+    time.sleep(1)
+    return redirect('vendedores')
+
+@login_required
 def sneak_details(request, nombre, sneak_id):
     sneak = get_object_or_404(Zapatilla, id_prod=sneak_id)
     ctx = {'sneak' : sneak, 'title': sneak.name}
     return render(request, 'details.html', ctx) 
+
+

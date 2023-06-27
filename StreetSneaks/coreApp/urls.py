@@ -6,4 +6,6 @@ urlpatterns = [
     path('privacidad/', views.priv, name='priv'),
     path('preguntas-frecuentes/', views.faq, name='faq'),
     path('Terminos-y-Servicio/', views.tos, name='tos'),
+    path('contactanos/', views.enviarForm, name='contactanos'),
+    path('respuestas/', views.respuestas, name='respuestas'),
 ]

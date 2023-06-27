@@ -2,6 +2,7 @@
  {% load static %}
   {% block add_styles %}
   <link rel="stylesheet" href="{% static 'css/css-views/question.css' %}">
+  <link rel="stylesheet" href="sweetalert2.min.css">
   {% endblock add_styles %}
   {% block content %}
   <section>
@@ -263,18 +264,25 @@
         <section>
           <div class="container mt-5">
             <h1 class="text-center mb-5" id="form-quest">Contáctanos</h1>
-            <form name="contactanos-form" id="contactanos-form">
+            <form name="contactanos-form" method="post" action="{% url 'contactanos' %}" id="contactanos-form">
+              {% csrf_token %}
               <div class="form-group">
                 <label for="name">Nombre</label>
-                <input type="text" name="name" class="form-control" id="name" placeholder="Ingrese su nombre">
+                <input type="text" value="{{user.username}}" readonly name="name" class="form-control" id="name" placeholder="Ingrese su nombre">
               </div>
               <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" name="email" class="form-control" id="email" placeholder="Ingrese su email">
+                <input type="email" value="{{user.email}}" readonly name="email" class="form-control" id="email" placeholder="Ingrese su email">
               </div>
               <div class="form-group">
                 <label for="order">Número de pedido</label>
-                <input type="number" name="order" class="form-control" id="order" placeholder="Ingrese el número de su pedido">
+                <select class="form-select" aria-label="order" name="order">
+                  {% for order in orders %}
+                  <option value="{{order.id_boleta}}">{{order.id_boleta}}</option>
+                  {% empty %}
+                  <option value="nan">No hay pedidos</option>
+                  {% endfor %}
+                </select>
               </div>
               <div class="form-group">
                 <label for="subject">Asunto</label>
@@ -293,5 +301,6 @@
   </section>
   {% block scripts %}
    <script src="{% static 'js/script-form-contacto.js' %}"></script>
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   {% endblock scripts %}
 {% endblock content %}

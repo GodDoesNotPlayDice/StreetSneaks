@@ -27,7 +27,7 @@ def eliminar_carro(request, carro_id):
     return redirect('carro', username=request.user.username)
 
 @login_required
-@user_passes_test(lambda user: user.is_superuser)
+@user_passes_test(lambda user: user.is_staff)
 def agregar_cupon(request):
     if request.method == 'POST':
         Cupon(
@@ -37,7 +37,7 @@ def agregar_cupon(request):
     return redirect('gestion-zapatillas')
 
 @login_required
-@user_passes_test(lambda user: user.is_superuser)
+@user_passes_test(lambda user: user.is_staff)
 def eliminar_cupon(request, id_cupon):
     cupon = Cupon.objects.get(pk=id_cupon)
     cupon.delete()

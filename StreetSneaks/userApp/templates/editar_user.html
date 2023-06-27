@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% block add_styles %}
+<link rel="stylesheet" href="{% static 'css/css-views/form_edit.css' %}">
+<link rel="stylesheet" href="sweetalert2.min.css">
+{% endblock add_styles %}
+<div class="container center-form">
+    <style>
+        .container {
+          margin-top: 50px;
+        }
+        .center-form {
+          display: flex;
+          justify-content: center;
+        }
+      </style>
+
+      {% if not user.is_superuser == 1 %}
+      <div class="col-md-6 m-5">
+        <h3>Editar Usuario</h3>
+        <p>Editando: {{user.username}}</p>
+        <form id="editUserForm" method="POST" action="{% url 'editUser' %}">
+          {% csrf_token %}
+          <div class="form-group my-3">
+            <label for="username">Nombre de Usuario:</label>
+            <input type="text" name="username" class="form-control" id="username" placeholder="Ingrese el nombre de usuario ">
+          </div>
+          <div class="form-group my-3">
+            <label for="lastname">Apellido:</label>
+            <input type="text" name="lastname" class="form-control" id="lastname" placeholder="Ingrese el apellido">
+          </div>
+          <div class="form-group my-3">
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" name="email" class="form-control" id="email" placeholder="Ingrese el correo electrónico">
+          </div>
+          <div class="form-group my-3">
+            <label for="celular">Celular:</label>
+            <input type="text" name="celular" class="form-control" id="celular" placeholder="Ingrese el número de celular">
+          </div>
+          <button type="submit" class="btn btn-primary">Guardar cambios</button>
+        </form>
+      </div>
+      {% else %}
+      <div class="m-5">
+        <h3 class="p-5">EL ADMIN NO PUEDE EDITAR PERFIL</h3>
+      </div>
+      {% endif %}
+  </div>
+{% endblock content %}
+{% block scripts %}
+<script src="{% static 'js/valid_edit.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+{% endblock scripts %}

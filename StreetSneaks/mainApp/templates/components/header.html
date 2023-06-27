@@ -23,6 +23,8 @@
                 <span class="header-top__item__link__text">Bienvenido {{user.username}}</span></a>
               <a class="header-top__item__link" href="{% url 'logout' %}">
                 <span class="header-top__item__link__text">LogOut</span></a>
+                <a class="header-top__item__link" href="{% url 'editar_usuario' %}">
+                  <span class="header-top__item__link__text">Editar Perfil</span></a>
               {% else %}
               <a class="header-top__item__link" href="{% url 'login' %}">
                 <i class="fa-solid fa-user"></i>
@@ -90,6 +92,9 @@
             </li>
             <li class="header-center__menu__item">
               <a class="header-center__menu__item__link disable" href="{% url 'logout' %}"><i class="fa-solid fa-right-from-bracket"></i>Log out</a>
+            </li>
+            <li class="header-center__menu__item">
+              <a class="header-center__menu__item__link disable" href="{% url 'editar_usuario' %}"><i class="fa-solid fa-right-from-bracket"></i>Editar Perfil</a>
             </li>
               {% endif %}
             <li class="header-center__menu__item disable">

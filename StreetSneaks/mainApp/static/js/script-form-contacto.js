@@ -1,63 +1,57 @@
-
-
 $(document).ready(function() {
+  $('#contactanos-form').submit(function(event) {
+    event.preventDefault(); // Evita que se envíe el formulario automáticamente
 
-    $('#contactanos-form').submit(function(e) {
-      e.preventDefault();
-      var name = $('#name').val();
-      var email = $('#email').val();
-      var order = $('#order').val();
-      var subject = $('#subject').val();
-      var mensage = $('#mensage').val();
-  
-      $(".error").remove();
+    var orderValue = $('select').val();
+    var subjectValue = $('#subject').val();
+    var messageValue = $('#mensage').val();
 
-      if (name.length == 0) {
-        $('#name').after('<span class="error">Este campo es obligatorio</span>');
-      }else if (name.length < 3) {
-        $(".error").remove();
-        $('#name').after('<span class="error">Este campo debe tener mínimo 3 caracteres</span>');
-      }else{
-        var regEx = /^[a-zA-ZÀ-ÿ\s]{3,15}$/
-        var validname = regEx.test(name);
-        if (!validname) {
-          $('#name').after('<span class="error">Ingrese un nombre válido</span>');
-        }
-      }
-      if (email.length == 0) {
-        $('#email').after('<span class="error">Este campo es obligatorio</span>');
-      } else {
-        var regEx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
-        var validEmail = regEx.test(email);
-        if (!validEmail) {
-          $('#email').after('<span class="error">Ingrese un Email válido</span>');
-        }
-      }
-      if (order.length == 0) {
-        $('#order').after('<span class="error">Este campo es obligatorio.</span>');
-      }else if (order.length < 6) {
-        $('#order').after('<span class="error">El número de orden es de mínimo 6 caracteres.</span>');
-      }
-      if (subject.length == 0) {
-        $('#subject').after('<span class="error">El asunto es obligatorio.</span>');
-      }else{
-        var regEx = /^.{2,100}$/
-        var validsubject = regEx.test(subject);
-        if (!validsubject) {
-          $('#subject').after('<span class="error">Ingrese el asunto</span>');
-      }}
-      if (mensage.length == 0) {
-        $('#mensage').after('<span class="error">El mensage es obligatorio.</span>');
-      }else{
-        var regEx = /^.{20,1000}$/
-        var validmensage = regEx.test(mensage);
-        if (!validmensage) {
-          $('#mensage').after('<span class="error">Ingrese un mínimo de 50 caracteres</span>');
-      }}
-    });
-  
+    // Elimina los mensajes de error anteriores
+    $('.error-message').remove();
+
+    // Validación del campo "Número de pedido"
+    if (orderValue === 'nan') {
+      $('<p class="error-message" style="color: red;">Seleccione un número de pedido válido</p>').insertAfter('select');
+    }
+
+    // Validación del campo "Asunto"
+    if (subjectValue === '') {
+      $('<p class="error-message" style="color: red;">Ingrese el asunto</p>').insertAfter('#subject');
+    }
+
+    // Validación del campo "Mensaje"
+    if (messageValue === '') {
+      $('<p class="error-message" style="color: red;">Ingrese el mensaje</p>').insertAfter('#mensage');
+    }
+
+    // Validación de la longitud máxima de caracteres
+    var maxLength = 1000;
+    if (subjectValue.length > maxLength) {
+      $('<p class="error-message" style="color: red;">El campo "Asunto" excede el límite de caracteres</p>').insertAfter('#subject');
+    }
+    if (messageValue.length > maxLength) {
+      $('<p class="error-message" style="color: red;">El campo "Mensaje" excede el límite de caracteres</p>').insertAfter('#mensage');
+    }
+
+    // Si hay mensajes de error, detener el envío del formulario
+    if ($('.error-message').length > 0) {
+      return;
+    }
+
+    // Si pasa todas las validaciones, puedes enviar el formulario
+    // Aquí puedes agregar tu lógica para enviar los datos del formulario
+    // al servidor o realizar cualquier otra acción necesaria
+
+    // Mostrar notificación de éxito
+
+    // Reiniciar el formulario después del envío (opcional)
+    $('#contactanos-form').unbind('submit').submit();
+
+    Swal.fire(
+      'Completado Enviado',
+      'Se envió el formulario correctamente',
+      'success'
+    );
+
   });
-
-
-
-
+});
