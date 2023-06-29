@@ -20,9 +20,9 @@
               {% if user.is_authenticated %}
               <a class="header-top__item__link" href="{% url 'profile' %}">
                 <i class="fa-solid fa-user"></i>
-                <span class="header-top__item__link__text">Bienvenido {{user.username}}</span></a>
+                <span class="header-top__item__link__text">Bienvenido {{user.username}}, ir a mi perfil</span></a>
               <a class="header-top__item__link" href="{% url 'logout' %}">
-                <span class="header-top__item__link__text">LogOut</span></a>
+                <span class="header-top__item__link__text">Cerrar Sesión</span></a>
                 <a class="header-top__item__link" href="{% url 'editar_usuario' %}">
                   <span class="header-top__item__link__text">Editar Perfil</span></a>
               {% else %}

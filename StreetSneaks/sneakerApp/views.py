@@ -6,6 +6,7 @@ from ventaApp.models import Cupon
 from .functions import id_prod
 from django.contrib.auth.models import User
 from userApp.models import Usuario
+from ventaApp.models import Boleta, Estado
 
 def items():
     return Zapatilla.objects.all()    
@@ -150,4 +151,35 @@ def sneak_details(request, nombre, sneak_id):
     ctx = {'sneak' : sneak, 'title': sneak.name}
     return render(request, 'details.html', ctx) 
 
+
+@login_required
+@user_passes_test(lambda user: user.is_staff)
+def gestionar_producto(request):
+    boleta = Boleta.objects.all() 
+    estados = Estado.objects.all()
+    ids = []
+    verif_id = []
+    for i in boleta:
+       if i.id_boleta not in verif_id:
+           verif_id.append(i.id_boleta)
+           ids.append({'id_boleta' : i.id_boleta, 'estado_envio' : i.estado_envio, 'fecha_hoy' : i.fecha_actual, 'username' : i.user.username, 'last_name' : i.user.last_name , 'fecha_entrega' : i.fecha})
+        
+    ctx = {'boletas': ids, 'estados': estados , 'title': 'Gestion de Pedidos'}
+    return render(request, 'gestion_pedidos.html', ctx)
+
+@login_required
+@user_passes_test(lambda user: user.is_staff)
+def editar_estado_pedido(request, id_boleta):
+    if request.method == 'POST':
+        estado_code = int(request.POST['estado'])
+        boleta = Boleta.objects.filter(id_boleta=id_boleta)
+        for b in boleta:
+            if b is not None:
+                estado = Estado.objects.get(valor=estado_code)
+                b.estado_envio = estado
+            b.save()
+
+        return redirect('gestionar_producto')
+    else:
+        return redirect('gestionar_producto')
 

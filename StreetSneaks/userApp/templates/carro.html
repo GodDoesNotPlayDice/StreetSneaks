@@ -54,6 +54,8 @@
                                             {% endfor %}
                                     </select>
                                 </div>
+                                <p class="text-danger">Si no tienes una direccion ve a tu perfil a ingresar una.</p>
+                                <a href="{% url 'profile' %}">clickea aqui para ir</a>
                             </div>
                         </div>
                         <form  method='POST' action="{% url 'pago' %}">

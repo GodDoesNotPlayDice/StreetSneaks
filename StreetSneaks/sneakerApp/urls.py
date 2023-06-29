@@ -17,4 +17,6 @@ urlpatterns = [
     path('acenderVendedor/<int:id>', views.acenderVendedor, name='acenderVendedor'),
     path('decenderVendedor/<int:id>', views.decenderVendedor, name='decenderVendedor'),
     path('busquedaUser/', views.busquedaUser, name='busquedaUser'),
+    path('gestionar_producto/', views.gestionar_producto, name='gestionar_producto'),
+    path('cambiar_estado/<str:id_boleta>', views.editar_estado_pedido, name='cambiar_estado'),
 ]

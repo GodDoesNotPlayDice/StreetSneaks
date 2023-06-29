@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block header %}
+{% include 'components/admin-header.html' %}
+{% endblock header %}
+{% block boostrap %}
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
+{% endblock boostrap %}
+{% block content %}
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          backgroundColor: {
+            's-blue': '#4355ce',
+            's-red': '#e13838',
+            's-black': '#1f1b1a',
+          }
+        }
+      }
+    }
+  </script>
+  
+  <div class="">
+    {% for boleta in boletas %}
+    <div class="m-5">
+        <div class="flex flex-col">
+            <h3 class="text-xl lg:text-2xl">{{boleta.id_boleta}}</h3>
+            <p class="my-1"><b>Nombre: </b>{{boleta.username}} {{boleta.last_name}}</p>
+            <p class="text-sm"><b>fecha de entrega: </b>{{boleta.fecha_entrega}}</p>
+            <p class="text-sm"><b>fecha de compra: </b>{{boleta.fecha_hoy}}</p>
+            {% if boleta.estado_envio.valor == 25 %}
+            <p class="text-green-600"><b>Estado del envio saliendo</b></p>
+            {% elif boleta.estado_envio.valor == 50 %}
+            <p class="text-green-600"><b>Estado del envio Mitad del camino</b></p>
+            {% elif boleta.estado_envio.valor == 100 %}
+            <p class="text-green-600"><b>Estado del envio llego</b></p>
+            {% endif %}
+            <div>
+                <h3 class="text-2xl">Editar estado del envio</h3>
+                <form action="{% url 'cambiar_estado' boleta.id_boleta %}" method="POST">
+                    {% csrf_token %}
+                    <label for="estado" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select an option</label>
+                    <select id="estado" name="estado" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    {% for estado in estados %}
+                    {% if boleta.estado_envio.pk == estado.pk %}
+                    <option selected value="{{estado.valor}}">{{estado.estado}}</option>
+                    {% elif boleta.estado_envio.pk != estado.pk %}
+                    <option value="{{estado.valor}}">{{estado.estado}}</option>
+                    {% endif %}
+                    {% endfor %}
+                    </select>
+                    <div class="flex justify-end">
+                        <button type="submit" class="my-3 focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+  </div>
+
+
+
+
+
+{% endblock content %}
+{% block footer %}
+{% include 'components/admin-footer.html' %}
+{% endblock footer %}
+{% block scripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+{% endblock scripts %}

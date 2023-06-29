@@ -2,7 +2,7 @@ from random import randint, choices
 import string
 def id_prod():
     aux = []
-    base = "StreetSneakStore#"
+    base = "ST#"
     numbers = ""
     for i in range(10):
         aux.append(f"{randint(1,9)}")
@@ -14,5 +14,5 @@ def id_prod():
 def generar_id_boleta():
     parte_random = ''.join(choices(string.digits, k=5))
     random2 = ''.join(choices(string.digits, k=5))
-    id_boleta = f"StreetSneaks#Boleta@{parte_random}-{random2}"
+    id_boleta = f"ST#Boleta@{parte_random}-{random2}"
     return id_boleta

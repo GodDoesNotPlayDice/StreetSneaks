@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load filters %}
+{% block add_styles %}
+    <link rel="stylesheet" href="{% static '/css/css-views/pedido.css' %}">
+{% endblock add_styles %}
+
+{% block content %}
+<section>
+    <h2>Detalle de tu pedido</h2>
+    <div class="order-wrap">
+        <div class="order-cards">
+
+          {% for boleta in todas_boletas %}
+          {% if id_boleta == boleta.id_boleta %}
+            <div class="order-card">
+                <div class="order-card__content">
+                    <div class="order-card__img-container">
+                        <img src="{{boleta.productos.items.imagen.url}}" alt="" class="order-card__img">
+                    </div>
+                    <div class="order-card__details">
+                        <p class="order-card__texts">{{boleta.productos.items.name}}</p>
+                        <p class="order-card__texts">Talla {{boleta.productos.items.tallaEUR.number}} {{boleta.productos.items.tallaEUR.tipo}}</p>
+                        <p class="order-card__texts">${{boleta.productos.items.precio|precio}} CLP</p>
+                    </div>
+                    <div class="order-card__time">
+                        <p class="order-card__time__text">{{boleta.fecha}}</p>
+                        <a href="pedido.html" class="order-card__link">Volver</a>
+                    </div>
+                </div>
+                <div class="order-ship-progress">
+                    <div class="order-ship-progress__texts">
+                        <p class="order-ship-progress__text">
+                            <i class="fa-solid fa-truck-fast"></i> Saliendo
+                        </p>
+                        <p class="order-ship-progress__text">
+                            <i class="fa-solid fa-truck-arrow-right"></i> A mitad de camino
+                        </p>
+                        <p class="order-ship-progress__text">
+                            <i class="fa-solid fa-house"></i> Llegando
+                        </p>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: {{boleta.estado_envio.valor}}%;" aria-valuenow="{{boleta.estado_envio.valor}}" aria-valuemin="0" aria-valuemax="100">{{boleta.estado_envio.valor}}%</div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+
+           
+        </div>
+
+        <div class="order-summary">
+            <div class="order-summary__top">
+                <h4 class="order-summary__top__title">Detalle de la compra</h4>
+                <div class="order-summary__top__date-number">
+                    <p class="order-summary__text">13 de febrero</p>
+                    <p class="order-summary__text">{{id_boleta}}</p>
+                </div>
+            </div>
+            <div class="order-summary__mid">
+              <div class="order-summary__mid-prod">
+                <p class="order-summary__text">Descuento</p>
+                <p class="order-summary__text">${{descuento|precio}}</p>
+            </div>
+                <div class="order-summary__mid-prod">
+                    <p class="order-summary__text">Total</p>
+                    <p class="order-summary__text">${{total|precio}}</p>
+                </div>
+                <div class="order-summary__mid-ship">
+                    <p class="order-summary__text">Envío</p>
+                    <p class="order-summary__text">$4.950</p>
+                </div>
+            </div>
+            <div class="order-summary__bot">
+                <h5 class="order-summary__bot__title">Pago</h5>
+                <div class="order-summary__bot__pay">
+                    <p class="order-summary__text">${{total_pagar|precio}}</p>
+                    <p class="order-summary__text">Tarjeta****{{numero_tarjeta}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
