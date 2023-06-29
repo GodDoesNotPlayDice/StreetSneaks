@@ -35,6 +35,18 @@ class Venta(models.Model):
     def __str__(self) -> str:
         return str(self.items)
     
+class Estado(models.Model):
+    estado = models.CharField(max_length=255, verbose_name="Nombre del estado")
+    valor = models.IntegerField(null=True, verbose_name="Porcentaje del recorrido")
+    class Meta:
+        verbose_name = "Estado"
+        verbose_name_plural = "Estados"
+    
+    def __str__(self) -> str:
+        return self.estado
+
+
+
 
 
 class Boleta(models.Model):
@@ -47,6 +59,7 @@ class Boleta(models.Model):
     iva = models.IntegerField(null=True, verbose_name="Iva")
     descuento = models.IntegerField(null=True, verbose_name="Descuento")
     numero_tarjeta = models.CharField(max_length=255, verbose_name="Numero Tarjeta", null=True)
+    estado_envio = models.ForeignKey(Estado, on_delete=models.CASCADE, verbose_name="Estado", null=True)
 
     class Meta:
         verbose_name = "Boleta"

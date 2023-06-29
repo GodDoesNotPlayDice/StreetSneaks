@@ -5,13 +5,12 @@ from django.http import JsonResponse
 from userApp.models import Direccion, Tarjeta
 from sneakerApp.models import Zapatilla
 from userApp.models import Carro
-from .models import Boleta, Cupon, Iva
+from .models import Boleta, Cupon, Iva, Estado
 from ventaApp.models import Venta
 from mainApp.templatetags.filters import precio
 from datetime import datetime, timedelta
 import locale
 from sneakerApp.functions import generar_id_boleta
-
 # Create your views here.
 
 @login_required
@@ -137,6 +136,7 @@ def pagar(request):
 
 @login_required
 def pagar_confirmar(request, fecha_entrega):
+    estado = Estado.objects.get(id=0)
     print(fecha_entrega)
     if request.method == 'POST':
         nro_tarjeta = request.POST['nro-credit']
@@ -170,7 +170,6 @@ def pagar_confirmar(request, fecha_entrega):
             cupon = None
 
         id_boleta = generar_id_boleta()
-        # fecha_entrega = (datetime.now().date() + timedelta(days=3)).strftime('%d de %B del %Y')
         for c in carro:
             venta = Venta(
                 user=c.user,
@@ -188,7 +187,8 @@ def pagar_confirmar(request, fecha_entrega):
                 total=int(total_con_iva),
                 iva=iva,
                 descuento=descuento,
-                numero_tarjeta = nro_tarjeta
+                numero_tarjeta = nro_tarjeta,
+                estado_envio=estado
             )
             boleta.save()
         
@@ -196,8 +196,22 @@ def pagar_confirmar(request, fecha_entrega):
         time.sleep(3)
         return redirect('mis_pedidos')
 
+@login_required
+def detalle_pedido(request, id_boleta):
+    boleta = Boleta.objects.filter(id_boleta=id_boleta, user=request.user).first()
+    todas_boletas = Boleta.objects.filter(user=request.user)
+    id_boleta = boleta.id_boleta
+    fecha_compra = boleta.fecha_actual
+    total = boleta.total
+    total_pagar = boleta.total + 4950
+    descuento = boleta.descuento
+    numero_tarjeta = boleta.numero_tarjeta[-4:]
+    iva = boleta.iva
+    ctx = {'todas_boletas' : todas_boletas , 'boleta': boleta, 'id_boleta': id_boleta, 'fecha_compra': fecha_compra, 'total': total, 'descuento': descuento, 'numero_tarjeta': numero_tarjeta, 'iva': iva, 'total_pagar': total_pagar, 'title': 'Detalle pedido'}
+    return render(request, 'pedido-detalle.html', ctx)
 
+@login_required
 def pedidos(request):
     boleta = Boleta.objects.filter(user=request.user)
-    ctx = {'boleta': boleta}
+    ctx = {'boleta': boleta , 'title': 'Mis pedidos'}
     return render(request, 'pedido.html', ctx)
