@@ -11,6 +11,11 @@ from mainApp.templatetags.filters import precio
 from datetime import datetime, timedelta
 import locale
 from sneakerApp.functions import generar_id_boleta
+import requests
+
+
+
+
 # Create your views here.
 
 @login_required
@@ -150,7 +155,16 @@ def pagar_confirmar(request, fecha_entrega):
             fecha_vencimiento=fecha_vencimiento
         ).save()
         try:
-            iva = Iva.objects.get(id=1).valor
+            url = "https://sttt-96a1c-default-rtdb.firebaseio.com/IVA.json"
+            response = requests.get(url)
+            if response.status_code == 200:
+                json_data = response.json()
+                print(json_data)
+            else:
+                print("Error al obtener el JSON:", response.status_code)
+
+
+            iva = json_data
             locale.setlocale(locale.LC_ALL, 'es_ES.utf8')
             carro = Carro.objects.filter(user=request.user)
             items = [c.items for c in carro]
